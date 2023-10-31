@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 28, 2023 at 12:09 PM
+-- Generation Time: Oct 31, 2023 at 04:17 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -143,7 +143,77 @@ INSERT INTO `products` (`Product_ID`, `Name`, `Price`, `Img_path`, `Content`, `Q
 (9, 'Chậu Gốm Nhật Vát Trắng Nhỏ', 35000, 'https://cayxinh.vn/wp-content/uploads/2017/12/chau-gom-nhat-tron-vat-35k-min-400x400.jpg', '', 10, 10, 10, 0, '2023-10-28 09:44:32', '2023-10-28 09:44:32', 4),
 (10, 'Chậu Gốm Tròn Vát Đáy Đỏ', 50000, 'https://cayxinh.vn/wp-content/uploads/2017/12/chau-gom-tron-vat-day-do-50k-min-400x400.jpg', '', 10, 10, 10, 0, '2023-10-28 09:44:32', '2023-10-28 09:44:32', 4),
 (11, 'Chậu Gốm Sứ Mắt Na S2', 35000, 'https://cayxinh.vn/wp-content/uploads/2017/12/chau-gom-su-mat-na-s2-min-400x400.jpg', '', 10, 10, 10, 0, '2023-10-28 09:44:32', '2023-10-28 09:44:32', 4),
-(12, 'Chậu Gốm Sứ Kẻ Miệng', 70000, 'https://cayxinh.vn/wp-content/uploads/2018/01/chau-gom-su-ke-mieng-01-400x400.jpg', '', 10, 10, 10, 0, '2023-10-28 09:44:32', '2023-10-28 09:44:32', 4);
+(12, 'Chậu Gốm Sứ Kẻ Miệng', 70000, 'https://cayxinh.vn/wp-content/uploads/2018/01/chau-gom-su-ke-mieng-01-400x400.jpg', '', 10, 10, 10, 0, '2023-10-28 09:44:32', '2023-10-28 09:44:32', 4),
+(13, 'Cây Tùng Xương Cá', 1200000, 'https://cayxinh.vn/wp-content/uploads/2020/12/cay-tung-xuong-ca-121220-01-280x280.jpg', '', 10, 10, 10, 40, '2023-10-31 01:46:50', '2023-10-31 01:46:50', 1),
+(14, 'Cây Phát Tài', 270000, 'https://cayxinh.vn/wp-content/uploads/2020/08/cay-phat-tai-050820-06-280x280.jpg', '', 10, 10, 10, 5, '2023-10-31 01:46:50', '2023-10-31 01:46:50', 1),
+(15, 'Cây Vạn Niên Thanh Leo Cột', 1400000, 'https://cayxinh.vn/wp-content/uploads/2017/11/cay-van-nien-thanh-cot-300x300.jpg', '', 10, 10, 10, 14, '2023-10-31 01:46:50', '2023-10-31 01:46:50', 1),
+(16, 'Cây Hạnh Phúc', 220000, 'https://cayxinh.vn/wp-content/uploads/2017/11/cay-hanh-phuc-1108198-280x280.jpg', '', 10, 10, 10, 15, '2023-10-31 01:46:50', '2023-10-31 01:46:50', 1),
+(17, 'Cây Ngũ Gia Bì', 250000, 'https://cayxinh.vn/wp-content/uploads/2017/11/cay-ngu-gia-bi-12081911-280x280.jpg', '', 10, 10, 10, 13, '2023-10-31 01:46:50', '2023-10-31 01:46:50', 1),
+(18, 'Cây Cau Cảnh', 850000, 'https://cayxinh.vn/wp-content/uploads/2020/07/cay-cau-canh-14102020-1-280x280.jpg', '', 10, 10, 10, 10, '2023-10-31 01:51:53', '2023-10-31 01:51:53', 1),
+(19, 'Cây Trầu Bà Leo Cột', 900000, 'https://cayxinh.vn/wp-content/uploads/2019/11/cay-trau-ba-leo-cot-2811-2019-280x280.jpg', '', 10, 10, 10, 6, '2023-10-31 01:51:53', '2023-10-31 01:51:53', 1),
+(20, 'Cây Trầu Bà', 220000, 'https://cayxinh.vn/wp-content/uploads/2018/06/cay-trau-ba-1608197-280x280.jpg', '', 10, 10, 10, 2, '2023-10-31 01:51:53', '2023-10-31 01:51:53', 1),
+(21, 'Cây Thiết Mộc Lan', 250000, 'https://cayxinh.vn/wp-content/uploads/2018/05/cay-thiet-moc-lan-01-300x300.jpg', '', 10, 10, 10, 17, '2023-10-31 01:51:53', '2023-10-31 01:51:53', 1),
+(22, 'Cây Trầu Bà Đế Vương Đỏ', 220000, 'https://cayxinh.vn/wp-content/uploads/2018/06/cay-trau-ba-1608193-400x400.jpg', '', 10, 10, 10, 11, '2023-10-31 01:51:53', '2023-10-31 01:51:53', 1),
+(23, 'Cây Trường Sinh', 170000, 'https://cayxinh.vn/wp-content/uploads/2017/12/cay-truong-sinh-1008192-280x280.jpg', '', 10, 10, 10, 17, '2023-10-31 01:53:48', '2023-10-31 01:53:48', 1),
+(24, 'Cây Bàng Singapore', 170000, 'https://cayxinh.vn/wp-content/uploads/2017/11/cay-bang-singgapore-1108195-280x280.jpg', '', 10, 10, 10, 23, '2023-10-31 01:53:48', '2023-10-31 01:53:48', 1),
+(25, 'Cây Ngũ Gia Bì', 250000, 'https://cayxinh.vn/wp-content/uploads/2017/11/cay-ngu-gia-bi-12081911-280x280.jpg', '', 10, 10, 10, 13, '2023-10-31 02:00:50', '2023-10-31 02:00:50', 2),
+(26, 'Cây Cau Cảnh', 850000, 'https://cayxinh.vn/wp-content/uploads/2020/07/cay-cau-canh-14102020-1-280x280.jpg', '', 10, 10, 10, 1, '2023-10-31 02:00:50', '2023-10-31 02:00:50', 2),
+(27, 'Cây Mộc Hương', 850000, 'https://cayxinh.vn/wp-content/uploads/2020/06/moc-huong-8-280x280.jpg', '', 10, 10, 10, 5, '2023-10-31 02:00:50', '2023-10-31 02:00:50', 2),
+(28, 'Cây Kim Ngân', 220000, 'https://cayxinh.vn/wp-content/uploads/2017/11/cay-kim-ngan-1108195-280x280.jpg', '', 10, 10, 10, 14, '2023-10-31 02:00:50', '2023-10-31 02:00:50', 2),
+(29, 'Cây Đa Búp Đỏ', 170000, 'https://cayxinh.vn/wp-content/uploads/2017/11/cay-da-bup-do-1108191-280x280.jpg', '', 10, 10, 10, 1, '2023-10-31 02:00:50', '2023-10-31 02:00:50', 2),
+(30, 'Cây Cau Tiểu Trâm', 170000, 'https://cayxinh.vn/wp-content/uploads/2017/11/cay-cau-tieu-tram-1108199-280x280.jpg', '', 10, 10, 10, 23, '2023-10-31 02:00:50', '2023-10-31 02:00:50', 2),
+(31, 'Cây Tùng La Hán', 150000, 'https://cayxinh.vn/wp-content/uploads/2018/01/tung-la-han-1708198-280x280.jpg', '', 10, 10, 10, 17, '2023-10-31 02:00:50', '2023-10-31 02:00:50', 2),
+(32, 'Tiểu cảnh Composite 09', 500000, 'https://cayxinh.vn/wp-content/uploads/2018/01/tieu-canh-terrarium-composite-09-300x300.jpg', '', 10, 10, 10, 5, '2023-10-31 02:07:19', '2023-10-31 02:07:19', 3),
+(33, 'Tiểu cảnh Composite 08', 500000, 'https://cayxinh.vn/wp-content/uploads/2018/01/tieu-canh-terrarium-composite-08-300x300.jpg', '', 10, 10, 10, 5, '2023-10-31 02:07:19', '2023-10-31 02:07:19', 3),
+(34, 'Tiểu cảnh Composite 07', 500000, 'https://cayxinh.vn/wp-content/uploads/2018/01/tieu-canh-terrarium-composite-07-300x300.jpg', '', 10, 10, 10, 5, '2023-10-31 02:07:19', '2023-10-31 02:07:19', 3),
+(35, 'Tiểu cảnh Composite 06', 500000, 'https://cayxinh.vn/wp-content/uploads/2018/01/tieu-canh-terrarium-composite-06-300x300.jpg', '', 10, 10, 10, 5, '2023-10-31 02:07:19', '2023-10-31 02:07:19', 3),
+(36, 'Tiểu cảnh Thuỷ Tinh 37', 500000, 'https://cayxinh.vn/wp-content/uploads/2017/11/tieu-canh-terrarium-thuy-tinh-02-300x300.jpg', '', 10, 10, 10, 5, '2023-10-31 02:07:19', '2023-10-31 02:07:19', 3),
+(37, 'Tiểu cảnh Composite 05', 500000, 'https://cayxinh.vn/wp-content/uploads/2017/11/tieu-canh-terrarium-composite-05-300x300.jpg', '', 10, 10, 10, 5, '2023-10-31 02:07:19', '2023-10-31 02:07:19', 3),
+(38, 'Tiểu cảnh Composite 04', 500000, 'https://cayxinh.vn/wp-content/uploads/2017/11/tieu-canh-terrarium-composite-04-300x300.jpg', '', 10, 10, 10, 5, '2023-10-31 02:07:19', '2023-10-31 02:07:19', 3),
+(39, 'Tiểu cảnh Composite 03', 500000, 'https://cayxinh.vn/wp-content/uploads/2017/11/tieu-canh-terrarium-composite-03-300x300.jpg', '', 10, 10, 10, 5, '2023-10-31 02:07:19', '2023-10-31 02:07:19', 3),
+(40, 'Chậu Thủy Tinh Tròn Vát', 120000, 'https://cayxinh.vn/wp-content/uploads/2018/01/chau-thuy-tinh-tron-vat-300x300.jpg', '', 10, 10, 10, 1, '2023-10-31 02:13:10', '2023-10-31 02:13:10', 4),
+(41, 'Chậu Gốm Vân Đá Trụ Tròn', 150000, 'https://cayxinh.vn/wp-content/uploads/2017/12/chau-gom-van-da-tru-tron-01-300x300.jpg', '', 10, 10, 10, 1, '2023-10-31 02:13:10', '2023-10-31 02:13:10', 4),
+(42, 'Chậu Gốm Sứ Hạt Dẻ S1', 120000, 'https://cayxinh.vn/wp-content/uploads/2018/01/chau-gom-su-hat-de-s1-01-300x300.jpg', '', 10, 10, 10, 1, '2023-10-31 02:13:10', '2023-10-31 02:13:10', 4),
+(43, 'Chậu Gốm Sứ Vuông Vát S2', 90000, 'https://cayxinh.vn/wp-content/uploads/2017/12/chau-gom-su-vuong-vat-s2-300x300.jpg', '', 10, 10, 10, 0, '2023-10-31 02:13:10', '2023-10-31 02:13:10', 4),
+(44, 'Chậu Gốm Sứ Nhật Tròn Cao', 100000, 'https://cayxinh.vn/wp-content/uploads/2017/12/chau-gom-nhat-binh-cao-trang-2-70k-min-280x280.jpg', '', 10, 10, 10, 1, '2023-10-31 02:13:10', '2023-10-31 02:13:10', 4),
+(45, 'Chậu Gốm Sứ Nhật Ang To', 70000, 'https://cayxinh.vn/wp-content/uploads/2018/01/chau-gom-nhat-dia-to-hong-70k-300x300.jpg', '', 10, 10, 10, 1, '2023-10-31 02:13:10', '2023-10-31 02:13:10', 4),
+(46, 'Chậu gốm chữ nhật khóm hoa', 90000, 'https://cayxinh.vn/wp-content/uploads/2017/12/chau-gom-dat-nung-013-300x300.jpg', '', 10, 10, 10, 1, '2023-10-31 02:13:10', '2023-10-31 02:13:10', 4),
+(47, 'Chậu Gốm Nhật Bộ 3 Men Chảy', 40000, 'https://cayxinh.vn/wp-content/uploads/2017/12/chau-gom-nhat-bo-3-men-chay-01-min-280x280.jpg', '', 10, 10, 10, 0, '2023-10-31 02:13:10', '2023-10-31 02:13:10', 4),
+(48, 'Sen Đá Hoa Hồng Xanh', 150000, 'https://cayxinh.vn/wp-content/uploads/2020/06/sen-da-hoa-hong-xanh-280x280.jpg', '', 10, 10, 10, 33, '2023-10-31 02:20:26', '2023-10-31 02:20:26', 5),
+(49, 'Sen Đá Da Rắn', 90000, 'https://cayxinh.vn/wp-content/uploads/2017/11/sen-da-da-ran-280x280.jpg', '', 10, 10, 10, 1, '2023-10-31 02:20:26', '2023-10-31 02:20:26', 5),
+(50, 'Sen Đá Phật Bà Trắng', 90000, 'https://cayxinh.vn/wp-content/uploads/2017/11/sen-da-phat-ba-trang-280x280.jpg', '', 10, 10, 10, 1, '2023-10-31 02:20:26', '2023-10-31 02:20:26', 5),
+(51, 'Sen Đá Viền Tím Cánh Nhọn', 70000, 'https://cayxinh.vn/wp-content/uploads/2017/11/sen-da-vien-tim-canh-nhon-300x300.jpg', '', 10, 10, 10, 1, '2023-10-31 02:20:26', '2023-10-31 02:20:26', 5),
+(52, 'Sen Đá Kim Cương', 70000, 'https://cayxinh.vn/wp-content/uploads/2017/11/sen-da-kim-cuong-300x300.jpg', '', 10, 10, 10, 0, '2023-10-31 02:20:26', '2023-10-31 02:20:26', 5),
+(53, 'Sen Đá Sỏi Viền Đỏ', 70000, 'https://cayxinh.vn/wp-content/uploads/2017/11/sen-da-soi-vien-do-280x280.jpg', '', 10, 10, 10, 0, '2023-10-31 02:20:26', '2023-10-31 02:20:26', 5),
+(54, 'Sen Đá Kim Tuyến', 35000, 'https://cayxinh.vn/wp-content/uploads/2017/12/sen-da-kim-tuyen-2-270221-1-280x280.jpg', '', 10, 10, 10, 0, '2023-10-31 02:20:26', '2023-10-31 02:20:26', 5),
+(55, 'Sen Đá 3D', 35000, 'https://cayxinh.vn/wp-content/uploads/2017/11/sen-da-3d-280x280.jpg', '', 10, 10, 10, 0, '2023-10-31 02:20:26', '2023-10-31 02:20:26', 5),
+(56, 'Sen Đá Pha Lê', 35000, 'https://cayxinh.vn/wp-content/uploads/2017/11/sen-da-pha-le-120820-9-280x280.jpg', '', 10, 10, 10, 1, '2023-10-31 02:20:26', '2023-10-31 02:20:26', 5),
+(57, 'Sen Đá Cỏ Tím', 35000, 'https://cayxinh.vn/wp-content/uploads/2017/11/sen-da-co-tim-300x300.jpg', '', 10, 10, 10, 1, '2023-10-31 02:20:26', '2023-10-31 02:20:26', 5),
+(58, 'Sen Đá Chuỗi Ngọc Bi', 35000, 'https://cayxinh.vn/wp-content/uploads/2017/11/sen-da-chuoi-ngoc-bi-300x300.jpg', '', 10, 10, 10, 1, '2023-10-31 02:20:26', '2023-10-31 02:20:26', 5),
+(59, 'Sen Đá Sedum Hoa Hồng', 35000, 'https://cayxinh.vn/wp-content/uploads/2017/11/sen-da-sedum-bong-hong-phap-080820-5-280x280.jpg', '', 10, 10, 10, 1, '2023-10-31 02:20:26', '2023-10-31 02:20:26', 5),
+(60, 'Xương Rồng Khế Bụi Vàng', 300000, 'https://cayxinh.vn/wp-content/uploads/2018/07/xuong-rong-khe-vang-bui-280x280.jpg', '', 10, 10, 10, 33, '2023-10-31 02:28:40', '2023-10-31 02:28:40', 6),
+(61, 'Xương Rồng Khế Xanh Bụi', 150000, 'https://cayxinh.vn/wp-content/uploads/2018/07/xuong-rong-khe-xanh-280x280.jpg', '', 10, 10, 10, 2, '2023-10-31 02:28:40', '2023-10-31 02:28:40', 6),
+(62, 'Xương Rồng Lông Thiên Nga Bụi', 150000, 'https://cayxinh.vn/wp-content/uploads/2018/07/xuong-rong-long-thien-nga-bui-280x280.jpg', '', 10, 10, 10, 1, '2023-10-31 02:28:40', '2023-10-31 02:28:40', 6),
+(63, 'Xương Rồng Bóng Vàng Bụi', 150000, 'https://cayxinh.vn/wp-content/uploads/2018/07/xuong-rong-bong-vang-bui-280x280.jpg', '', 10, 10, 10, 2, '2023-10-31 02:28:40', '2023-10-31 02:28:40', 6),
+(64, 'Xương Rồng Hồng Tử Đinh', 150000, 'https://cayxinh.vn/wp-content/uploads/2018/07/xuong-rong-hong-tu-dinh-280x280.jpg', '', 10, 10, 10, 1, '2023-10-31 02:28:40', '2023-10-31 02:28:40', 6),
+(65, 'Xương Rồng Tai Thỏ Xanh', 150000, 'https://cayxinh.vn/wp-content/uploads/2018/04/xuong-rong-tai-tho-xanh-300x300.jpg', '', 10, 10, 10, 20, '2023-10-31 02:28:40', '2023-10-31 02:28:40', 6),
+(66, 'Xương Rồng Bát Tiên', 150000, 'https://cayxinh.vn/wp-content/uploads/2020/03/xuong_rong_bat_tien_290320_03-280x280.jpg', '', 10, 10, 10, 40, '2023-10-31 02:28:40', '2023-10-31 02:28:40', 6),
+(67, 'Xương Rồng Tai Thỏ Vàng', 90000, 'https://cayxinh.vn/wp-content/uploads/2018/04/xuong-rong-tai-tho-vang-2-300x300.jpg', '', 10, 10, 10, 1, '2023-10-31 02:28:40', '2023-10-31 02:28:40', 6),
+(68, 'Xương Rồng Lông Thiên Nga', 90000, 'https://cayxinh.vn/wp-content/uploads/2018/02/xuong-rong-long-thien-nga-300x300.jpg', '', 10, 10, 10, 0, '2023-10-31 02:28:40', '2023-10-31 02:28:40', 6),
+(69, 'Xương Rồng Gymno', 70000, 'https://cayxinh.vn/wp-content/uploads/2018/07/xuong-rong-gymno-gai-trang-280x280.jpg', '', 10, 10, 10, 2, '2023-10-31 02:28:40', '2023-10-31 02:28:40', 6),
+(70, 'Xương Rồng Thần Long', 70000, 'https://cayxinh.vn/wp-content/uploads/2018/07/xuong-rong-than-long-270221-280x280.jpg', '', 10, 10, 10, 1, '2023-10-31 02:28:40', '2023-10-31 02:28:40', 6),
+(71, 'Xương Rồng Astro', 70000, 'https://cayxinh.vn/wp-content/uploads/2018/07/xuong-rong-astro-280x280.jpg', '', 10, 10, 10, 0, '2023-10-31 02:28:40', '2023-10-31 02:28:40', 6),
+(72, 'Biệt thự lớn', 150000, 'https://cayxinh.vn/wp-content/uploads/2018/03/biet-thu-lon-04-300x300.jpg', '', 10, 10, 10, 33, '2023-10-31 02:41:43', '2023-10-31 02:41:43', 7),
+(73, 'Móc treo thủy tinh', 100000, 'https://cayxinh.vn/wp-content/uploads/2018/03/moc-treo-thuy-tinh-02-300x300.jpg', '', 10, 10, 10, 50, '2023-10-31 02:41:43', '2023-10-31 02:41:43', 7),
+(74, 'Biệt Thự Nhỏ', 35000, 'https://cayxinh.vn/wp-content/uploads/2017/11/biet-thu-nho-01-min-280x280.jpg', '', 10, 10, 10, 1, '2023-10-31 02:41:43', '2023-10-31 02:41:43', 7),
+(75, 'Nhà nấm 2', 35000, 'https://cayxinh.vn/wp-content/uploads/2018/03/nha-nam-2-01-300x300.jpg', '', 10, 10, 10, 29, '2023-10-31 02:41:43', '2023-10-31 02:41:43', 7),
+(76, 'Nhà nấm', 35000, 'https://cayxinh.vn/wp-content/uploads/2018/03/nha-nam-1-05-300x300.jpg', '', 10, 10, 10, 29, '2023-10-31 02:41:43', '2023-10-31 02:41:43', 7),
+(77, 'Totoro lái xe', 25000, 'https://cayxinh.vn/wp-content/uploads/2017/11/totoro-lai-xe-01-280x280.jpg', '', 10, 10, 10, 0, '2023-10-31 02:41:43', '2023-10-31 02:41:43', 7),
+(78, 'Totoro cầm ô', 25000, 'https://cayxinh.vn/wp-content/uploads/2017/11/Totoro-cam-o-01-280x280.jpg', '', 10, 10, 10, 0, '2023-10-31 02:41:43', '2023-10-31 02:41:43', 7),
+(79, 'Thỏ con 2', 25000, 'https://cayxinh.vn/wp-content/uploads/2017/11/tho-con-2-01-280x280.jpg', '', 10, 10, 10, 0, '2023-10-31 02:41:43', '2023-10-31 02:41:43', 7),
+(80, 'Nhà cổ Hội An', 25000, 'https://cayxinh.vn/wp-content/uploads/2017/11/nha-co-hoi-an-01-280x280.jpg', '', 10, 10, 10, 1, '2023-10-31 02:41:43', '2023-10-31 02:41:43', 7),
+(81, 'Ngôi nhà nhỏ 2', 25000, 'https://cayxinh.vn/wp-content/uploads/2017/11/ngoi-nha-nho-2-01-280x280.jpg', '', 10, 10, 10, 0, '2023-10-31 02:41:43', '2023-10-31 02:41:43', 7),
+(82, 'Khỉ con xinh xắn', 25000, 'https://cayxinh.vn/wp-content/uploads/2017/11/khi-con-xinh-xan-01-280x280.jpg', '', 10, 10, 10, 2, '2023-10-31 02:41:43', '2023-10-31 02:41:43', 7);
 
 -- --------------------------------------------------------
 
@@ -275,7 +345,7 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `Product_ID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `Product_ID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 
 --
 -- AUTO_INCREMENT for table `transactions`
