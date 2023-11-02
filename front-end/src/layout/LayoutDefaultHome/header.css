@@ -1,0 +1,210 @@
+
+*
+{
+    box-sizing: border-box;
+    /* border,padding in width,height */
+}
+body
+{
+    overflow-x:hidden;
+}
+/* header-top */
+
+.header__top
+{
+    background-color: var(--color-green);
+    text-align: center;
+    padding: 10px;
+}
+/* header-introduce */
+.header__introduce
+{
+    border: 1px solid #ddd;
+}
+.header__introduce .header__wrap
+{
+    display: flex;
+    align-items: center;
+}
+.header__logo Link 
+{
+  display: block;
+}
+.header__introduce .header__wrap .header__logo
+{
+    width: 25%;
+}
+.header__introduce .header__wrap .header__logo img
+{
+    padding: 5px 0px;
+    width: 100%;
+    height: 100%;
+}
+.header__introduce .header__wrap .header__search
+{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    padding: 0px 20px;
+}
+.header__introduce .header__wrap .header__search input{
+    padding: 10px 20px;
+    border: 2px solid var(--color-green);
+    width:500px;
+    outline: none;
+    border-radius: 30px 0px 0px 30px;
+}
+.header__introduce .header__wrap .header__search .header__button
+{
+    border: 2px solid var(--color-green);
+    border-radius: 0px 30px 30px 0px;
+    padding: 10px 20px;
+    height: 100%;
+    background-color: var(--color-green);
+    color:var(--color-bg);
+    cursor: pointer;
+}
+.header__introduce .header__wrap .header__contact
+{
+    display: flex;
+    align-items: center;
+}
+.header__introduce .header__wrap .header__contact .header__icon
+{
+    background-color: var(--color-green);
+    color:var(--color-bg);
+    padding: 10px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.header__introduce .header__wrap .header__contact .header__tele
+{
+    font-weight: 500;
+    font-size: 20px;
+    color: var(--color-green);
+}
+/* header-main */
+.header__main
+{
+    
+   box-shadow: 3px 10px 13px#0000000d;
+  
+   background-color: var(--color-bg);
+}
+.header__main .header__wrap
+{
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.header__main .header__wrap .header__category
+{
+    width: 25%;
+    display: flex;
+    background-color: var(--color-green);
+    color:var(--color-bg);
+    padding: 16px;
+    cursor: pointer;
+    margin-right: 20px;
+
+}
+.header__main .header__wrap .header__category .header__icon
+{
+    margin-right: 10px;
+
+}
+.header__main .header__wrap .header__menu
+{
+    flex: 1;
+    display: flex;
+}
+.header__main .header__wrap .header__menu .header__link--home
+{
+  display: block;
+  color:var(--color-text);
+}
+.header__main .header__wrap .header__menu .header__box
+{
+    padding: 7px;
+    cursor: pointer;
+
+}
+.header__main .header__wrap .header__menu .header__box:hover
+{
+    color:var(--color-green);
+}
+.header__main .header__wrap .header__menu .header__link--cart
+{
+  display: block;
+  color:var(--color-text);
+}
+.header__main .header__wrap .header__menu .header__cart
+{
+    display: flex;
+    align-items: center;
+}
+.header__main .header__wrap .header__menu .header__cart .header__text
+{
+    margin-right: 10px;
+    
+}
+/* header__view */
+.header__view .header__wrap
+{
+    display: flex;
+    height:300px;
+
+}
+.header__view .header__wrap .header__list
+{
+    width: 25%; 
+    border:1px solid #ddd;
+    border-bottom: 0px;
+}
+.header__view .header__wrap .header__list ul
+{
+    height: 100%;
+    display: flex;
+    margin: 0px;
+    flex-direction: column;
+    padding-left: 0px;
+}
+.header__view .header__wrap .header__list li    
+{
+    height: 14.3%;
+    font-weight: 400;
+    list-style-type: none;
+    padding-left: 10px;
+    padding-top: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+}
+.header__view .header__wrap .header__list li:hover
+{
+    color: var(--color-green);
+    background-color: #ddd;
+}
+.header__view .header__wrap .header__image
+{
+    width: 75%;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+.header__view .header__wrap .header__image img
+{
+    width: 100%;
+    border-radius: 10px;
+    height: 100%;
+    
+}
+.header__list--visuable
+{
+    visibility:hidden;                                                                                                                                                                                                                                                                                                                                                                                                 
+}
+/* outlet : main */
+
+
+
