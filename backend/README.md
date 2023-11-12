@@ -1,43 +1,41 @@
-Laravel Installation Guide
-This guide will help you install Laravel, a powerful and flexible PHP framework, on your computer.
+Hướng dẫn Cài đặt Laravel
+Hướng dẫn này sẽ giúp bạn cài đặt Laravel, một framework PHP mạnh mẽ và linh hoạt, trên máy tính của bạn.
 
-System Requirements
-Before getting started, ensure that your computer meets the following system requirements:
+Yêu Cầu Hệ Thống
+Trước khi bắt đầu, đảm bảo rằng máy tính của bạn đáp ứng các yêu cầu hệ thống sau:
 
 PHP >= 7.4
 Composer
-Node.js and NPM
-MySQL or SQLite
-Step 1: Download Composer
-To install Laravel, you need Composer. If you haven't installed it yet, download Composer from https://getcomposer.org/ and follow the instructions on the website.
+Node.js và NPM
+MySQL hoặc SQLite
+Bước 1: Tải Composer
+Để cài đặt Laravel, bạn cần Composer. Nếu bạn chưa cài đặt, hãy tải Composer từ https://getcomposer.org/ và cài đặt theo hướng dẫn trên trang web.
 
-Step 2: Pull Files from the Project.
-Step 3: Configure the Environment
-Create a new database from the SQL file in the database directory.
-Copy the .env.example file to a new file named .env:
-bash
-Copy code
+Bước 2: Pull file từ project.
+Bước 3: Cấu hình Môi trường
+Tạo database mới từ file sql trong mục database.
+
+Sao chép tệp .env.example thành một tệp mới có tên .env:
+
 cp .env.example .env
-Open the .env file and configure the database information to match the newly created database:
-makefile
-Copy code
+Mở tệp .env và cấu hình thông tin database đúng với database mới tạo.
+
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=v1
 DB_USERNAME=root
 DB_PASSWORD=
-Step 4: Run the Application
-Run the following command to start the Laravel development server:
+Bước 4: Chạy Ứng Dụng
+Chạy lệnh sau để khởi động máy chủ phát triển của Laravel:
 
-Copy code
 php artisan serve
-At this point, the Laravel server will run on the host and port configured in .env. To change the port, you can use the following command:
+Lúc này máy chủ laravel sẽ được chạy trên host và port cố định được config trong .env.
 
-css
-Copy code
+Để thay đổi port theo ý muốn, ví dụ chạy máy chủ trên port 8080 thì ta chạy lệnh sau:
+
 php artisan serve --port=8080
-Open your browser and visit http://localhost:8000 to view the Laravel application.
+Mở trình duyệt và truy cập http://localhost:8080 để xem ứng dụng Laravel.
 
-Support and Contact
-If you encounter issues or have any questions, check the official Laravel documentation or reach out to the Laravel community.
+Hỗ trợ và Liên Hệ
+Nếu bạn gặp vấn đề hoặc có bất kỳ câu hỏi nào, hãy kiểm tra tài liệu chính của Laravel hoặc liên hệ với cộng đồng Laravel.
