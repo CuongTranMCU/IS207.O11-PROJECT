@@ -1,7 +1,9 @@
+import Login from "../../Components/Login";
+
 function LoginPage(){
     return(
         <>
-        Login Page
+        <Login></Login>
         </>
     )
 

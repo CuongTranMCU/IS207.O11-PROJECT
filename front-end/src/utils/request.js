@@ -1,4 +1,4 @@
-const DOMAIN="http://localhost:3000";
+const DOMAIN="https://is207-project-tree-shop.000webhostapp.com";
 export const get=async(path)=>
 {
     const response = await fetch(DOMAIN+path);

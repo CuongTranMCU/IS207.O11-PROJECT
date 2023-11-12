@@ -1,7 +1,9 @@
+import Logout from "../../Components/Logout";
+
 function LogoutPage(){
     return(
         <>
-        Logout Page
+        <Logout></Logout>
         </>
     )
 
