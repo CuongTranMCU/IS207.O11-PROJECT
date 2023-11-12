@@ -9,7 +9,7 @@ class UserQuery{
         'address'=>['eq'],
         'phone'=>['eq'],
         'name'=>['eq'],
-        'createdAt'=>['eq', 'lt', 'gt']
+        'createdAt'=>['eq', 'lt', 'lte', 'gte', 'gt'],
     ];
     protected $columnMap = [
         'email'=>'Email',
@@ -21,7 +21,9 @@ class UserQuery{
     protected $operatorMap = [
         'eq'=>'=',
         'lt'=>'<',
-        'gt'=>'>'
+        'gt'=>'>',
+        'lte'=>'<=',
+        'gte'=>'>=',
     ];
     public function transform(Request $request){
         $result = [];

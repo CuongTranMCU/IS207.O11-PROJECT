@@ -7,7 +7,7 @@ class CategoryQuery{
     protected $safeParms = [
         'slug'=>['eq'],
         'name'=>['eq'],
-        'createdAt'=>['eq', 'lt', 'gt']
+        'createdAt'=>['eq', 'lt', 'lte', 'gte', 'gt'],
     ];
     protected $columnMap = [
         'slug'=>'Slug',
@@ -17,7 +17,9 @@ class CategoryQuery{
     protected $operatorMap = [
         'eq'=>'=',
         'lt'=>'<',
-        'gt'=>'>'
+        'gt'=>'>',
+        'lte'=>'<=',
+        'gte'=>'>=',
     ];
     public function transform(Request $request){
         $result = [];
