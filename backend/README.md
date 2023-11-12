@@ -1,66 +1,83 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hướng dẫn Cài đặt Laravel</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            background-color: #f5f5f5;
+        }
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+        h1, h2 {
+            color: #333;
+        }
 
-## About Laravel
+        p, ul {
+            color: #777;
+        }
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+        code, pre {
+            background-color: #f8f8f8;
+            padding: 10px;
+            border-radius: 4px;
+        }
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hướng dẫn Cài đặt Laravel</h1>
 
-## Learning Laravel
+    <p>Hướng dẫn này sẽ giúp bạn cài đặt Laravel, một framework PHP mạnh mẽ và linh hoạt, trên máy tính của bạn.</p>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+    <h2>Yêu Cầu Hệ Thống</h2>
+    <p>Trước khi bắt đầu, đảm bảo rằng máy tính của bạn đáp ứng các yêu cầu hệ thống sau:</p>
+    <ul>
+        <li>PHP >= 7.4</li>
+        <li>Composer</li>
+        <li>Node.js và NPM</li>
+        <li>MySQL hoặc SQLite</li>
+    </ul>
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+    <h2>Bước 1: Tải Composer</h2>
+    <p>Để cài đặt Laravel, bạn cần Composer. Nếu bạn chưa cài đặt, hãy tải Composer từ <a href="https://getcomposer.org/" target="_blank">https://getcomposer.org/</a> và cài đặt theo hướng dẫn trên trang web.</p>
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+    <h2>Bước 2: Pull file từ project.</h2>
+    
 
-## Laravel Sponsors
+    <h2>Bước 3: Cấu hình Môi trường</h2>
+    <p>Tạo database mới từ file sql trong mục database.</p>
+    <p>Sao chép tệp .env.example thành một tệp mới có tên .env:</p>
+    <pre><code>cp .env.example .env</code></pre>
+    <p>Mở tệp .env và cấu hình thông tin database đúng với database mới tạo.</p>
+    <pre><code>DB_CONNECTION=mysql</code></pre>
+    <pre><code>DB_HOST=127.0.0.1</code></pre>
+    <pre><code>DB_PORT=3306</code></pre>
+    <pre><code>DB_DATABASE=v1</code></pre>
+    <pre><code>DB_USERNAME=root</code></pre>
+    <pre><code>DB_PASSWORD=</code></pre>
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+    <h2>Bước 4: Chạy Ứng Dụng</h2>
+    <p>Chạy lệnh sau để khởi động máy chủ phát triển của Laravel:</p>
+    <pre><code>php artisan serve</code></pre>
+    <p>Lúc này máy chủ laravel sẽ được chạy trên host và port cố định được config trong .env.</p>
+    <p>Để thay đổi port theo ý muốn, ví dụ chạy máy chủ trên port 8080 thì ta chạy lệnh sau:</p>
+    <pre><code>php artisan serve --port=8080</code></pre>
+    <p>Mở trình duyệt và truy cập <a href='http://localhost:8000'>http://localhost:8080</a> để xem ứng dụng Laravel.</p>
 
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+    <h2>Hỗ trợ và Liên Hệ</h2>
+    <p>Nếu bạn gặp vấn đề hoặc có bất kỳ câu hỏi nào, hãy kiểm tra tài liệu chính của Laravel hoặc liên hệ với cộng đồng Laravel.</p>
+</body>
+</html>
