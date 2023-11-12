@@ -64,7 +64,7 @@ class TransactionController extends Controller
         if($request->note) $transaction->Note = $request->note;
         $transaction->save();
         $id = $transaction->Transaction_ID;
-        return response()->json(['transactionId'=>$id, 'message'=>'Create new Transaction Successfully']);
+        return response()->json(['transactionId'=>$id, 'message'=>'Success']);
     }
 
     public function update(UpdateTransactionRequest $request, $transactionId){

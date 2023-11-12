@@ -20,6 +20,7 @@ class OrderResource extends JsonResource
             'productName'=>$this->Product_name,
             'productPrice'=>$this->Product_price,
             'quantity'=>$this->Quantity,
+            'transactionId'=>$this->Transaction_ID,
             'createdAt'=>$this->Created_at,
             'updatedAt'=>$this->Updated_at
         ];

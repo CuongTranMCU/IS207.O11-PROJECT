@@ -32,7 +32,6 @@ class BulkStoreOrderRequest extends FormRequest
     public function prepareForValidation(){
         $data = [];
         foreach($this->toArray() as $obj){
-            
             $obj['Product_ID'] = $obj['productId'] ?? null;
             $obj['Product_name'] = $obj['productName'] ?? null;
             $obj['Product_price'] = $obj['productPrice'] ?? null;

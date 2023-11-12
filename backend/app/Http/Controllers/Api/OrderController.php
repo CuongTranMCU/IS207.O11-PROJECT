@@ -30,26 +30,25 @@ class OrderController extends Controller
 
     public function update(UpdateOrderRequest $request, $id){
         $Order = Order::where('Order_ID', $id)->first();
-        if($Order){
+        if($Order)
             $Order->update($request->all());
-            return response()->json(['message' => 'Success']);
-        }
         else return response()->json(['message' => 'Not found'], 404);
     }
 
     public function destroy($id){
         $Order = Order::where('Order_ID', $id)->first();
-        if($Order){
+        if($Order)
             $Order->delete($Order);
-            return response()->json(['message' => 'Success']);
-        }
         else return response()->json(['message' => 'Not found'], 404);
     }
 
     public function bulkStore(BulkStoreOrderRequest $request){
+        ddd('aa');
         $bulk = collect($request->all())->map(function($arr, $key){
-            return Arr::except($arr, ['productId', 'productName', 'productPrice', 'quantity', 'transactionId']);
+            
+            return Arr::except($arr,  ['productId', 'productName', 'productPrice']);
         });
+        
         Order::insert($bulk->toArray());
     return response()->json(['message'=>'Success']);
 

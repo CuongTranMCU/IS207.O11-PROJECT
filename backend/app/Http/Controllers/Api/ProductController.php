@@ -125,10 +125,8 @@ class ProductController extends Controller
     public function update(UpdateProductRequest $request, $id)
     {
         $product = product::where('Product_ID', $id)->first();
-        if($product){
+        if($product)
             $product->update($request->all());
-            return response()->json(['message' => 'Success']);
-        }
         else return response()->json(['message' => 'Not found'],404);
     }
 
@@ -138,10 +136,8 @@ class ProductController extends Controller
     public function destroy(DeleteProductRequest $request, $id)
     { 
         $product = product::where('Product_ID', $id)->first();
-        if($product){
+        if($product)
             $product->delete($product);
-            return response()->json(['message' => 'Success']);
-        }
         else return response()->json(['message' => 'Not found'],404);
     }
 }
