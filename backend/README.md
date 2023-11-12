@@ -28,7 +28,7 @@ Bước 3: Cấu hình Môi trường
 
 Tạo database mới từ file sql trong mục database.
 
-Sao chép tệp .env.example thành một tệp mới có tên .env:
+Nếu chưa có tệp .env thì ta sao chép tệp .env.example thành một tệp mới có tên .env:
 
     cp .env.example .env
 
