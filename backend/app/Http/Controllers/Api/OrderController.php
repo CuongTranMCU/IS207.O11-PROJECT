@@ -43,10 +43,9 @@ class OrderController extends Controller
     }
 
     public function bulkStore(BulkStoreOrderRequest $request){
-        ddd('aa');
         $bulk = collect($request->all())->map(function($arr, $key){
             
-            return Arr::except($arr,  ['productId', 'productName', 'productPrice']);
+            return Arr::except($arr,  ['productId', 'productName', 'productPrice', 'quantity', 'transactionId']);
         });
         
         Order::insert($bulk->toArray());
