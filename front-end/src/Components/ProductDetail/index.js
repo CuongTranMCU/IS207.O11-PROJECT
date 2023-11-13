@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { getListProduct } from "../../services/productServices";
+import { useLocation, useParams } from "react-router-dom";
+import { getListProduct, getListProductPage } from "../../services/productServices";
 import "./styles.css"
 function ProductDetail(){
     const {slug} = useParams();
+    const location= useLocation();
+    const page = location.state.page;
     const [productDetail,setProductDetail]= useState([]);
     useEffect( ()=>
     {
         const fetchProductDetail = async()=>
         {
-            const data= await getListProduct();  
+            const data= await getListProductPage(page);  
             for (let i=0;i<data.data.length;i++)
             {
                 if(slug === data.data[i].slug)

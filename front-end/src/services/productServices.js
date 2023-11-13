@@ -1,8 +1,8 @@
 import {  get} from "../utils/request";
 
-export const getListProduct=()=>
+export const getListProductPage=(page)=>
 {
-    return get("/products");
+    return get(`/products?page=${page}`);
 }
 export const getProductDetail=(id)=>
 {

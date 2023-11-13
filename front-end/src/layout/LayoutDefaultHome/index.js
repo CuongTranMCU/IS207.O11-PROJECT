@@ -9,7 +9,8 @@ import { useSelector } from "react-redux";
 import "./header.css"
 import "./footer.css"
 import { getCookie } from "../../helpers/cookie";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { getListCategory } from "../../services/categoryServices";
 function LayoutDefaultHome() {
     // const cart=useSelector(state=>state.cartReducer);
     // const total=cart.reduce((sum,item)=>{
@@ -17,9 +18,19 @@ function LayoutDefaultHome() {
     // },0);
     const token = getCookie("token");
     const auth = useSelector(state =>state.authenReducer); 
+    const [category,SetCategory] = useState([]);
     // khi giá trị auth thay đổi thì tự động reload lại trang.,tại khi đăng nhập hay đăng xuất đã gửi 1 dispatch true/false 
     // => khi thay đổi thì nó sẽ reload trang để cập nhật token xem còn hay không. 
     const [none, setNone] = useState(true);
+    useEffect(  ()=>
+    {
+      const fetchApi = async ()=>
+      {
+          const data = await getListCategory();
+          SetCategory(data.data);
+      }
+      fetchApi();
+    },[])
    
   return (
     <>
@@ -77,13 +88,12 @@ function LayoutDefaultHome() {
             </div>
             <div  className={none ?"header__list--none":"header__list"}>
               <ul>
-                <li>Cây trồng trong nhà</li>
-                <li>Cây cảnh văn phòng</li>
-                <li>Tiểu cảnh Terraium</li>
-                <li>Chậu cây cảnh</li>
-                <li>Sen Đá</li>
-                <li>Xương Rồng</li>
-                <li>Phụ kiện Terraium</li>
+                {
+                  category.map(item=>
+                    (
+                      <Link to={`/category/${item.slug}`} className="header__link" key={item.id}><li>{item.name}</li> </Link>
+                    ))
+                }
               </ul>
             </div>
             </div>

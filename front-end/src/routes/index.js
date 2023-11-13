@@ -1,3 +1,4 @@
+import ListProductPage from "../Components/ListProductPage";
 import ProductDetail from "../Components/ProductDetail";
 import LayoutDefaultHome from "../layout/LayoutDefaultHome";
 import CartPage from "../pages/CartPage";
@@ -35,6 +36,10 @@ export const routes = [
         {
             path: "products",
             element:<ProductPage></ProductPage>
+        },
+        {
+            path:"products/page/:page",
+            element: <ListProductPage></ListProductPage>
         },
         {
             path:"product/:slug",

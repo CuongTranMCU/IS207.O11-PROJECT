@@ -1,13 +1,15 @@
+import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Item from "./Item";
-import banner from "../../Components/images/Banner-Web7.png";
 import "./styles.css"
+
 import { Link, useNavigate } from "react-router-dom";
 import { getListProductPage } from "../../services/productServices";
-function ListProduct()
+import Item from "../ListProduct/Item";
+function ListProductPage()
 {
-    const [product,setProduct] = useState([]);
-    const [page,setPage] = useState(1);
+    const {Page} = useParams;const [product,setProduct] = useState([]);
+    const [page,setPage] = useState(Page);
+    const navigate = useNavigate();
     useEffect(()=>
     {
         const fetchApi = async ()=>
@@ -16,11 +18,13 @@ function ListProduct()
             setProduct(data.data);
         }
         fetchApi();
+        // navigate(`/page/${page}`);
     },[page]);  
     const handleDown =()=>
     {
       if(page>=2)
        setPage(page -1);
+    navigate(`/page/${page}`);
 
     }
     const handleUp =()=>
@@ -36,7 +40,7 @@ function ListProduct()
             <div className="product__list">
                 {
                     product.map(item =>(
-                      <Link to = {`/product/${item.slug}`} state = {{page}} className="product__link" key={item.id}>
+                      <Link to = {`/product/${item.slug}`} className="product__link" key={item.id}>
                         <Item key = {item.id} item = {item}></Item>
                       </Link>
                     ))
@@ -53,5 +57,6 @@ function ListProduct()
         </div>
         </>
     )
+
 }
-export default ListProduct;
+export default ListProductPage;

@@ -226,7 +226,10 @@ body
     color:var(--color-text);
     display: block;
 }
-
+.header__link
+{
+    color:var(--color-text);
+}
 
 /* outlet : main */
 
