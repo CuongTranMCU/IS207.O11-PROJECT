@@ -1,3 +1,4 @@
+import React, {useState, useEffect} from 'react';
 import { Link, Outlet } from "react-router-dom";
 import logo from "../../Components/images/logo-1-1.png";
 import banner from "../../Components/images/Banner-Web7.png";
@@ -6,14 +7,24 @@ import payment from "../../Components/images/phuong-thuc-thanh-toan-cayxinh.png"
 import footerLogo from "../../Components/images/logo-1-1.png"
 import footerProtect from "../../Components/images/dmca_protected-1.png";
 import footerNoti from "../../Components/images/20150827110756-cay-xinh-dathongbao-e1611808211540.png";
+
+import 'bootstrap/dist/css/bootstrap.min.css';  
 import { useSelector } from "react-redux";
 import "./header.css"
 import "./footer.css"
+
+
 function LayoutDefaultHome() {
   const cart=useSelector(state=>state.cartReducer);
     const total=cart.reduce((sum,item)=>{
       return sum + item.quantity;
     },0)
+  // const [plant, setplant]
+  //     = useState(plantData);
+
+
+  const [tableData, setTableData] = useState([]);
+
   return (
     <>
        {/* <!--  HEADER --> */}
@@ -54,11 +65,32 @@ function LayoutDefaultHome() {
             <Link to ="/" className="header__link--home">
               <div className="header__box header__home">  Trang chủ
               </div>
-                </Link>
+            </Link>
+              
               <div className="header__box header__products">Sản phẩm</div>
-              <div className="header__box header__knowledge">Kiến thức cây cảnh</div>
-              <div className="header__box header__sale">Bán sỉ & nhượng quyền</div>
-              <div className="header__box header__recruitment">Tuyển dụng</div>
+              <div className="header__box header__knowledge">
+                <Link to ="/Knowledge" className="header__link--knowledge">              
+                  <div >Kiến thức cây cảnh <span>&darr;</span></div> 
+                </Link>
+                <div className="header__knowledgedrop" >
+                <Link to="/Guide" className="header__link--guide">
+                  <div className="header__box">
+                    Hướng dẫn chăm sóc
+                  </div>
+                </Link>
+                <Link to="/Fengshui" className="header__link--fengshui">
+                  <div className="header__box">
+                    Cây cảnh phong thủy 
+                  </div>
+                </Link>
+                </div>
+              </div>
+              <Link to="/Wholesale" className="header__link--wholesale">
+                <div className="header__box header__sale">Bán sỉ & nhượng quyền</div>
+              </Link>
+              <Link to="/Recruitment" className="header__link--recruitment">
+                <div className="header__box header__recruitment">Tuyển dụng</div>
+              </Link>
               <div className="header__box header__address">Địa chỉ</div>
               <Link to ="/cart" className="header__link--cart">
               <div className="header__box header__cart">
@@ -96,7 +128,19 @@ function LayoutDefaultHome() {
       </div>
         {/* MAIN: */}
       <main className="main">
-        <Outlet />
+         <Outlet /> 
+        
+          {/* !-------------------------------------------------BESTSELLER-------------------------------------------------- */}
+        
+          {/* !----------------------------------------------------------innerproducts------------------------------------------------------ */}  
+
+      {/* !------------------------------------------------Blog Section--------------------------------! */}
+      
+
+        
+    
+           
+
       </main>
         {/* <!-------------------------------------------------------FOOTER----------------------------------------------------> */}
     <footer>
@@ -123,7 +167,7 @@ function LayoutDefaultHome() {
                         <li><a href="#">Chính sách giao hàng & đổi trả</a></li>
                         <li><a href="#">Thỏa thuận người dùng</a></li>
                         <li><a href="#">Chính sách bảo mật</a></li>
-                        <li><a href="#">Chính sách đại lý</a></li>
+                        <li> <Link to="/Wholesale" className="header__link--wholesale"><a href="#">Chính sách đại lý</a></Link></li>
                         <li><a href="#">Hệ thống cửa hàng Cây Xinh</a></li>
                     </ul>
                     <a href="#">

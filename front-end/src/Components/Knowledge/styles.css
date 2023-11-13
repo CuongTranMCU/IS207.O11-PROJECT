@@ -1,0 +1,99 @@
+.KnowledgeTitle{
+    width: 100%;
+    height: 120%;
+    box-shadow: 0px 8px 6px 0px rgba(0,0,0,0.2);
+    padding: 10px;
+    overflow: hidden;
+}
+.postcontainer{
+    width: 100%;
+    height:180px;
+    display: flex;
+    margin:10px 0 20px;
+    box-shadow: 0 2px 3px 4px rgba(0,0,0,0.2);
+    /* position: relative; */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+.postimage{
+    width: 30%;
+    height: 100%;
+}
+.contentcontainer{
+    padding: 10px 10px 0 10px;
+    width: 70%;
+}
+.comment{
+    font-size: 12px;
+    font-weight: 10;
+    margin-top: 10px;
+}
+.posttitle{
+    /* font-size: 1.7vw; */
+     font-size: 120%; 
+    
+}
+.posttitle:hover{
+    color:var(--color-green);
+}
+.postcontent{
+    /* font-size: 1.3vw; */
+    display: -webkit-box;
+    font-size: 100%;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    /* text-overflow: ellipsis; */
+}
+.bodycontainer{
+    display:flex;
+    width: 105%;
+}
+.Allpost{
+    width: 80%;
+}
+.menucontainer{
+    display: flex-start;  
+    margin:10px 0 10px 10px;
+    box-shadow: 0 2px 3px 4px rgba(0,0,0,0.2);
+    width: 20%;
+    height: 100%;
+    padding: 20px 20px 20px 20px;
+    word-spacing: -1px;
+}
+.menutitle{
+    font-size: 1.6vw;
+    font-weight: 450;
+    margin-bottom: -5px;
+}
+.menucontent{
+    margin: -5px 0 -5px;
+    font-size: 1.1vw;
+}
+.newpostcontainer{
+    margin-top: 60px;
+}
+.newpost{
+    display: flex;
+    height:50px;
+
+}
+.newpostimg{
+    width:20%;
+    height:auto;
+    border-radius: 50%;
+}
+.newpostcontent{
+    width: 80%;
+    font-size: 1vw;
+    margin-left: 5px;
+}
+.newpostcontent:hover {
+    color:var(--color-green);
+    cursor: pointer;
+}
+.menucontent:hover{
+    color:var(--color-green);
+    cursor: pointer;
+}

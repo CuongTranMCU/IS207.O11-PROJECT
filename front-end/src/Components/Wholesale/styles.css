@@ -1,0 +1,16 @@
+.bodycontent{
+    margin: 10px 20px 30px 0px;
+    box-shadow: 0px 8px 6px 0px rgba(0,0,0,0.2);
+    width: 80%;
+    padding: 20px 30px 60px 30px;
+}
+.moi_hop_tac{
+    margin: 10px 40px 40px 40px;
+    height: auto;
+}
+.wholesalecontent{
+    margin: 20px 10px 10px 10px;
+}
+.highlighttext{
+    color:var(--color-green);
+}
