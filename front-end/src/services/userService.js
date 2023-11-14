@@ -1,8 +1,8 @@
 import { get, post } from "../utils/request"
 
-export const login =(email,password)=>
+export const login =(user)=>
 {
-    return get(`/users?email=${email}&password=${password}`);
+    return post(user,"/login");
 }
 export const checkExistEmail =(email)=>
 {
@@ -10,5 +10,5 @@ export const checkExistEmail =(email)=>
 }
 export const createAccount =(user)=>
 {
-    return post(user,"/users")
+    return post(user,"/register")
 }

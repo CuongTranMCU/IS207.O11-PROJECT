@@ -15,7 +15,7 @@ function ListProduct()
             setProduct(data.data);
         }
         fetchApi();
-    },[page]);  
+    },[page]);
     const handleDown =()=>
     {
       if(page>=2)

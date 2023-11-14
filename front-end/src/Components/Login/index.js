@@ -12,12 +12,18 @@ function Login(){
         e.preventDefault();
         const email = e.target.elements.email.value;
         const password = e.target.elements.password.value;
-        const user = await  login(email,password);
-
-        if(user.length >0)
+        const user =
+        {
+            "email": email,
+            "password": password
+        }
+        console.log(user);
+        const data = await  login(user);
+        if(data.message.length >0)
         {   
             alert("Đăng nhập thành công");
-            const {email,token} = user[0];
+            const {email} = user.email;
+            const {token} = data.token;
             const exDays= 2;
             setCookie("email",email,exDays);
             setCookie("token",token,exDays);
@@ -27,7 +33,6 @@ function Login(){
         else
         {
             alert("Đăng nhập thất bại");
-
         }
     }
     return(
