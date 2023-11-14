@@ -27,7 +27,7 @@ class UserAuth extends Controller
             'email' => 'required|unique:users,email',
             'password' => ['required'],
         ]);
-
+        
         $user = new User;
         $user->Email = $request->email;
         $user->Password = Hash::make($request->password);

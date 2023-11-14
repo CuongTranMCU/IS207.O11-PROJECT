@@ -51,6 +51,12 @@ Route::get('logout', [App\Http\Controllers\User\UserAuth::class, 'postLogout'])-
 Route::get('user/{userId}',[App\Http\Controllers\User\UserController::class, 'information'])->middleware('auth:sanctum', 'ability:user');
 Route::patch('user/{userId}',[App\Http\Controllers\User\UserController::class, 'update'])->middleware('auth:sanctum', 'ability:user');
 
+Route::get('user/{userId}/cart', [App\Http\Controllers\Api\CartController::class, 'index'])->middleware('auth:sanctum', 'ability:user');
+Route::post('user/{userId}/cart', [App\Http\Controllers\Api\CartController::class, 'store'])->middleware('auth:sanctum', 'ability:user');
+Route::patch('user/{userId}/cart', [App\Http\Controllers\Api\CartController::class, 'update'])->middleware('auth:sanctum', 'ability:user');
+Route::delete('user/{userId}/cart', [App\Http\Controllers\Api\CartController::class, 'destroy'])->middleware('auth:sanctum', 'ability:user');
+Route::delete('user/{userId}/cart/bulkdestroy', [App\Http\Controllers\Api\CartController::class, 'bulkDestroy'])->middleware('auth:sanctum', 'ability:user');
+
 //làm filter cho transaction
 Route::patch('transactions/{transactionId}', [App\Http\Controllers\Api\TransactionController::class, 'update'])->middleware('auth:sanctum', 'ability:user');   //cập nhập status của transaction
 Route::get('transactions/{transactionId}', [App\Http\Controllers\Api\TransactionController::class, 'show'])->middleware('auth:sanctum', 'ability:user');    //xem 1 transaction của user
