@@ -1,4 +1,4 @@
-import ListProductPage from "../Components/ListProductPage";
+import CategoryProduct from "../Components/CategoryProduct";
 import ProductDetail from "../Components/ProductDetail";
 import LayoutDefaultHome from "../layout/LayoutDefaultHome";
 import CartPage from "../pages/CartPage";
@@ -38,13 +38,13 @@ export const routes = [
             element:<ProductPage></ProductPage>
         },
         {
-            path:"products/page/:page",
-            element: <ListProductPage></ListProductPage>
-        },
-        {
             path:"product/:slug",
             element: <ProductDetail></ProductDetail>
-        }  
+        },
+        {
+            path:"category/:slug",
+            element:<CategoryProduct></CategoryProduct>
+        }
     ]
 },
 {

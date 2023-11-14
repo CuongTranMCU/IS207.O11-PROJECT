@@ -1,21 +1,33 @@
 import { useEffect, useState } from "react";
-import Item from "./Item";
-import "./styles.css"
-import { Link } from "react-router-dom";
-import { getListProductPage } from "../../services/productServices";
-function ListProduct()
-{
+import Item from "../ListProduct/Item"
+import "../ListProduct/styles.css"
+import { Link, useParams } from "react-router-dom";
+import { getListCategoryProduct } from "../../services/productServices";
+import { getListCategory } from "../../services/categoryServices";
+function CategoryProduct(){
     const [product,setProduct] = useState([]);
     const [page,setPage] = useState(1);
+   const {slug} = useParams();
+   var categoryId;
     useEffect(()=>
     {
         const fetchApi = async ()=>
-        {
-            const data = await getListProductPage(page);
-            setProduct(data.data);
-        }
+        {             
+            const listCategory = await getListCategory();
+            console.log(listCategory);
+            for (let i = 0 ; i< listCategory.data.length;i++)
+            {
+                if(slug === listCategory.data[i].slug)
+                {
+                    categoryId = listCategory.data[i].id;
+                }
+            }
+        const data = await getListCategoryProduct(categoryId);
+      
+        setProduct(data.data);
+    }
         fetchApi();
-    },[page]);  
+    },[slug]);  
     const handleDown =()=>
     {
       if(page>=2)
@@ -24,7 +36,7 @@ function ListProduct()
     }
     const handleUp =()=>
     {
-      if(page <=4)
+      if(page <=0)
       setPage(page+1);
     }
     return(
@@ -52,5 +64,6 @@ function ListProduct()
         </div>
         </>
     )
+
 }
-export default ListProduct;
+export default CategoryProduct;

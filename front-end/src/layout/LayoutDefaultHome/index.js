@@ -18,6 +18,7 @@ function LayoutDefaultHome() {
     // },0);
     const token = getCookie("token");
     const auth = useSelector(state =>state.authenReducer); 
+    var categoryId;
     const [category,SetCategory] = useState([]);
     // khi giá trị auth thay đổi thì tự động reload lại trang.,tại khi đăng nhập hay đăng xuất đã gửi 1 dispatch true/false 
     // => khi thay đổi thì nó sẽ reload trang để cập nhật token xem còn hay không. 

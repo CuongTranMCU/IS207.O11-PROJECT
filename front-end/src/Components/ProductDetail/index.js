@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
-import { getListProduct, getListProductPage } from "../../services/productServices";
+import { getListProductPage } from "../../services/productServices";
 import "./styles.css"
 function ProductDetail(){
     const {slug} = useParams();
