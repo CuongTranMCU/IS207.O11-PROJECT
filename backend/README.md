@@ -46,6 +46,23 @@ Mở tệp .env và cấu hình thông tin database đúng với database mới 
 
     DB_PASSWORD=
 
+Vào thư mục /config, chọn tệp cors và sửa:
+    'paths' => ['api/*', 'sanctum/csrf-cookie'],
+thành
+    'paths' => ['*', 'sanctum/csrf-cookie'],
+
+Vào thư mục App\Http\Middleware, chọn tệp VerifyCsrfToken.php và sửa
+    protected $except = [
+        '/admin/*',
+        '/home/*',
+        '/user/*',
+        '*'
+    ];
+thành 
+    protected $except = [
+        '*'
+    ];
+
 Bước 4: Chạy Ứng Dụng
 ---------------------
 
