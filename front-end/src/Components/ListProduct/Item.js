@@ -4,14 +4,8 @@
 function Item(props)
 {
     const {item} = props; // 
-    // const discount = parseInt(item.discountPercentage).toFixed();
-    // const newPrice = (parseInt(item.price)*(100 - discount)/100).toFixed();
-    // const dispatch = useDispatch();
-    // const handleAdd =()=>
-    // {
-    //     dispatch(addtoCart(item.id,item));
-
-    // }
+    // const discount = parseInt(item.discount).toFixed();
+    // const newPrice = (parseInt(item.price)*(100 - discount)/100).toFixed();    
     return(
         <>
          <div className="product__item" key={item.id}>
@@ -23,7 +17,6 @@ function Item(props)
                         <div className="product__new-price">{item.price}đ</div>
                         {/* <div className="product__old-price">{item.price}$</div> */}
                         {/* <div className="product__discount">{discount}%</div> */}
-                        {/* <button onClick={handleAdd} >Thêm vào giỏ hàng</button> */}
                     </div>
                 </div>
         </>

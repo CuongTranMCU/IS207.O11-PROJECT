@@ -1,5 +1,11 @@
+import DashBoard from "../Components/Admin/DashBoard";
+import LoginAdmin from "../Components/Admin/LoginAdmin";
+import OrderCRUD from "../Components/Admin/OrderCRUD";
+import ProductCRUD from "../Components/Admin/ProductCRUD";
+import UserCRUD from "../Components/Admin/UserCRUD";
 import CategoryProduct from "../Components/CategoryProduct";
 import ProductDetail from "../Components/ProductDetail";
+import LayoutDefaultAdmin from "../layout/LayoutDefaultAdmin";
 import LayoutDefaultHome from "../layout/LayoutDefaultHome";
 import CartPage from "../pages/CartPage";
 import HomePage from "../pages/HomePage";
@@ -48,6 +54,30 @@ export const routes = [
     ]
 },
 {
+    path:"/admin",
+    element:<LayoutDefaultAdmin></LayoutDefaultAdmin>,
+    children:[
+        {
+            index:true,
+            element:<DashBoard></DashBoard>
+        },
+        {
+            path:"user",
+            element:<UserCRUD></UserCRUD>
+        },
+        {
+            path:"product",
+            element:<ProductCRUD></ProductCRUD>
+        },
+        {
+            path:"order",
+            element:<OrderCRUD></OrderCRUD>
+        }
+    ]
+},
+{
+    path:"/admin/login",
+    element:<LoginAdmin></LoginAdmin>
 
 }
 ];
