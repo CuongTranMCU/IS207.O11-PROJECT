@@ -33,7 +33,7 @@ Route::get('/', function () {
     //Route::get('home', [App\Http\Controllers\Api\HomeController::class, 'index']);
 Route::get('categories', [App\Http\Controllers\Api\CategoryController::class, 'index']);  
 Route::get('categories/{id}', [App\Http\Controllers\Api\CategoryController::class, 'show']); 
-Route::get('products', [App\Http\Controllers\Api\ProductController::class, 'index']);  
+Route::get('/products', [App\Http\Controllers\Api\ProductController::class, 'index']);  
 Route::get('products/{id}', [App\Http\Controllers\Api\ProductController::class, 'show']); 
 
 
@@ -85,7 +85,7 @@ Route::get('statistics/products', [App\Http\Controllers\Admin\ba::class, 'calcul
 //Route::get('statistics/products', [App\Http\Controllers\Admin\ba::class, 'calculateAverageSoldPerDayForProducts']);//->middleware(['auth:sanctum' , 'ability:admin']);
 Route::get('statistics/products/{id}', [App\Http\Controllers\Admin\ba::class, 'showProduct'])->middleware(['auth:sanctum' , 'ability:admin']);
 
-Route::get('admin/allUsers', [App\Http\Controllers\Admin\UserManagement::class, 'index'])->name('ad_user.home')->middleware(['auth:sanctum' , 'ability:admin']);
+Route::get('allUsers', [App\Http\Controllers\Admin\UserManagement::class, 'index'])->name('ad_user.home')->middleware(['auth:sanctum' , 'ability:admin']);
 // Route::get('admin/users/{id}', [App\Http\Controllers\Admin\UserManagement::class, 'show'])->name('ad_user.show')->middleware(['auth:sanctum' , 'ability:admin']);
 Route::post('createUser', [App\Http\Controllers\Admin\UserManagement::class, 'add'])->middleware(['auth:sanctum' , 'ability:admin']);
 Route::delete('users/{id}', [App\Http\Controllers\Admin\UserManagement::class, 'destroy'])->middleware(['auth:sanctum' , 'ability:admin']);

@@ -2,10 +2,14 @@ import { get } from "../utils/request";
 
 export const getListUser= ()=>
 {
-    return get("/admin/allUsers");
+    return get("/api/allUsers");
 
 }
 export const getListOrder =()=>
 {
-    return get("/admin/orders");
+    return get("/api/transactions");
+}
+export const getListProduct =()=>
+{
+    return get("/api/products");
 }

@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 
    
     //Login admin.
-    Route::get('admin/login', [App\Http\Controllers\Admin\AdminAuth::class, 'getLogin'])->name('admin.preparelogin');
+Route::get('admin/login', [App\Http\Controllers\Admin\AdminAuth::class, 'getLogin'])->name('admin.preparelogin');
 Route::post('admin/login', [App\Http\Controllers\Admin\AdminAuth::class, 'postLogin'])->name('admin.login');
 Route::get('admin/logout', [App\Http\Controllers\Admin\AdminAuth::class, 'postLogout'])->name('admin.logout');
 

@@ -3,7 +3,6 @@ import { useDispatch } from "react-redux";
 import { loginadmin } from "../../../services/userService";
 import { setCookie } from "../../../helpers/cookie";
 import { authen } from "../../../actions/authen";
-import { get } from "../../../utils/request";
 
 function LoginAdmin(){
     const navigate= useNavigate();  
@@ -15,8 +14,8 @@ function LoginAdmin(){
         const password = e.target.elements.password.value;
         const admin =
         {
-            "email": email,
-            "password": password
+            email: email,
+            password: password
         }
         const data = await  loginadmin(admin);
         if(data.message === "Admin login successfully")
