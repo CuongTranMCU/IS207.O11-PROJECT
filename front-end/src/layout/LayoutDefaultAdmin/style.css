@@ -2,14 +2,18 @@
 .admin
 {
     display: flex;
-    height: 100vh;
 }
 .admin__title
 {
     width: 17%;
     color:var(--color-green);
-    height: 100%;
-    border: 2px solid #ddd;
+    height: 100vh;
+    border-left: 2px solid #ddd;
+}
+.admin__CRUD 
+{
+    width: 100%;
+    background-color: #ddd;
 }
 .admin__title .admin__name
 {

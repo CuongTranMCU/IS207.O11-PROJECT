@@ -8,6 +8,10 @@ export const getProductDetail=(id)=>
 {
     return get(`/api/products?id=${id}`);
 }
+export const getListCategory=()=>
+{
+    return get("/api/categories");
+}
 export const getListCategoryProduct=(categoryId)=>
 {
     return get(`/api/products?categoryId=${categoryId}`);
