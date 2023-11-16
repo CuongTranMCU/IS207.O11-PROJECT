@@ -106,9 +106,23 @@ function LayoutDefaultHome() {
                 <Link to ="/products" className="header__link">
                 <div className="header__box header__products">Sản phẩm</div>
                 </Link>
-                <Link to ="/knowledge" className="header__link">
-                <div className="header__box header__knowledge">Kiến thức cây cảnh</div>
-                </Link>
+                <div className="header__box header__knowledge">
+                  <Link to ="/Knowledge" className="header__link--knowledge">              
+                    <div >Kiến thức cây cảnh <span>&darr;</span></div> 
+                  </Link>
+                  <div className="header__knowledgedrop" >
+                    <Link to="/Guide" className="header__link--guide">
+                      <div className="header__box">
+                        Hướng dẫn chăm sóc
+                      </div>
+                    </Link>
+                    <Link to="/Fengshui" className="header__link--fengshui">
+                      <div className="header__box">
+                        Cây cảnh phong thủy 
+                      </div>
+                    </Link>
+                  </div>
+                </div>
                <Link to ="/wholesale" className="header__link">
            <div className="header__box header__sale">Bán sỉ & nhượng quyền</div>
                </Link>
