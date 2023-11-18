@@ -41,13 +41,11 @@ function ListProduct()
                     ))
                 }
             </div>
+            
             <div className="product__page">
-              <button onClick={handleDown}>-
-              </button>
+              <button className="product__page__divider" onClick={handleDown}>-</button>
               <span>{page}</span>
-              <button onClick={handleUp}>+
-              </button>
-
+              <button className="product__page__divider" onClick={handleUp}>+</button>
             </div>
         </div>
         </>
