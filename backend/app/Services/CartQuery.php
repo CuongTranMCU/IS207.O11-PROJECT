@@ -10,14 +10,16 @@ class CartQuery{
         'productPrice'=>['eq', 'lt', 'gt', 'lte', 'gte'],
         'quantity'=>['eq', 'lt', 'gt', 'lte', 'gte'],
         'status'=>['eq', 'lt', 'gt', 'lte', 'gte'],
-        'createdAt'=>['eq', 'lt', 'gt', 'lte', 'gte']
+        'createdAt'=>['eq', 'lt', 'gt', 'lte', 'gte'],
+        'userId'=>['eq']
     ];
     protected $columnMap = [
         'productId'=>'Product_ID',
         'productName'=>'Product_name',
         'productPrice'=>'Product_price',
         'quantity'=>'Quantity',
-        'createdAt'=>'Created_at'
+        'createdAt'=>'Created_at',
+        'userId'=>'User_ID'
     ];
     protected $operatorMap = [
         'eq'=>'=',

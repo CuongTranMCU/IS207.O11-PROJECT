@@ -20,9 +20,8 @@ class CartController extends Controller
     {
         $filter = new CartQuery();
         $query = $filter->transform($request);
-        $query = cart::where($query);
-        $orders = $query->get();
-        return new CartCollection($orders);
+        $carts = Cart::where($query)->get();
+        return new CartCollection($carts);
     }
     /**
      * Show the form for creating a new resource.
@@ -63,15 +62,40 @@ class CartController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateCartRequest $request, $id)
+    public function update(Request $request)
     {
-        $cart = Cart::where('id', $id)->first();
-        if($cart){
-            $cart->update($request->all());
-            return response()->json(['message'=>'Success']);
+        // Lấy dữ liệu từ JSON
+    $jsonData = $request->json()->all();
+
+    // Lấy danh sách các cartId từ JSON
+    $cartIds = array_column($jsonData, 'cartId');
+
+    // Lấy danh sách các bản ghi từ cơ sở dữ liệu có cartId nằm trong danh sách trên
+    $cartsToUpdate = Cart::whereIn('id', $cartIds)->get();
+
+    // Cập nhật thông tin từ JSON cho từng bản ghi
+    foreach ($cartsToUpdate as $cart) {
+        $jsonDataForCart = collect($jsonData)->firstWhere('cartId', $cart->id);
+       // return response()->json(['message' => $jsonDataForCart]);
+
+        if ($jsonDataForCart) {
+            // Loại bỏ giá trị null từ mảng dữ liệu JSON
+            $updateData = array_filter([
+                'Product_ID' => $jsonDataForCart['productId'] ?? null,
+                'Product_name' => $jsonDataForCart['productName'] ?? null,
+                'Product_price' => $jsonDataForCart['productPrice'] ?? null,
+                'Quantity' => $jsonDataForCart['quantity'] ?? null,
+                'User_ID' => $jsonDataForCart['userId'] ?? null,
+                'Status' => $jsonDataForCart['status'] ?? null,
+            ]);
+
+            // Cập nhật bản ghi chỉ với các trường có giá trị
+            $cart->update($updateData);
         }
-        else return response()->json(['message' => 'Not found'], 404);
     }
+
+    return response()->json(['message' => 'Success']);
+}
 
     /**
      * Remove the specified resource from storage.
@@ -85,15 +109,11 @@ class CartController extends Controller
         }
         else return response()->json(['message' => 'Not found'], 404);
     }
-    public function bulkDestroy(Request $request, $userId){
-        $request->validate([
-            'status'=>'required'
-        ]);
- 
-        $status = $request->query('status');
-        $carts = Cart::where('User_ID', $userId)->get();
+    public function bulkDestroy(Request $request){
+        $filter = new CartQuery();
+        $query = $filter->transform($request);
+        $carts = Cart::where($query)->get();
         foreach($carts as $cart){
-            if($cart->Status == $status)
                 $cart->delete($cart);
         }
         return response()->json(['message'=>'Success']);
