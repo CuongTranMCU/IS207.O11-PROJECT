@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getListProduct } from "../../../services/adminService";
-import { getListCategory, getListCategoryProduct, getListProductPage } from "../../../services/productServices";
+import { getListCategory, getListCategoryProduct, getListNewProductPage, getListProductPage } from "../../../services/productServices";
 import "../UserCRUD/style.css"
 function ProductCRUD(){
     const [product,setProduct]= useState([]);
@@ -10,7 +10,7 @@ function ProductCRUD(){
     {
         const fetchApi = async ()=>
         {
-            const product = await getListProductPage(page);
+            const product = await getListNewProductPage(page);
             setProduct(product.data);  
             const category = await getListCategory();
             setCategory(category.data);
@@ -38,6 +38,7 @@ function ProductCRUD(){
             <th>Tên sản phẩm</th>
             <th>Danh mục</th>
             <th>Giá</th>
+            <th>Giảm giá</th>
             <th>Ngày cập nhật</th>
             <th>Action</th>
             </tr>
@@ -51,6 +52,7 @@ function ProductCRUD(){
                     <td>{item.name}</td>
                     <td>{cate?.name}</td>
                     <td>{item.price}</td>
+                    <td>{item.discount}%</td>
                     <td>{item.createdAt}</td>
                     <td>
                         <button>Edit</button>

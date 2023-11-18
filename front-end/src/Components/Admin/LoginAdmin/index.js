@@ -10,24 +10,24 @@ function LoginAdmin(){
     const handleSubmit = async (e)=>
     {
         e.preventDefault();
-        const email = e.target.elements.email.value;
-        const password = e.target.elements.password.value;
-        const admin =
-        {
-            email: email,
-            password: password
-        }
-        const data = await  loginadmin(admin);
-        if(data.message === "Admin login successfully")
-        {   
-            alert("Đăng nhập thành công");
-            const email= admin.email;
-            const token = data.token;
-            console.log(token);
-            console.log(token);
-            const exDays= 2;
-            setCookie("email",email,exDays);
-            setCookie("token",token,exDays);
+            const email = e.target.elements.email.value;
+            const password = e.target.elements.password.value;
+            const admin =
+            {
+                email: email,
+                password: password
+            }
+            const data = await  loginadmin(admin);
+            if(data.message === "Admin login successfully")
+            {   
+                alert("Đăng nhập thành công");
+                const email= admin.email;
+                const token = data.token;
+                console.log(token);
+                console.log(token);
+                const exDays= 2;
+                setCookie("email",email,exDays);
+                setCookie("token",token,exDays);
             dispatch(authen(true));
             navigate("/admin");
         }
