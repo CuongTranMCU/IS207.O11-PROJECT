@@ -1,4 +1,11 @@
 {
+<<<<<<< HEAD
+    "folders": [
+        {
+            "path": "../../../backend"
+        }
+    ]
+=======
 	"folders": [
 		{
 			"name": "IS207.O11-PROJECT",
@@ -6,4 +13,5 @@
 		}
 	],
 	"settings": {}
+>>>>>>> d71d5e51c3b19f13d4d8e58abf65447e56217784
 }

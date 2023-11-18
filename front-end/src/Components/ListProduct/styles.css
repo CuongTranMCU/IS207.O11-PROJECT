@@ -1,17 +1,29 @@
 
+.header__wrap .header__list 
+{
+    width: 25%;
+}
+
+.header__list--visuable
+{
+    visibility:hidden;                                                                                                                                                                                                                                                                                                                                                                                                 
+}
 .product__list
 {
     display: flex;
     flex-wrap: wrap;
 }
+.product__link
+{
+    display:block;
+    width: 20%;
+}
 .product__item
 {
 
     padding: 10px;
-    width: 23.2%;
     margin:10px;
     cursor: pointer;
-    border: 1px solid #847e7e;
     border-radius: 3px;
     box-shadow:2px 1px 3px 4px #e9dede6e;
 }
@@ -32,7 +44,8 @@
 {
     font-size: 20px;
     font-weight: 600;
-    color:rgb(47, 47, 125)
+    color:rgb(47, 47, 125);
+    height: 60px;
 }
 .product__new-price
 {
@@ -48,6 +61,7 @@
 {
     font-weight: 700;
     color:rgb(59, 110, 92);
+    
 }
 button
 {
@@ -57,3 +71,4 @@ button
     color:orange;
     cursor: pointer;
 }
+

@@ -14,11 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-//route cho user và admin, trang chủ
 
 
     //Route::get('home', [App\Http\Controllers\Api\HomeController::class, 'index']);

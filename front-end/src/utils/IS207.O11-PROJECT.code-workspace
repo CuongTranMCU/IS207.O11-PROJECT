@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "IS207.O11-PROJECT",
+			"path": "../../.."
+		},
+		{
+			"name": "backend",
+			"path": "../../../../backend"
+		}
+	],
+	"settings": {}
+}

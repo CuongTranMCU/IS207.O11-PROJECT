@@ -1,7 +1,9 @@
+import Register from "../../Components/Register";
+
 function RegisterPage(){
     return(
         <>
-        Register Page
+        <Register></Register>
         </>
     )
 

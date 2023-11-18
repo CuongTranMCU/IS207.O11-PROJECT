@@ -1,8 +1,9 @@
 import { combineReducers } from "redux";
 import { cartReducer } from "./cart";
+import { authenReducer } from "./auth";
 const allReducer = combineReducers(
     {
-        cartReducer,
+        cartReducer, authenReducer
         // nhiều reducer khác...
     }
 )
