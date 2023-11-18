@@ -28,7 +28,9 @@ Route::get('/', function () {
     Route::get('login', [App\Http\Controllers\User\UserAuth::class, 'getLogin'])->name('user.preparelogin');
     Route::post('login', [App\Http\Controllers\User\UserAuth::class, 'postLogin'])->name('user.login');
     Route::get('logout', [App\Http\Controllers\User\UserAuth::class, 'postLogout'])->name('user.logout');
-
+    Route::get('admin/login', [App\Http\Controllers\Admin\AdminAuth::class, 'getLogin'])->name('admin.preparelogin');
+Route::post('admin/login', [App\Http\Controllers\Admin\AdminAuth::class, 'postLogin'])->name('admin.login');
+Route::get('admin/logout', [App\Http\Controllers\Admin\AdminAuth::class, 'postLogout'])->name('admin.logout');
    
     
 
