@@ -47,9 +47,7 @@ function Register(){
                 <input type="email" name="email" placeholder="Email" required></input><br></br>
                 <input type="password" name="password" placeholder="Password" required></input><br></br>
                 <button className="button login__button">Đăng kí</button>
-            </form>
-
-            
+            </form> 
         </div>
         </>
     )
