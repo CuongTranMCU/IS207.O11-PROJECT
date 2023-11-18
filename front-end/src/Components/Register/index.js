@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import {  createAccount } from "../../services/userService";
-
+import "./Register.css"
 function Register(){
     const navigate = useNavigate();
     const handleSubmit = async (e)=>

@@ -37,9 +37,9 @@ function ListProduct()
                 {
                     product.map(item =>(
                       <Link to = {`/product/${item.slug}`} state = {{page}}  className="product__link" key={item .id}>
-                        <Product
+                        <Item
                         key={item .id}
-                        Post={item }
+                        item={item }
                     />
                       </Link>
                     ))

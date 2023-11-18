@@ -20,7 +20,7 @@ function UserCRUD(){
     return(
         <>
         <div className="userTable">
-        <h2 >Danh sách người dùng</h2>
+        <h2 className="title" >Danh sách người dùng</h2>
         <NewUser ></NewUser>
         <table>
             <tr >
