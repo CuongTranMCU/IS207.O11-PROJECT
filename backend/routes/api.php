@@ -46,11 +46,11 @@ Route::put('products/{id}', [App\Http\Controllers\Api\ProductController::class, 
 Route::get('user/{userId}',[App\Http\Controllers\User\UserController::class, 'information'])->middleware('auth:sanctum', 'ability:user');
 Route::patch('user/{userId}',[App\Http\Controllers\User\UserController::class, 'update'])->middleware('auth:sanctum', 'ability:user');
 
-Route::get('user/{userId}/cart', [App\Http\Controllers\Api\CartController::class, 'index'])->middleware('auth:sanctum', 'ability:user');
-Route::post('user/{userId}/cart', [App\Http\Controllers\Api\CartController::class, 'store'])->middleware('auth:sanctum', 'ability:user');
-Route::patch('user/{userId}/cart', [App\Http\Controllers\Api\CartController::class, 'update'])->middleware('auth:sanctum', 'ability:user');
-Route::delete('user/{userId}/cart', [App\Http\Controllers\Api\CartController::class, 'destroy'])->middleware('auth:sanctum', 'ability:user');
-Route::delete('user/{userId}/cart/bulkdestroy', [App\Http\Controllers\Api\CartController::class, 'bulkDestroy'])->middleware('auth:sanctum', 'ability:user');
+Route::get('cart', [App\Http\Controllers\Api\CartController::class, 'index'])->middleware('auth:sanctum', 'ability:user');
+Route::post('cart', [App\Http\Controllers\Api\CartController::class, 'store'])->middleware('auth:sanctum', 'ability:user');
+Route::patch('cart', [App\Http\Controllers\Api\CartController::class, 'update'])->middleware('auth:sanctum', 'ability:user');
+Route::delete('cart/destroy/{id}', [App\Http\Controllers\Api\CartController::class, 'destroy'])->middleware('auth:sanctum', 'ability:user');
+Route::delete('cart/bulkdestroy', [App\Http\Controllers\Api\CartController::class, 'bulkDestroy'])->middleware('auth:sanctum', 'ability:user');
 
 //làm filter cho transaction
 Route::patch('transactions/{transactionId}', [App\Http\Controllers\Api\TransactionController::class, 'update'])->middleware('auth:sanctum', 'ability:user');   //cập nhập status của transaction

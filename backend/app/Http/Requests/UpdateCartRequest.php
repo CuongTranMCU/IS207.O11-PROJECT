@@ -22,20 +22,61 @@ class UpdateCartRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'productId'=>['sometimes', 'required'],
-            'productName'=>['sometimes', 'required'],
-            'productPrice'=>['sometimes', 'required'],
-            'quantity'=>['sometimes', 'required'],
-            'userId'=>['sometimes', 'required'],
-            'status'=>['sometimes', 'required']
+            '*.cartId' => ['required'],
+            '*.productId' => ['sometimes', 'required'],
+            '*.productName' => ['sometimes', 'required'],
+            '*.productPrice' => ['sometimes', 'required'],
+            '*.quantity' => ['sometimes', 'required'],
+            '*.userId' => ['sometimes', 'required'],
+            '*.status' => ['sometimes', 'required']
         ];
     }
-    public function prepareForValidation(){
-        if($this->productId) $this->merge(['Product_ID' => $this->productId]);
-        if($this->productName) $this->merge(['Product_name' => $this->productName]);
-        if($this->productPrice) $this->merge(['Product_price' => $this->productPrice]); 
-        if($this->quantity) $this->merge(['Quantity' => $this->quantity]);
-        if($this->userId) $this->merge(['User_ID' => $this->userId]);
-        if($this->status) $this->merge(['Status' => $this->status]);
+    public function prepareForValidation()
+    {
+        $data = $this->toArray();
+    
+        if (empty($data)) {
+            return;
+        }
+    
+        $formattedData = [];
+        foreach ($data as $obj) {
+            $formattedObj = [];
+
+            $formattedObj['id'] = $obj['cartId'];
+    
+            // Kiểm tra xem các trường tồn tại trước khi chuyển đổi
+            if ($this->has('productId')) {
+                $formattedObj['Product_ID'] = $obj['productId'];
+            }
+    
+            if ($this->has('productName')) {
+                $formattedObj['Product_name'] = $obj['productName'];
+            }
+    
+            if ($this->has('productPrice')) {
+                $formattedObj['Product_price'] = $obj['productPrice'];
+            }
+    
+            if ($this->has('quantity')) {
+                $formattedObj['Quantity'] = $obj['quantity'];
+            }
+    
+            if ($this->has('transactionId')) {
+                $formattedObj['Transaction_ID'] = $obj['transactionId'];
+            }
+    
+            if ($this->has('userId')) {
+                $formattedObj['User_ID'] = $obj['userId'];
+            }
+    
+            if ($this->has('status')) {
+                $formattedObj['Status'] = $obj['status'];
+            }
+    
+            $formattedData[] = $formattedObj;
+        }
+    
+        $this->merge($formattedData);
     }
 }
