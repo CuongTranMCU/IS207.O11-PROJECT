@@ -5,6 +5,14 @@
     margin: 20px;
     margin-top: 47px;
 }
+.button__new
+{
+    background-color: #d8d4d4;
+    color:var(--color-text);
+    margin: 10px;
+    border-radius: 5px;
+
+}
 h2
 {
     padding: 10px;
@@ -32,4 +40,12 @@ table td button
     background-color: #d8d4d4;
     color:var(--color-text);
     text-align: center;
+}
+.product:hover
+{
+    background-color: #d8d4d4;
+}
+.user:hover
+{
+    background-color: #d8d4d4;
 }

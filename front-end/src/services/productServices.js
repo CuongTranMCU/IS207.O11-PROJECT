@@ -4,6 +4,10 @@ export const getListProductPage=(page)=>
 {
     return get(`/api/products?page=${page}`);
 }
+export const getListNewProductPage=(page)=>
+{
+    return get(`/api/products?orderBy=createdAt-desc&page=${page}`)
+}
 export const getProductDetail=(id)=>
 {
     return get(`/api/products?id=${id}`);
