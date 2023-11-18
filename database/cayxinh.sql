@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 14, 2023 lúc 06:28 AM
+-- Thời gian đã tạo: Th10 18, 2023 lúc 06:05 AM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -163,6 +163,13 @@ CREATE TABLE `personal_access_tokens` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `personal_access_tokens`
+--
+
+INSERT INTO `personal_access_tokens` (`id`, `tokenable_type`, `tokenable_id`, `name`, `token`, `abilities`, `last_used_at`, `expires_at`, `created_at`, `updated_at`) VALUES
+(76, 'App\\Models\\User', 34, 'userToken', 'f32ff7ee30092f0b19bd00170c84f7898d0d8769377b16a95fbee198f54efdf9', '[\"user\"]', '2023-11-14 07:37:31', NULL, '2023-11-14 07:16:07', '2023-11-14 07:37:31');
 
 -- --------------------------------------------------------
 
@@ -325,7 +332,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`User_ID`, `Email`, `Password`, `Created_at`, `Updated_at`, `Address`, `Phone`, `Name`) VALUES
 (31, 'abcd@gmail.com', '$2y$12$Im4dr9XUgi6tCmC3zPUPu.cOwPVugEwGLrWCE7OiM4jwBjj6sdmzC', '2023-11-12 14:59:14', '2023-11-12 07:59:14', 'KTX A', '0335664121', 'Tùng'),
-(33, 'abc@gmail.com', '$2y$12$8stLWcGDtx.OySlEyrhN7.TbfxW.9zS44UDFVc3JNMvy6mbDXx39O', '2023-11-13 19:42:44', '2023-11-13 19:42:44', NULL, NULL, NULL);
+(33, 'abc@gmail.com', '$2y$12$8stLWcGDtx.OySlEyrhN7.TbfxW.9zS44UDFVc3JNMvy6mbDXx39O', '2023-11-13 19:42:44', '2023-11-13 19:42:44', NULL, NULL, NULL),
+(34, 'aaa@gmail.com', '$2y$12$NRash4lBcGGnR2RrSGVEbu3xLSEbI1HwqEHxAN0qohYN371K83YbW', '2023-11-14 06:03:57', '2023-11-14 06:03:57', NULL, NULL, NULL);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -440,7 +448,7 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT cho bảng `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 
 --
 -- AUTO_INCREMENT cho bảng `products`
@@ -458,7 +466,7 @@ ALTER TABLE `transactions`
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `User_ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `User_ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
