@@ -15,8 +15,8 @@ function Login(){
         const password = e.target.elements.password.value;
         const user =
         {
-            "email": email,
-            "password": password
+            email: email,
+            password: password
         }
         console.log(user);
         const data = await  login(user);
