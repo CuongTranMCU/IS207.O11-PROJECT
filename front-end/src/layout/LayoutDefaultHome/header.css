@@ -125,7 +125,7 @@ body
 {
     
    box-shadow: 3px 10px 13px#0000000d;
-  
+   z-index: 2; 
    background-color: var(--color-bg);
 }
 .header__main .header__wrap
@@ -232,6 +232,51 @@ body
 }
 
 /* outlet : main */
+.header__list--visuable
+{
+    visibility:hidden;                                                                                                                                                                                                                                                                                                                                                                                                 
+}
+.header__link--knowledge{
+    color:var(--color-text);
+}
+.header__link--knowledge:hover{
+    color: var(--color-green);
+}
+.header__link--guide{
+    color:var(--color-text);
+}
+.header__link--fengshui{
+    color:var(--color-text);
+}
+.header__link--wholesale{
+    color:var(--color-text);
+}
+.header__link--recruitment{
+    color:var(--color-text);
+}
+.header__knowledgedrop
+{
 
+    display: none;
+    color:var(--color-text);
+    position: absolute;
+}
+.header__knowledgedrop div{
+    display: block;
+    background-color: #fff;
+
+}
+
+.header__knowledgedrop:hover  {
+    display: block;
+}
+.header__knowledge
+{
+    display: inline-block;
+    /* color:var(--color-green); */
+}
+.header__knowledge:hover .header__knowledgedrop {
+    display: block;
+}
 
 

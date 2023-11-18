@@ -1,0 +1,75 @@
+#bscontainer{
+    background-color: #fafafa;
+}
+#bsheader{
+    /* display: flex; */
+    text-align: center;
+}
+#bstitle{
+    font-size: 30px;
+    color:var(--color-green);
+    padding-top: 10px;
+}
+#bsbody{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    margin:0.5% ;
+    margin-bottom: 4vw;
+}
+.bsitem{
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--cultured);
+    /* padding: 15px; */
+    /* padding: 1% 1%; */
+    border-radius: 5%;
+
+    background-color: white;
+    word-wrap:break-word;
+    max-width: 100%;
+    margin-bottom: 1%;
+    box-shadow: 2px 2px 20px #00000017;
+
+
+}
+.bsimg{
+    display: flex;
+    transition: transform 330ms ease-in-out;
+    max-width: 100%;
+    height: auto;
+}
+.imgborder{
+    max-width: 40%;
+    height: auto;
+    overflow: hidden;
+}
+.bsimg:hover{
+    transform: scale(1.3);
+    transition: transform 330ms ease-in-out;
+}
+.bscontent{
+    float:bottom;
+ 
+    width: 100%;
+}
+.bsproduct{
+     font-size: 1.4vw; 
+     color: green;
+    /* font-size: 20px; */
+    text-decoration: none;
+    display: flex;
+    width: 100%;
+}
+.bsproduct:hover{
+    color: #31b61c;
+}
+.bsprice{
+    /* font-size: 20px; */
+    font-size: 1.3vw; 
+    color: #f089ab;
+}

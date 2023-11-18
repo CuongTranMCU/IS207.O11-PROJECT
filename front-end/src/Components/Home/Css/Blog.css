@@ -1,0 +1,60 @@
+.Blog{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    margin-bottom: 5vw;
+}
+ .KnowledgeBlog{
+    width: 48%;
+}
+.FengshuiBlog{
+    width: 48%;
+} 
+.BlogHeader{
+    text-align: center;
+}
+.BlogHeaderText{
+    color:var(--color-green) ;
+}
+.BlogBody{
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: space-between; 
+    flex-wrap: wrap;
+}
+.BlogPost{
+    width:30%;
+    height: 20vw;
+}
+.BlogPost:hover{
+    cursor: pointer;
+    
+}
+.Blogimgborder{
+    overflow: hidden;
+}
+.BlogImg{
+    width: 100%;
+    border-radius: 1vw;
+    transition: transform 500ms ease-in-out;
+}
+.BlogImg:hover{
+    transform: scale(1.2);
+    transition: transform 500ms ease-in-out;
+    z-index: -1;
+}
+.BlogTitle{
+    font-size: 1.3vw;
+    font-weight: 600;
+}
+.BlogTitle:hover{
+    color:var(--color-green);
+}
+.BlogContent{
+    font-size: 1.15vw;
+    overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
