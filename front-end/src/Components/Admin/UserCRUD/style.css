@@ -1,0 +1,51 @@
+.userTable,.productTable,.orderTable
+{
+    background-color: var(--color-bg);
+    border-radius: 5px;
+    margin: 20px;
+    margin-top: 47px;
+}
+.button__new
+{
+    background-color: #d8d4d4;
+    color:var(--color-text);
+    margin: 10px;
+    border-radius: 5px;
+
+}
+h2
+{
+    padding: 10px;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+table th
+{
+    background-color: #d8d4d4;
+    padding: 5px;
+}
+
+table td 
+{
+    padding: 10px;
+    border-bottom: 2px solid #d8d4d4;
+}
+table td button
+{
+    border-radius: 5px;
+    margin-right: 5px;
+    width: 60px;
+    background-color: #d8d4d4;
+    color:var(--color-text);
+    text-align: center;
+}
+.product:hover
+{
+    background-color: #d8d4d4;
+}
+.user:hover
+{
+    background-color: #d8d4d4;
+}

@@ -84,6 +84,42 @@ body
     font-size: 20px;
     color: var(--color-green);
 }
+.header__introduce .header__wrap .header__contact .header__login
+{
+    font-weight: 500;
+    font-size: 20px;
+    padding: 10px;
+    color: var(--color-green);
+}
+.header__introduce .header__wrap .header__contact .header__login:hover
+{
+    color:green;
+}
+.header__introduce .header__wrap .header__contact .header__sign-up:hover
+{
+    color:green;
+}
+.header__introduce .header__wrap .header__contact .header__sign-up
+{
+    font-weight: 500;
+    font-size: 20px;
+    color: var(--color-green);
+}
+.header__introduce .header__wrap .header__contact .header__logout
+{
+    font-weight: 500;
+    font-size: 20px;
+    padding: 10px;
+    color: var(--color-green);
+}
+.header__introduce .header__wrap .header__contact .header__logout:hover
+{
+    color:green;
+}
+.header__introduce .header__wrap .header__contact .header__link--login,.header__link--sign-up,.header__link--logout
+{
+    display: block;
+}
 /* header-main */
 .header__main
 {
@@ -102,44 +138,78 @@ body
 
 .header__main .header__wrap .header__category
 {
-    width: 25%;
+    width: 31.7%;
+}
+
+.header__main .header__wrap .header__category--title
+{
+    width: 100%;
     display: flex;
     background-color: var(--color-green);
     color:var(--color-bg);
     padding: 16px;
     cursor: pointer;
     margin-right: 20px;
-
+   
 }
-.header__main .header__wrap .header__category .header__icon
+.header__main .header__wrap .header__category--title .header__icon
 {
     margin-right: 10px;
+}
+/* Header-list */
+.header__list--none
+{
+    display: none;
+}
+.header__list
+{
+ 
+    border:1px solid #ddd;
+    border-bottom: 0px;
+    font-size: 18px;
+    background-color: var(--color-bg);
+    position: absolute;
 
 }
+.header__list ul
+{
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin: 0px;
+    flex-direction: column;
+    padding-left: 0px;
+}
+.header__list li    
+{
+    height: 14.3%;
+    font-weight: 400;
+    list-style-type: none;
+    padding-left: 10px;
+    padding-top: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+}
+.header__list li:hover
+{
+    color: var(--color-green);
+    background-color: #ddd;
+}
+
 .header__main .header__wrap .header__menu
 {
     flex: 1;
     display: flex;
 }
-.header__main .header__wrap .header__menu .header__link--home
-{
-  display: block;
-  color:var(--color-text);
-}
 .header__main .header__wrap .header__menu .header__box
 {
-    padding: 7px;
+    padding: 10px;
     cursor: pointer;
-
 }
 .header__main .header__wrap .header__menu .header__box:hover
 {
     color:var(--color-green);
-}
-.header__main .header__wrap .header__menu .header__link--cart
-{
-  display: block;
-  color:var(--color-text);
 }
 .header__main .header__wrap .header__menu .header__cart
 {
@@ -151,59 +221,16 @@ body
     margin-right: 10px;
     
 }
-/* header__view */
-.header__view .header__wrap
+.header__main .header__wrap .header__menu .header__link
 {
-    display: flex;
-    height:300px;
+    color:var(--color-text);
+    display: block;
+}
+.header__link
+{
+    color:var(--color-text);
+}
 
-}
-.header__view .header__wrap .header__list
-{
-    width: 25%; 
-    border:1px solid #ddd;
-    border-bottom: 0px;
-}
-.header__view .header__wrap .header__list ul
-{
-    height: 100%;
-    display: flex;
-    margin: 0px;
-    flex-direction: column;
-    padding-left: 0px;
-}
-.header__view .header__wrap .header__list li    
-{
-    height: 14.3%;
-    font-weight: 400;
-    list-style-type: none;
-    padding-left: 10px;
-    padding-top: 10px;
-    cursor: pointer;
-    border-bottom: 1px solid #ddd;
-}
-.header__view .header__wrap .header__list li:hover
-{
-    color: var(--color-green);
-    background-color: #ddd;
-}
-.header__view .header__wrap .header__image
-{
-    width: 75%;
-    padding-top: 20px;
-    padding-left: 20px;
-}
-.header__view .header__wrap .header__image img
-{
-    width: 100%;
-    border-radius: 10px;
-    height: 100%;
-    
-}
-.header__list--visuable
-{
-    visibility:hidden;                                                                                                                                                                                                                                                                                                                                                                                                 
-}
 /* outlet : main */
 
 

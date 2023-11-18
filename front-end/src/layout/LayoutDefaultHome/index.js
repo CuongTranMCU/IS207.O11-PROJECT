@@ -1,6 +1,5 @@
 import { Link, Outlet } from "react-router-dom";
 import logo from "../../Components/images/logo-1-1.png";
-import banner from "../../Components/images/Banner-Web7.png";
 import social from "../../Components/images/facebook101121.png";
 import payment from "../../Components/images/phuong-thuc-thanh-toan-cayxinh.png"
 import footerLogo from "../../Components/images/logo-1-1.png"
@@ -9,11 +8,31 @@ import footerNoti from "../../Components/images/20150827110756-cay-xinh-dathongb
 import { useSelector } from "react-redux";
 import "./header.css"
 import "./footer.css"
+import { getCookie } from "../../helpers/cookie";
+import { useEffect, useState } from "react";
+import { getListCategory } from "../../services/categoryServices";
 function LayoutDefaultHome() {
-  const cart=useSelector(state=>state.cartReducer);
-    const total=cart.reduce((sum,item)=>{
-      return sum + item.quantity;
-    },0)
+    // const cart=useSelector(state=>state.cartReducer);
+    // const total=cart.reduce((sum,item)=>{
+    //   return sum + item.quantity;
+    // },0);
+    const token = getCookie("token");
+    const auth = useSelector(state =>state.authenReducer); 
+    var categoryId;
+    const [category,SetCategory] = useState([]);
+    // khi giá trị auth thay đổi thì tự động reload lại trang.,tại khi đăng nhập hay đăng xuất đã gửi 1 dispatch true/false 
+    // => khi thay đổi thì nó sẽ reload trang để cập nhật token xem còn hay không. 
+    const [none, setNone] = useState(true);
+    useEffect(  ()=>
+    {
+      const fetchApi = async ()=>
+      {
+          const data = await getListCategory();
+          SetCategory(data.data);
+      }
+      fetchApi();
+    },[])
+   
   return (
     <>
        {/* <!--  HEADER --> */}
@@ -37,63 +56,90 @@ function LayoutDefaultHome() {
                 <i className="fa-solid fa-phone"></i>
               </div>
               <div className="header__tele">090.566.5982</div>
+              {
+                token ?(<>
+                <Link to ="/logout" className="header__link--logout">
+                <div className="header__logout">Đăng xuất</div>
+                </Link>
+                </>):
+                <>
+                 <Link to = "/login" className="header__link--login">
+              <div className="header__login">Đăng nhập</div>
+              </Link>
+              <Link to = "/sign-up" className="header__link--sign-up">
+              <div className="header__sign-up">Đăng kí </div>
+              </Link>
+                </>
+              }
+            
+
             </div>
           </div>
         </div>
       </div>
-      <div className="header__main">
+      <div div className="header__main">
         <div className="container">
           <div className="header__wrap">
-            <div className="header__category">
+            <div  className="header__category">
+              <div className="header__category--title" onClick={()=>setNone (!none)}>
               <div className="header__icon">
                 <i className="fa-solid fa-bars"></i>
               </div>
               <div className="header__text">Danh mục sản phẩm</div>
             </div>
+            <div  className={none ?"header__list--none":"header__list"}>
+              <ul>
+                {
+                  category.map(item=>
+                    (
+                      <Link to={`/category/${item.slug}`} className="header__link" key={item.id}><li>{item.name}</li> </Link>
+                    ))
+                }
+              </ul>
+            </div>
+            </div>
             <div className="header__menu">
-            <Link to ="/" className="header__link--home">
+            <Link to ="/" className="header__link">
               <div className="header__box header__home">  Trang chủ
               </div>
                 </Link>
-              <div className="header__box header__products">Sản phẩm</div>
-              <div className="header__box header__knowledge">Kiến thức cây cảnh</div>
-              <div className="header__box header__sale">Bán sỉ & nhượng quyền</div>
-              <div className="header__box header__recruitment">Tuyển dụng</div>
-              <div className="header__box header__address">Địa chỉ</div>
-              <Link to ="/cart" className="header__link--cart">
+                <Link to ="/products" className="header__link">
+                <div className="header__box header__products">Sản phẩm</div>
+                </Link>
+                <Link to ="/knowledge" className="header__link">
+                <div className="header__box header__knowledge">Kiến thức cây cảnh</div>
+                </Link>
+               <Link to ="/wholesale" className="header__link">
+           <div className="header__box header__sale">Bán sỉ & nhượng quyền</div>
+               </Link>
+               <Link to="/recruitment" className="header__link">
+               <div className="header__box header__recruitment">Tuyển dụng</div>
+               </Link>
+             <Link to ="/address" className="header__link">
+             <div className="header__box header__address">Địa chỉ</div>
+             </Link>
+             
+              {
+                token ?(
+                  <Link to ="/cart" className="header__link">
               <div className="header__box header__cart">
              
-              <div className="header__text">Giỏ hàng({total})</div>
+              <div className="header__text">Giỏ hàng</div>
                 <div className="header__icon">
                   <i className="fa-solid fa-cart-plus"></i>
                 </div>
                 </div>
                 </Link>
              
+                ):
+                (<></>)
+              }
+              
             </div>
-          </div>
-        </div>
+            </div>
       </div>
-      <div className="header__view">
-        <div className="container">
-          <div className="header__wrap">
-            <div className="header__list">
-              <ul>
-                <li>Cây trồng trong nhà</li>
-                <li>Cây cảnh văn phòng</li>
-                <li>Tiểu cảnh Terraium</li>
-                <li>Chậu cây cảnh</li>
-                <li>Sen Đá</li>
-                <li>Xương Rồng</li>
-                <li>Phụ kiện Terraium</li>
-              </ul>
-            </div>
-            <div className="header__image">
-              <img src={banner} alt="image" />
-            </div>
-          </div>
-        </div>
       </div>
+     
         {/* MAIN: */}
       <main className="main">
         <Outlet />

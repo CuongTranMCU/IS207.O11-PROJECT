@@ -1,0 +1,38 @@
+
+.admin
+{
+    display: flex;
+}
+.admin__title
+{
+    width: 17%;
+    color:var(--color-green);
+    height: 100vh;
+    border-left: 2px solid #ddd;
+}
+.admin__CRUD 
+{
+    width: 100%;
+    background-color: #ddd;
+}
+.admin__title .admin__name
+{
+    text-align: center;
+    font-weight: 700;
+    font-size: 30px;
+}
+.admin__dashboard,.admin__users--crud,.admin__products--crud,.admin__orders--crud
+{
+    padding:10px;
+    border-radius: 5px;
+}
+.admin__dashboard:hover,.admin__users--crud:hover,.admin__products--crud:hover,.admin__orders--crud:hover
+{
+    background-color: rgba(10, 189, 10, 0.612);
+    color:var(--color-text);
+}
+.header__link
+{
+    color:var(--color-text);
+    display: block;
+}
