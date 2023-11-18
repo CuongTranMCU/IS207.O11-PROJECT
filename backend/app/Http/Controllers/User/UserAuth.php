@@ -27,7 +27,7 @@ class UserAuth extends Controller
             'email' => 'required|unique:users,email',
             'password' => ['required'],
         ]);
-
+        
         $user = new User;
         $user->Email = $request->email;
         $user->Password = Hash::make($request->password);
@@ -72,6 +72,6 @@ class UserAuth extends Controller
             return response()->json(['message' => 'Logout Success'], 200);
            // return redirect()->route('user.login');
         }
-        abort(Response::HTTP_FORBIDDEN);
+        return response()->json(['message' => 'Logout Fail'], 200);
     }
 }

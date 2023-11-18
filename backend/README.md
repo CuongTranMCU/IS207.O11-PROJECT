@@ -1,38 +1,36 @@
-   Hướng dẫn Cài đặt Laravel body { font-family: 'Arial', sans-serif; line-height: 1.6; margin: 40px; background-color: #f5f5f5; } h1, h2 { color: #333; } p, ul { color: #777; } code, pre { background-color: #f8f8f8; padding: 10px; border-radius: 4px; } a { color: #3498db; text-decoration: none; } a:hover { text-decoration: underline; }
+  Laravel Installation Guide body { font-family: 'Arial', sans-serif; line-height: 1.6; margin: 40px; background-color: #f5f5f5; } h1, h2 { color: #333; } p, ul { color: #777; } code, pre { background-color: #f8f8f8; padding: 10px; border-radius: 4px; } a { color: #3498db; text-decoration: none; } a:hover { text-decoration: underline; }
 
-Hướng dẫn Cài đặt Laravel
-=========================
+Installation Guide
+==========================
 
-Hướng dẫn này sẽ giúp bạn cài đặt Laravel, một framework PHP mạnh mẽ và linh hoạt, trên máy tính của bạn.
+System Requirements
+-------------------
 
-Yêu Cầu Hệ Thống
-----------------
-
-Trước khi bắt đầu, đảm bảo rằng máy tính của bạn đáp ứng các yêu cầu hệ thống sau:
+Before you begin, make sure your computer meets the following system requirements:
 
 *   PHP >= 7.4
 *   Composer
-*   Node.js và NPM
-*   MySQL hoặc SQLite
+*   Node.js and NPM
+*   MySQL or SQLite
 
-Bước 1: Tải Composer
---------------------
+Step 1: Download Composer
+-------------------------
 
-Để cài đặt Laravel, bạn cần Composer. Nếu bạn chưa cài đặt, hãy tải Composer từ [https://getcomposer.org/](https://getcomposer.org/) và cài đặt theo hướng dẫn trên trang web.
+To install Laravel, you need Composer. If not installed, download Composer from [https://getcomposer.org/](https://getcomposer.org/) and follow the instructions on the website.
 
-Bước 2: Pull file từ project.
+Step 2: Pull Files from the Project
+-----------------------------------
+
+Step 3: Configure Environment
 -----------------------------
 
-Bước 3: Cấu hình Môi trường
----------------------------
+Create a new database using the SQL file in the database folder.
 
-Tạo database mới từ file sql trong mục database.
-
-Nếu chưa có tệp .env thì ta sao chép tệp .env.example thành một tệp mới có tên .env:
+If the .env file does not exist, copy the .env.example file to a new file named .env:
 
     cp .env.example .env
 
-Mở tệp .env và cấu hình thông tin database đúng với database mới tạo.
+Open the .env file and configure the database information according to the newly created database.
 
     DB_CONNECTION=mysql
 
@@ -46,22 +44,30 @@ Mở tệp .env và cấu hình thông tin database đúng với database mới 
 
     DB_PASSWORD=
 
-Bước 4: Chạy Ứng Dụng
----------------------
+In the /config folder, select the cors file and change:
 
-Chạy lệnh sau để khởi động máy chủ phát triển của Laravel:
+    'paths' => ['api/*', 'sanctum/csrf-cookie'],
+
+to
+
+    'paths' => ['*', 'sanctum/csrf-cookie'],
+
+Step 4: Run the Application
+---------------------------
+
+Run the following command to start the Laravel development server:
 
     php artisan serve
 
-Lúc này máy chủ laravel sẽ được chạy trên host và port cố định được config trong .env.
+The Laravel server will now run on the specified host and port configured in .env.
 
-Để thay đổi port theo ý muốn, ví dụ chạy máy chủ trên port 8080 thì ta chạy lệnh sau:
+To change the port, for example, run the server on port 8080, use the following command:
 
     php artisan serve --port=8080
 
-Mở trình duyệt và truy cập [http://localhost:8080](http://localhost:8000) để xem ứng dụng Laravel.
+Open your browser and go to [http://localhost:8080](http://localhost:8080) to view the Laravel application.
 
-Hỗ trợ và Liên Hệ
------------------
+Support and Contact
+-------------------
 
-Nếu bạn gặp vấn đề hoặc có bất kỳ câu hỏi nào, hãy kiểm tra tài liệu chính của Laravel hoặc liên hệ với cộng đồng Laravel.
+If you encounter issues or have any questions, check the official Laravel documentation or contact the Laravel community.

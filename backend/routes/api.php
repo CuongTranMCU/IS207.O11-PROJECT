@@ -18,22 +18,13 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::group(['namespace'=>'App\Http\Controllers\Api', 'middleware'=>'auth:sanctum'], function(){
+/*Route::group(['namespace'=>'App\Http\Controllers\Api', 'middleware'=>'auth:sanctum'], function(){
     Route::apiResource('categories', CategoryController::class);
     Route::apiResource('products', ProductController::class);
-});
-//
-Route::get('/', function () {
-    return view('welcome');
-});
-
-//route cho user và admin, trang chủ
-
-
-    //Route::get('home', [App\Http\Controllers\Api\HomeController::class, 'index']);
+});*/
 Route::get('categories', [App\Http\Controllers\Api\CategoryController::class, 'index']);  
 Route::get('categories/{id}', [App\Http\Controllers\Api\CategoryController::class, 'show']); 
-Route::get('/products', [App\Http\Controllers\Api\ProductController::class, 'index']);  
+Route::get('products', [App\Http\Controllers\Api\ProductController::class, 'index']);  
 Route::get('products/{id}', [App\Http\Controllers\Api\ProductController::class, 'show']); 
 
 
@@ -47,11 +38,19 @@ Route::post('products', [App\Http\Controllers\Api\ProductController::class, 'sto
 Route::delete('products/{id}', [App\Http\Controllers\Api\ProductController::class, 'destroy'])->middleware(['auth:sanctum' , 'ability:admin']);
 Route::patch('products/{id}', [App\Http\Controllers\Api\ProductController::class, 'update'])->middleware(['auth:sanctum' , 'ability:admin']);
 Route::put('products/{id}', [App\Http\Controllers\Api\ProductController::class, 'update'])->middleware(['auth:sanctum' , 'ability:admin']);
+//route cho user
+
 
 
 
 Route::get('user/{userId}',[App\Http\Controllers\User\UserController::class, 'information'])->middleware('auth:sanctum', 'ability:user');
 Route::patch('user/{userId}',[App\Http\Controllers\User\UserController::class, 'update'])->middleware('auth:sanctum', 'ability:user');
+
+Route::get('user/{userId}/cart', [App\Http\Controllers\Api\CartController::class, 'index'])->middleware('auth:sanctum', 'ability:user');
+Route::post('user/{userId}/cart', [App\Http\Controllers\Api\CartController::class, 'store'])->middleware('auth:sanctum', 'ability:user');
+Route::patch('user/{userId}/cart', [App\Http\Controllers\Api\CartController::class, 'update'])->middleware('auth:sanctum', 'ability:user');
+Route::delete('user/{userId}/cart', [App\Http\Controllers\Api\CartController::class, 'destroy'])->middleware('auth:sanctum', 'ability:user');
+Route::delete('user/{userId}/cart/bulkdestroy', [App\Http\Controllers\Api\CartController::class, 'bulkDestroy'])->middleware('auth:sanctum', 'ability:user');
 
 //làm filter cho transaction
 Route::patch('transactions/{transactionId}', [App\Http\Controllers\Api\TransactionController::class, 'update'])->middleware('auth:sanctum', 'ability:user');   //cập nhập status của transaction
@@ -73,6 +72,10 @@ Route::delete('orders/{id}', [App\Http\Controllers\Api\OrderController::class, '
 
 
 
+//route cho admin
+
+
+//Route::get('home', [App\Http\Controllers\Admin\AdminAuth::class, 'index'])->name('admin.home')->middleware(['auth:sanctum' , 'ability:admin']);
 
 
 Route::get('transactions', [App\Http\Controllers\Admin\TransactionManagement::class, 'index'])->middleware(['auth:sanctum' , 'ability:admin']);
@@ -85,8 +88,10 @@ Route::get('statistics/products', [App\Http\Controllers\Admin\ba::class, 'calcul
 //Route::get('statistics/products', [App\Http\Controllers\Admin\ba::class, 'calculateAverageSoldPerDayForProducts']);//->middleware(['auth:sanctum' , 'ability:admin']);
 Route::get('statistics/products/{id}', [App\Http\Controllers\Admin\ba::class, 'showProduct'])->middleware(['auth:sanctum' , 'ability:admin']);
 
-Route::get('allUsers', [App\Http\Controllers\Admin\UserManagement::class, 'index'])->name('ad_user.home')->middleware(['auth:sanctum' , 'ability:admin']);
+Route::get('admin/allUsers', [App\Http\Controllers\Admin\UserManagement::class, 'index'])->name('ad_user.home')->middleware(['auth:sanctum' , 'ability:admin']);
 // Route::get('admin/users/{id}', [App\Http\Controllers\Admin\UserManagement::class, 'show'])->name('ad_user.show')->middleware(['auth:sanctum' , 'ability:admin']);
 Route::post('createUser', [App\Http\Controllers\Admin\UserManagement::class, 'add'])->middleware(['auth:sanctum' , 'ability:admin']);
 Route::delete('users/{id}', [App\Http\Controllers\Admin\UserManagement::class, 'destroy'])->middleware(['auth:sanctum' , 'ability:admin']);
-Route::get('userOnline', [App\Http\Controllers\Admin\UserManagement::class, 'userOnline'])->middleware(['auth:sanctum' , 'ability:admin']);
+
+Route::get('userOnline', 'App\Http\Controllers\Admin\UserManagement@userOnline')
+    ->middleware(['auth:sanctum', 'ability:admin']); // Chỉ cho phép người dùng có ability 'admin'

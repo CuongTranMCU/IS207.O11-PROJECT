@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 12, 2023 lúc 02:18 PM
+-- Thời gian đã tạo: Th10 14, 2023 lúc 06:28 AM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -52,6 +52,24 @@ INSERT INTO `admins` (`Admin_ID`, `Name`, `Email`, `Phone`, `Address`, `Created_
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `carts`
+--
+
+CREATE TABLE `carts` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `Product_name` varchar(255) NOT NULL,
+  `Product_price` int(11) NOT NULL,
+  `Quantity` int(11) NOT NULL,
+  `User_ID` bigint(20) NOT NULL,
+  `Product_ID` int(20) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `Status` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `categories`
 --
 
@@ -95,7 +113,8 @@ CREATE TABLE `migrations` (
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '2014_10_12_100000_create_password_reset_tokens_table', 1),
-(2, '2019_12_14_000001_create_personal_access_tokens_table', 1);
+(2, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(3, '2023_11_14_012955_create_carts_table', 2);
 
 -- --------------------------------------------------------
 
@@ -158,9 +177,9 @@ CREATE TABLE `products` (
   `Img_path` varchar(200) NOT NULL,
   `Content` text NOT NULL,
   `Slug` varchar(50) NOT NULL,
-  `Quantity` int(20) NOT NULL,
-  `Sold` int(20) NOT NULL,
-  `View` int(20) NOT NULL,
+  `Quantity` int(20) NOT NULL DEFAULT 0,
+  `Sold` int(20) NOT NULL DEFAULT 0,
+  `View` int(20) NOT NULL DEFAULT 0,
   `Discount` int(20) NOT NULL DEFAULT 0,
   `Created_at` timestamp NULL DEFAULT current_timestamp(),
   `Updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
@@ -253,7 +272,8 @@ INSERT INTO `products` (`Product_ID`, `Name`, `Price`, `Img_path`, `Content`, `S
 (79, 'Thỏ con 2', 25000, 'https://cayxinh.vn/wp-content/uploads/2017/11/tho-con-2-01-280x280.jpg', '', 'tho-con-2', 10, 0, 0, 0, '2023-10-31 02:41:43', '2023-10-31 02:41:43', 7),
 (80, 'Nhà cổ Hội An', 25000, 'https://cayxinh.vn/wp-content/uploads/2017/11/nha-co-hoi-an-01-280x280.jpg', '', 'nha-co-hoi-an', 10, 0, 0, 1, '2023-10-31 02:41:43', '2023-10-31 02:41:43', 7),
 (81, 'Ngôi nhà nhỏ 2', 25000, 'https://cayxinh.vn/wp-content/uploads/2017/11/ngoi-nha-nho-2-01-280x280.jpg', '', 'ngoi-nha-nho-2', 10, 0, 0, 0, '2023-10-31 02:41:43', '2023-10-31 02:41:43', 7),
-(82, 'Khỉ con xinh xắn', 25000, 'https://cayxinh.vn/wp-content/uploads/2017/11/khi-con-xinh-xan-01-280x280.jpg', '', 'khi-con-xinh-xan', 10, 0, 0, 2, '2023-10-31 02:41:43', '2023-10-31 02:41:43', 7);
+(82, 'Khỉ con xinh xắn', 25000, 'https://cayxinh.vn/wp-content/uploads/2017/11/khi-con-xinh-xan-01-280x280.jpg', '', 'khi-con-xinh-xan', 10, 0, 0, 2, '2023-10-31 02:41:43', '2023-10-31 02:41:43', 7),
+(83, 'Cây Ngọc Bích', 170000, 'https://cayxinh.vn/wp-content/uploads/2018/01/cay-ngoc-bich-1208192-400x400.jpg', 'asd', 'cay-ngoc-bich', 10, 0, 1, 0, '2023-11-12 07:46:05', '2023-11-12 07:47:53', 2);
 
 -- --------------------------------------------------------
 
@@ -275,6 +295,13 @@ CREATE TABLE `transactions` (
   `Updated_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `transactions`
+--
+
+INSERT INTO `transactions` (`Transaction_ID`, `User_ID`, `Name`, `Phone`, `Address`, `Status`, `Total_money`, `Payment_method`, `Note`, `Created_at`, `Updated_at`) VALUES
+(1, 31, 'empty', 'empty', 'empty', 5, 100000, 0, '', '2023-11-12 15:00:29', '2023-11-12 15:00:29');
+
 -- --------------------------------------------------------
 
 --
@@ -293,6 +320,14 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Đang đổ dữ liệu cho bảng `users`
+--
+
+INSERT INTO `users` (`User_ID`, `Email`, `Password`, `Created_at`, `Updated_at`, `Address`, `Phone`, `Name`) VALUES
+(31, 'abcd@gmail.com', '$2y$12$Im4dr9XUgi6tCmC3zPUPu.cOwPVugEwGLrWCE7OiM4jwBjj6sdmzC', '2023-11-12 14:59:14', '2023-11-12 07:59:14', 'KTX A', '0335664121', 'Tùng'),
+(33, 'abc@gmail.com', '$2y$12$8stLWcGDtx.OySlEyrhN7.TbfxW.9zS44UDFVc3JNMvy6mbDXx39O', '2023-11-13 19:42:44', '2023-11-13 19:42:44', NULL, NULL, NULL);
+
+--
 -- Chỉ mục cho các bảng đã đổ
 --
 
@@ -303,6 +338,14 @@ ALTER TABLE `admins`
   ADD PRIMARY KEY (`Admin_ID`),
   ADD UNIQUE KEY `Email` (`Email`),
   ADD UNIQUE KEY `Phone` (`Phone`);
+
+--
+-- Chỉ mục cho bảng `carts`
+--
+ALTER TABLE `carts`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `User_ID` (`User_ID`),
+  ADD KEY `Product_ID` (`Product_ID`);
 
 --
 -- Chỉ mục cho bảng `categories`
@@ -370,50 +413,63 @@ ALTER TABLE `admins`
   MODIFY `Admin_ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
+-- AUTO_INCREMENT cho bảng `carts`
+--
+ALTER TABLE `carts`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT cho bảng `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `Category_ID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `Category_ID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT cho bảng `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `Order_ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `Order_ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT cho bảng `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- AUTO_INCREMENT cho bảng `products`
 --
 ALTER TABLE `products`
-  MODIFY `Product_ID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
+  MODIFY `Product_ID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 
 --
 -- AUTO_INCREMENT cho bảng `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `Transaction_ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `Transaction_ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `User_ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `User_ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
 --
+
+--
+-- Các ràng buộc cho bảng `carts`
+--
+ALTER TABLE `carts`
+  ADD CONSTRAINT `carts_ibfk_3` FOREIGN KEY (`User_ID`) REFERENCES `users` (`User_ID`),
+  ADD CONSTRAINT `carts_ibfk_4` FOREIGN KEY (`Product_ID`) REFERENCES `products` (`Product_ID`);
 
 --
 -- Các ràng buộc cho bảng `orders`
