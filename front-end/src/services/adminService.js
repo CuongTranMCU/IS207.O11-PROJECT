@@ -2,7 +2,7 @@ import { get } from "../utils/request";
 
 export const getListUser= ()=>
 {
-    return get("/api/allUsers");
+    return get("/api/admin/allUsers");
 
 }
 export const getListOrder =()=>

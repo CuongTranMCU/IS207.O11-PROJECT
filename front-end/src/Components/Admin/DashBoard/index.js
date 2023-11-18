@@ -10,8 +10,10 @@ function DashBoard(){
         {
             const user = await getListUser();
             setUser(user.data);  
+            console.log(user);
             const order = await getListOrder();
             setOrder(order.data)
+            console.log(order);
          }
         fetchApi();
     },[]);
