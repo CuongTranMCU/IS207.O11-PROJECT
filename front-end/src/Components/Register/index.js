@@ -1,7 +1,5 @@
-import { Link, useNavigate } from "react-router-dom";
-import { checkExistEmail, createAccount } from "../../services/userService";
-import { generateToken } from "../../helpers/generateToken";
-import "./Register.css";
+import { useNavigate } from "react-router-dom";
+import {  createAccount } from "../../services/userService";
 
 function Register(){
     const navigate = useNavigate();
@@ -10,15 +8,6 @@ function Register(){
         e.preventDefault();
         const email = e.target.elements.email.value;
         const password = e.target.elements.password.value;
-        // const user = await checkExistEmail(email);
-        // console.log(user);
-        // if(user.length >0 )
-        // {
-        //     alert(" Email đã tồn tại");
-        // }
-        // else
-        // {
-            // const token = generateToken();
             const newAccount = {
                 email: email,
                 password : password

@@ -1,6 +1,18 @@
 import { useEffect, useState } from "react";
-import { getListOrder, getListProduct } from "../../../services/adminService";
+import React from 'react';
+import { getListOrder } from "../../../services/adminService";
+import Modal from 'react-modal';
 import "../UserCRUD/style.css"
+const customStyles = {
+    content: {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+    },
+  };
 function OrderCRUD(){
     const [order,setOrder]= useState([]);
     useEffect(()=>
@@ -16,6 +28,7 @@ function OrderCRUD(){
         <>
         <div className="orderTable">
         <h2 >Danh sách đơn hàng</h2>
+        {/* <NewProduct></NewProduct> */}
         <table>
             <tr>
             <th>Id</th>
@@ -36,12 +49,13 @@ function OrderCRUD(){
                     <td>{item.status}</td>
                     <td>{item.createdAt}</td>
                     <td>
-                        <button>Edit</button>
-                        <button>Delete</button>
+
                     </td>
 
                 </tr>
+               
                 );
+                
                 })
         }
             </table>

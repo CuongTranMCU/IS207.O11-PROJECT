@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { setCookie } from "../../helpers/cookie";
 import { login } from "../../services/userService";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { authen } from "../../actions/authen";
 import "./Login.css";
 
@@ -20,11 +20,12 @@ function Login(){
         }
         console.log(user);
         const data = await  login(user);
-        if(data.message.length >0)
+        console.log(data);
+        if(data.message === "Login Success")
         {   
             alert("Đăng nhập thành công");
-            const {email} = user.email;
-            const {token} = data.token;
+            const email = user.email;
+            const token = data.token;
             const exDays= 2;
             setCookie("email",email,exDays);
             setCookie("token",token,exDays);

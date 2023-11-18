@@ -32,17 +32,6 @@ export function setCookie(cname, cvalue, exdays) {
     var expires = "expires="+ d.toUTCString();
     document.cookie = cname + "=" + cvalue + "; " + expires;
   }
-// // addCookie. 
-//   const addCookie = () => {
-//     document.cookie = setCookie("b", "10", 3);
-//   }
-  // var cookies = document.cookie;
-var isLogin = getCookie("isLogin");
-if(isLogin == "true") {
-console.log("Đã đăng nhập");
-} else {
-console.log("Chưa đăng nhập");
-}
 
 export const login = () => {
 document.cookie = 'isLogin=true';

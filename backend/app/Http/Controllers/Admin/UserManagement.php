@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Response;
 use App\Http\Resources\UserCollection;
 use Illuminate\Support\Facades\DB;
 use App\Services\UserQuery;
+use Illuminate\Support\Facades\Hash;
 
 class UserManagement extends Controller
 {
