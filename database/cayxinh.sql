@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 19, 2023 at 04:37 AM
+-- Generation Time: Nov 19, 2023 at 05:03 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -20,32 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `cayxinh`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `admin`
---
-
-CREATE TABLE `admin` (
-  `Admin_id` bigint(20) NOT NULL,
-  `Name` varchar(50) NOT NULL,
-  `Email` varchar(50) NOT NULL,
-  `Phone` varchar(50) NOT NULL,
-  `Address` varchar(50) NOT NULL,
-  `Created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `Updated_at` timestamp NULL DEFAULT current_timestamp(),
-  `Password` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `admin`
---
-
-INSERT INTO `admin` (`Admin_id`, `Name`, `Email`, `Phone`, `Address`, `Created_at`, `Updated_at`, `Password`) VALUES
-(1, 'Trần Văn Cường', 'tranvancuong@gmail.com', '0912345678', 'Huế', '2023-10-28 08:42:00', '2023-10-28 08:42:00', 'admin'),
-(2, 'Trần Anh Tuấn', 'trananhtuan@gmail.com', '0987654321', 'Bình Thuận', '2023-10-28 08:47:10', '2023-10-28 08:47:10', 'admin'),
-(3, 'Nguyễn Xuân Tùng', 'nguyenxuantung@gmail.com', '0712345678', 'Bình Thuận', '2023-10-28 08:47:37', '2023-10-28 08:47:37', 'admin');
 
 -- --------------------------------------------------------
 
@@ -382,14 +356,6 @@ INSERT INTO `users` (`User_ID`, `Email`, `Password`, `Created_at`, `Updated_at`)
 --
 
 --
--- Indexes for table `admin`
---
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`Admin_id`),
-  ADD UNIQUE KEY `Email` (`Email`),
-  ADD UNIQUE KEY `Phone` (`Phone`);
-
---
 -- Indexes for table `admins`
 --
 ALTER TABLE `admins`
@@ -463,12 +429,6 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for dumped tables
 --
-
---
--- AUTO_INCREMENT for table `admin`
---
-ALTER TABLE `admin`
-  MODIFY `Admin_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `admins`
