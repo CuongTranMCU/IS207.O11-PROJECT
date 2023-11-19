@@ -1,23 +1,29 @@
 import { useEffect, useState } from "react";
 import { getListUser } from "../../../services/adminService";
+import React from 'react';
 import "./style.css"
+import EditUser from "./EditUser";
+import NewUser from "./NewUser";
+import DeleteUser from "./DeleteUser";
+
 function UserCRUD(){
     const [user,setUser]= useState([]);
+    const fetchApi = async ()=>
+    {
+        const user = await getListUser();
+        setUser(user.data);  
+     }
     useEffect(()=>
     {
-        const fetchApi = async ()=>
-        {
-            const user = await getListUser();
-            setUser(user.data);  
-         }
         fetchApi();
     },[]);
     return(
         <>
         <div className="userTable">
-        <h2 >Danh sách người dùng</h2>
+        <h2 className="title" >Danh sách người dùng</h2>
+        <NewUser ></NewUser>
         <table>
-            <tr>
+            <tr >
             <th>Id</th>
             <th>Tên hiển thị</th>
             <th>Email</th>
@@ -35,8 +41,8 @@ function UserCRUD(){
                     <td>{item.phone}</td>
                     <td>{item.createdAt}</td>
                     <td>
-                        <button>Edit</button>
-                        <button>Delete</button>
+                        <EditUser></EditUser>
+                        <DeleteUser></DeleteUser>
                     </td>
 
                 </tr>

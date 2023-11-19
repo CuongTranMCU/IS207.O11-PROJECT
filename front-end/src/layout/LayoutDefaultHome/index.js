@@ -42,7 +42,7 @@ function LayoutDefaultHome() {
           <div className="header__wrap">
             <div className="header__logo">
             <Link to="/">
-            <img src= {logo}  alt={"logo"} />
+              <img src= {logo}  alt={"logo"} />
             </Link>
             </div>
             <div className="header__search">
@@ -67,7 +67,7 @@ function LayoutDefaultHome() {
               <div className="header__login">Đăng nhập</div>
               </Link>
               <Link to = "/sign-up" className="header__link--sign-up">
-              <div className="header__sign-up">Đăng kí </div>
+              <div className="header__sign-up">Đăng ký</div>
               </Link>
                 </>
               }
@@ -80,30 +80,30 @@ function LayoutDefaultHome() {
       <div div className="header__main">
         <div className="container">
           <div className="header__wrap">
-            <div  className="header__category">
-              <div className="header__category--title" onClick={()=>setNone (!none)}>
-              <div className="header__icon">
-                <i className="fa-solid fa-bars"></i>
-              </div>
-              <div className="header__text">Danh mục sản phẩm</div>
+            <div className="header__category">
+                <div className="header__category--title" onClick={()=>setNone (!none)}>
+                <div className="header__icon">
+                  <i className="fa-solid fa-bars"></i>
+                </div>
+                <div className="header__text">Danh mục sản phẩm</div>
             </div>
-            <div  className={none ?"header__list--none":"header__list"}>
-              <ul>
-                {
-                  category.map(item=>
-                    (
-                      <Link to={`/category/${item.slug}`} className="header__link" key={item.id}><li>{item.name}</li> </Link>
-                    ))
-                }
-              </ul>
+            <div className={none ?"header__list--none":"header__list"}>
+                <ul>
+                  {
+                    category.map(item=>
+                      (
+                        <Link to={`/category/${item.slug}`} className="header__link" key={item.id}><li>{item.name}</li> </Link>
+                      ))
+                  }
+                </ul>
             </div>
-            </div>
+          </div>
             <div className="header__menu">
-            <Link to ="/" className="header__link">
-              <div className="header__box header__home">  Trang chủ
-              </div>
-                </Link>
-                <Link to ="/products" className="header__link">
+              <Link to ="/" className="header__link">
+                  <div className="header__box header__home">Trang chủ</div>
+              </Link>
+
+              <Link to ="/products" className="header__link">
                 <div className="header__box header__products">Sản phẩm</div>
                 </Link>
                 <div className="header__box header__knowledge">
@@ -136,21 +136,19 @@ function LayoutDefaultHome() {
               {
                 token ?(
                   <Link to ="/cart" className="header__link">
-              <div className="header__box header__cart">
-             
-              <div className="header__text">Giỏ hàng</div>
-                <div className="header__icon">
-                  <i className="fa-solid fa-cart-plus"></i>
-                </div>
-                </div>
-                </Link>
+                    <div className="header__box header__cart">
+                  
+                    <div className="header__text">Giỏ hàng</div>
+                      <div className="header__icon"><i className="fa-solid fa-cart-plus"></i></div>
+                    </div>
+                  </Link>
              
                 ):
                 (<></>)
               }
               
             </div>
-            </div>
+          </div>
       </div>
       </div>
      

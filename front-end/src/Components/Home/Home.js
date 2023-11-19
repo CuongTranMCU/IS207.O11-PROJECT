@@ -1,4 +1,3 @@
-import { getProductName } from "../../services/productServices";
 import { useLocation, useParams } from "react-router-dom";
 import { getListProductPage,getListCategoryProduct } from "../../services/productServices";
 import { Link } from "react-router-dom";
@@ -9,7 +8,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import BestSeller from "./Props/BestSeller"
 import HomePost from "./Props/HomePost";
-import BsData from './BSdata';
 import lacay from "../../Components/images/lacay.png"
 import "./Css/BestSeller.css"
 import "./Css/Homeproduct.css"
