@@ -25,10 +25,10 @@ function BestSeller({plant})
             </a>
             <p class="bsprice">
                 <div className="OldPrice" style={PriceShow}>
-                    {plant.price} đ&nbsp;
+                    {plant.price.toLocaleString()} đ
                   </div>
                   <div className="NewPrice">
-                     {NewPrice} đ 
+                  &nbsp; {NewPrice.toLocaleString()} đ 
                   </div>
             </p>
         </div>

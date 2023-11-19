@@ -18,6 +18,7 @@ import KnowledgePage from "../pages/KnowledgePage";
 import RecruitmentPage from "../pages/RecruitmentPage";
 import WholesalePage from "../pages/WholesalePage";
 import GuidePage from "../pages/GuidePage";
+import AddressPage from "../pages/AddressPage";
 export const routes = [
 {
     path : "/",
@@ -74,6 +75,10 @@ export const routes = [
         {
             path: "Recruitment",
             element: <RecruitmentPage></RecruitmentPage>
+        },
+        {
+            path: "Address",
+            element: <AddressPage></AddressPage>
         }
     ]
 },

@@ -29,10 +29,10 @@ function HomePost({Post,isWide})
                 <div className="PostName">{Post.name}</div>
                 <div className="PostPrice">
                 <div className="OldPrice" style={PriceShow}>
-                    {Post.price} &nbsp;
+                    {Post.price.toLocaleString()} đ
                   </div>
                   <div className="NewPrice">
-                     {NewPrice} đ 
+                  &nbsp; {NewPrice.toLocaleString()} đ 
                   </div>
                   
                 </div>

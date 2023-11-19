@@ -8,9 +8,11 @@ import Img6 from "../../Components/images/thay-chau-cho-xuong-rong.jpg"
 import Img7 from "../../Components/images/bon-sai.jpg"
 import Img8 from "../../Components/images/vuon-ban-cong.jpg"
 import Img9 from "../../Components/images/van-chuyen-cay-canh.jpg"
+import { getListCategory } from "../../services/categoryServices"
+import { useEffect, useState } from "react";
+import { Link, Outlet } from "react-router-dom";
 import "./styles.css";
 import Post from "./post";
-
 
 function NewPost(props)
 {
@@ -30,6 +32,16 @@ function NewPost(props)
 
 function Knowledge()
 {   
+    const [category,SetCategory] = useState([]);
+    useEffect(  ()=>
+        {
+        const fetchApi = async ()=>
+        {
+            const data = await getListCategory();
+            SetCategory(data.data);
+        }
+        fetchApi();
+        },[])
     return(
     <>
         <div className="container">
@@ -131,19 +143,14 @@ function Knowledge()
                     <div className="menu">
                         <div className="menutitle">Danh mục sản phẩm</div>
                         <hr/>
-                        <div className="menucontent">Cây cảnh văn phòng </div>
-                        <hr/>
-                        <div className="menucontent">Cây trồng trong nhà </div>
-                        <hr/>
-                        <div className="menucontent">Chậu cây cảnh </div>
-                        <hr/>
-                        <div className="menucontent">Phụ kiện Terrarium </div>
-                        <hr/>
-                        <div className="menucontent">Sen đá </div>
-                        <hr/>
-                        <div className="menucontent">Tiểu cảnh Terrarium</div>
-                        <hr/>
-                        <div className="menucontent">Xương rồng</div>
+                        
+                        {
+                        category.map(item=>
+                            (
+                            <Link to={`/category/${item.slug}`} className="header__link" key={item.id}><div className='list'>{item.name}</div> </Link>
+                            ))
+                        }
+                        
                     </div>
                     <div className="newpostcontainer">
                         <div className="menutitle">Bài viết mới

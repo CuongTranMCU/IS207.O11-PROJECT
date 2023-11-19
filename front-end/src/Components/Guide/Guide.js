@@ -10,7 +10,9 @@ import Gui3 from "../../Components/images/cach-cham-soc-cay-trau-ba.jpg"
 import Gui4 from "../../Components/images/huong-dan-cham-soc-cay-de-ban.jpg"
 //import "./styles.css";
 import Post from "./post";
-
+import { getListCategory } from "../../services/categoryServices"
+import { useEffect, useState } from "react";
+import { Link, Outlet } from "react-router-dom";
 function NewPost(props)
 {
     return(        
@@ -28,6 +30,16 @@ function NewPost(props)
 }
 
 function Guide(){
+    const [category,SetCategory] = useState([]);
+    useEffect(  ()=>
+        {
+        const fetchApi = async ()=>
+        {
+            const data = await getListCategory();
+            SetCategory(data.data);
+        }
+        fetchApi();
+        },[])
     return(
         <>
         <div className="container">
@@ -80,19 +92,13 @@ function Guide(){
                     <div className="menu">
                         <div className="menutitle">Danh mục sản phẩm</div>
                         <hr/>
-                        <div className="menucontent">Cây cảnh văn phòng </div>
-                        <hr/>
-                        <div className="menucontent">Cây trồng trong nhà </div>
-                        <hr/>
-                        <div className="menucontent">Chậu cây cảnh </div>
-                        <hr/>
-                        <div className="menucontent">Phụ kiện Terrarium </div>
-                        <hr/>
-                        <div className="menucontent">Sen đá </div>
-                        <hr/>
-                        <div className="menucontent">Tiểu cảnh Terrarium</div>
-                        <hr/>
-                        <div className="menucontent">Xương rồng</div>
+                        {
+                        category.map(item=>
+                            (
+                            <Link to={`/category/${item.slug}`} className="header__link" key={item.id}><div className='list'>{item.name}</div> </Link>
+                            ))
+                        }
+                        
                     </div>
                     <div className="newpostcontainer">
                         <div className="menutitle">Bài viết mới

@@ -129,7 +129,7 @@ function LayoutDefaultHome() {
                <Link to="/recruitment" className="header__link">
                <div className="header__box header__recruitment">Tuyển dụng</div>
                </Link>
-             <Link to ="/address" className="header__link">
+             <Link to ="/Address" className="header__link">
              <div className="header__box header__address">Địa chỉ</div>
              </Link>
              
