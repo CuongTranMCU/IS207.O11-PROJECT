@@ -26,8 +26,8 @@ class UserController extends Controller
         $user = User::find($userId);
         if($user){
             $user->update($request->all());
-            //return response()->json(['message'=>'Success']);
-            return response()->json(['message'=>$request->all()]);
+            return response()->json(['message'=>'Success']);
+            //return response()->json(['message'=>$request->all()]);
         }
         else return response()->json(['message'=>'Not found'], 404);
     }

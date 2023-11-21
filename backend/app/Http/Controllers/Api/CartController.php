@@ -91,7 +91,7 @@ class CartController extends Controller
 
             // Cập nhật bản ghi chỉ với các trường có giá trị
             $cart->update($updateData);
-        }
+        } else return response()->json(['message'=>'Success']);
     }
 
     return response()->json(['message' => 'Success']);
