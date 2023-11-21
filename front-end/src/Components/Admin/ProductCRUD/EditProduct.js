@@ -57,12 +57,12 @@ function EditProduct(props)
            
         }   
         console.log(product);
-        //console.log(item.userId);
          try {
             const result = await editProduct(product,item.id);
              console.log(result);
             if(result)
             {
+                alert("Chỉnh sửa sản phẩm thành công");
                 closeModal();
                 reload();
             }
