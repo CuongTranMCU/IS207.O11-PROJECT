@@ -1,20 +1,24 @@
 import { useEffect, useState } from "react";
-import { getListProduct } from "../../../services/adminService";
-import { getListCategory, getListCategoryProduct, getListNewProductPage, getListProductPage } from "../../../services/productServices";
+import { getListCategory, getListNewProductPage } from "../../../services/productServices";
 import "../UserCRUD/style.css"
+import NewProduct from "./NewProduct";
+import DeleteProduct from "./DeleteProduct";
+import EditProduct from "./EditProduct";
+import { getListProduct } from "../../../services/adminService";
 function ProductCRUD(){
     const [product,setProduct]= useState([]);
     const [category,setCategory]= useState([]);
+    // const [total,setTotal] = useState(0);
     const [page,setPage]= useState(1);
+    const fetchApi = async ()=>
+    {
+        const product = await getListNewProductPage(page);
+        setProduct(product.data);  
+        const category = await getListCategory();
+        setCategory(category.data);
+     }
     useEffect(()=>
     {
-        const fetchApi = async ()=>
-        {
-            const product = await getListNewProductPage(page);
-            setProduct(product.data);  
-            const category = await getListCategory();
-            setCategory(category.data);
-         }
         fetchApi();
     },[page]);
     const handleDown =()=>
@@ -28,10 +32,15 @@ function ProductCRUD(){
       if(page <=4)
       setPage(page+1);
     }
+    const handleReload =()=>
+    {
+        fetchApi();
+    }
     return(
         <>
         <div className="productTable">
         <h2 >Danh sách sản phẩm</h2>
+        <NewProduct reload={handleReload}></NewProduct>
         <table>
             <tr>
             <th>Id</th>
@@ -55,8 +64,8 @@ function ProductCRUD(){
                     <td>{item.discount}%</td>
                     <td>{item.createdAt}</td>
                     <td>
-                        <button>Edit</button>
-                        <button>Delete</button>
+                        <EditProduct item ={item} reload ={handleReload}></EditProduct>
+                       <DeleteProduct item ={item} reload ={handleReload}></DeleteProduct>
                     </td>
 
                 </tr>

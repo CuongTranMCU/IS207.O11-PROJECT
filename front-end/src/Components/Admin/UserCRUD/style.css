@@ -49,3 +49,15 @@ table td button
 {
     background-color: #d8d4d4;
 }
+.button__submit,.button__close
+{
+    width: 80px;
+}
+.user__add
+{
+    margin: 10px;
+    background-color: #d8d4d4;
+    color:var(--color-text);
+    text-align: center;
+    border-radius: 5px;
+}

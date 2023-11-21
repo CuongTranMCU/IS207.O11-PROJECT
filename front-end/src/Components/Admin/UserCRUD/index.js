@@ -17,32 +17,38 @@ function UserCRUD(){
     {
         fetchApi();
     },[]);
+    const handleReload =()=>
+    {
+        fetchApi();
+    }
     return(
         <>
         <div className="userTable">
         <h2 >Danh sách người dùng</h2>
-        <NewUser ></NewUser>
+        <NewUser reload = {handleReload} ></NewUser>
         <table>
             <tr >
             <th>Id</th>
             <th>Tên hiển thị</th>
             <th>Email</th>
             <th>Số điện thoại</th>
+            <th>Địa chỉ</th>
             <th>Ngày cập nhật</th>
             <th>Action</th>
             </tr>
         {
            user.map(item=>
             (
-                <tr className="user" key= {item.id}>
+                <tr className="user" key= {item.userId}>
                     <td>{item.userId}</td>
                     <td>{item.name}</td>
                     <td>{item.email}</td>
                     <td>{item.phone}</td>
+                    <td>{item.address}</td>
                     <td>{item.createdAt}</td>
                     <td>
-                        <EditUser></EditUser>
-                        <DeleteUser></DeleteUser>
+                        <EditUser item={item} reload= {handleReload}></EditUser>
+                        <DeleteUser item={item} reload={handleReload} ></DeleteUser>
                     </td>
 
                 </tr>

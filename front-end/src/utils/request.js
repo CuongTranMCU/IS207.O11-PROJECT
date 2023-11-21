@@ -29,6 +29,7 @@ export const patch=async(item,id,path)=>
             {
             method:"PATCH",
             headers:{
+                Accept: 'application/json',
                 "Content-Type":"application/json",
                 "Authorization": `Bearer ${getCookie("token")}`
             },
@@ -46,5 +47,5 @@ export const del = async(id,path)=>
         "Authorization": `Bearer ${getCookie("token")}`
     }
     }); 
-    return response.json(); 
+    return response.ok; 
 }

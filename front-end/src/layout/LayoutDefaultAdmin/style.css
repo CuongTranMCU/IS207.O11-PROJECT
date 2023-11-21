@@ -12,8 +12,8 @@
 }
 .admin__CRUD 
 {
-    width: 100%;
-    background-color: #ddd;
+    flex: 1;
+    background-color:  #d8d4d4;
 }
 .admin__title .admin__name
 {
