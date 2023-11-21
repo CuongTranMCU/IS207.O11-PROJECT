@@ -30,8 +30,10 @@ class OrderController extends Controller
 
     public function update(UpdateOrderRequest $request, $id){
         $Order = Order::where('Order_ID', $id)->first();
-        if($Order)
+        if($Order){
             $Order->update($request->all());
+            return response()->json(['message'=>'Success']);
+        }
         else return response()->json(['message' => 'Not found'], 404);
     }
 
