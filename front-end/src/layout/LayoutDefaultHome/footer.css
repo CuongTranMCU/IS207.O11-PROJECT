@@ -59,6 +59,10 @@ footer .row1 .row12 ul li a {
     
 }
 
+footer .row1 .row12 ul li a:hover {
+    color: black;
+}
+
 footer .row1 .row12 button {
     width: 55%;
     height: 35px;

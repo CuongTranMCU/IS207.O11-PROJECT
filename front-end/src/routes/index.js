@@ -13,7 +13,11 @@ import LoginPage from "../pages/LoginPage";
 import LogoutPage from "../pages/LogoutPage";
 import ProductPage from "../pages/ProductPage";
 import RegisterPage from "../pages/Register";
-
+import FengshuiPage from "../pages/FengshuiPage";
+import KnowledgePage from "../pages/KnowledgePage";
+import RecruitmentPage from "../pages/RecruitmentPage";
+import WholesalePage from "../pages/WholesalePage";
+import GuidePage from "../pages/GuidePage";
 export const routes = [
 {
     path : "/",
@@ -50,6 +54,26 @@ export const routes = [
         {
             path:"category/:slug",
             element:<CategoryProduct></CategoryProduct>
+        },
+        {
+            path : "Knowledge",
+            element: <KnowledgePage></KnowledgePage>
+        },
+        {
+            path : "Guide",
+            element: <GuidePage></GuidePage>
+        },
+        {
+            path: "Fengshui",
+            element: <FengshuiPage></FengshuiPage>
+        },
+        {
+            path: "Wholesale",
+            element: <WholesalePage></WholesalePage>
+        },
+        {
+            path: "Recruitment",
+            element: <RecruitmentPage></RecruitmentPage>
         }
     ]
 },

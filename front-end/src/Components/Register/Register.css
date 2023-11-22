@@ -1,0 +1,49 @@
+.register {
+    text-align: center; 
+    padding: 2%;
+    margin: 2% 20%;
+
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.register input {
+    padding: 20px 45px 20px 20px;
+}
+
+.register h3,.register input {
+    margin-bottom: 3%;
+}
+
+.register input, .register button {
+    width: 60%;
+    height: 40px;
+    border-radius: 40px;
+}
+
+.register div i.fa-user {
+    position: absolute;
+    top: 22%;
+    right: 24%;
+}
+
+.register div i.fa-lock {
+    position: absolute;
+    top: 23%;
+    right: 24%;
+}
+
+.register .register__email, .register .register__password {
+    position: relative;
+}
+
+.register .login__button {
+    border: none;
+    background-color: var(--color-green);
+    color: yellow;
+}
+
+.register .login__button:hover {
+    background-color: #5cd75c;
+}
+

@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import {  createAccount } from "../../services/userService";
-
+import "./Register.css"
 function Register(){
     const navigate = useNavigate();
     const handleSubmit = async (e)=>
@@ -31,13 +31,24 @@ function Register(){
    
     return(
         <>
-        <div className="container register">
-            <h3 className="register__title">ĐĂNG KÍ</h3>
-            <form onSubmit={handleSubmit} className="register__form">
-                <input type="email" name="email" placeholder="Email" required></input><br></br>
-                <input type="password" name="password" placeholder="Password" required></input><br></br>
-                <button className="button login__button">Đăng kí</button>
-            </form> 
+        <div className="container">
+            <div className="register">
+                <h3 className="register__title">Đăng ký</h3>
+                <form onSubmit={handleSubmit} className="register__form">
+                    <div className="register__email">
+                        <input type="email" name="email" placeholder="Email" required></input>
+                        <i class="fa-solid fa-user"></i>
+                    </div>   
+
+                    <div className="register__password">
+                        <input type="password" name="password" placeholder="Password" required></input>
+                        <i class="fa-solid fa-lock"></i>
+                    </div>                 
+
+                    <button className="button login__button">Đăng ký</button>
+                </form>
+            </div>
+            
         </div>
         </>
     )

@@ -1,11 +1,9 @@
-// import { useDispatch } from "react-redux";
-// import { addtoCart } from "../../actions/cart";
 
 function Item(props)
 {
-    const {item} = props; // 
-    // const discount = parseInt(item.discount).toFixed();
-    // const newPrice = (parseInt(item.price)*(100 - discount)/100).toFixed();    
+    const {item} = props; 
+    var newPrice = item.price * (100 - item.discount)/100;
+    var showPrice = (item.discount > 0) ? "showPrice" : "";
     return(
         <>
          <div className="product__item" key={item.id}>
@@ -14,11 +12,11 @@ function Item(props)
                     </div>
                     <div className="product__content">
                         <div className="product__title">{item.name}</div>
-                        <div className="product__new-price">{item.price}đ</div>
-                        {/* <div className="product__old-price">{item.price}$</div> */}
-                        {/* <div className="product__discount">{discount}%</div> */}
+                        <div className={`product__old-price ${showPrice}`}>{item.price.toLocaleString()}đ</div> 
+                        <div className="product__new-price">{newPrice.toLocaleString()}đ</div>
+                        <div className={`product__discount ${showPrice}`}>{item.discount}%</div>
                     </div>
-                </div>
+            </div>
         </>
     )
 

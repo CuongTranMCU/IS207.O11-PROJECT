@@ -1,0 +1,65 @@
+.login {
+    text-align: center; 
+    padding: 2%;
+    margin: 2% 20%;
+
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.login input {
+    padding: 20px 45px 20px 20px;
+}
+
+.login h3,.login input {
+    margin-bottom: 3%;
+}
+
+.login input, .login button {
+    width: 60%;
+    height: 40px;
+    border-radius: 40px;
+}
+
+.login div i.fa-user {
+    position: absolute;
+    top: 22%;
+    right: 24%;
+}
+
+.login div i.fa-lock {
+    position: absolute;
+    top: 23%;
+    right: 24%;
+}
+
+.login .login__email, .login .login__password {
+    position: relative;
+}
+
+.login .login__button {
+    border: none;
+    background-color: var(--color-green);
+    color: yellow;
+}
+
+.login .login__button:hover {
+    background-color: #5cd75c;
+}
+
+.login .login__forgotpass {
+    margin: 0 150px 5px 0;
+    text-align: end;
+    
+}
+
+
+.login .login__register {
+    margin-top: 5px;
+    color: black;
+}
+
+.login .login__register a, .login .login__forgotpass a {
+    color: black;
+    font-weight: bold;
+}
