@@ -50,6 +50,7 @@ function ListProduct()
               <button className="product__page__divider" onClick={handleDown}>-</button>
               <span>{page}</span>
               <button className="product__page__divider" onClick={handleUp}>+</button>
+
             </div>
         </div>
         </>

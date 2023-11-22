@@ -111,7 +111,9 @@ function Home(){
                         <a href='#' className="choice">Cây phong thủy</a>
                         <a href='#' className="choice">Cây thủy sinh</a>
                         <a href='#' className="choice">Cây để bàn</a>
-                        <p className="extent">+ Xem tất cả</p>                                                   
+                        <Link to={`/category/cay-canh-van-phong`} className="header__link" >
+                            <p className="extent">+ Xem tất cả</p>  
+                        </Link>                                                 
                     </div>
                 </div>
                 <hr />
@@ -135,7 +137,9 @@ function Home(){
                         <a href='#' className="choice">Chậu gốm</a>
                         <a href='#' className="choice">Chậu nhựa</a>
                         <a href='#' className="choice">Chậu thủy tinh</a>
-                        <p className="extent">+ Xem tất cả</p>                                                   
+                        <Link to={`/category/tieu-canh-terrarium`} className="header__link" >
+                        <p className="extent">+ Xem tất cả</p> 
+                        </Link>                                                  
                     </div>
                 </div>
                 <hr />
@@ -158,7 +162,9 @@ function Home(){
                         <a href='#' className="choice">Chậu đất nung</a>
                         <a href='#' className="choice">Chậu nhựa</a>
                         <a href='#' className="choice">Chậu thủy tinh</a>
-                        <p className="extent">+ Xem tất cả</p>                                                   
+                        <Link to={`/category/chau-cay-canh`} className="header__link" >
+                        <p className="extent">+ Xem tất cả</p> 
+                        </Link>                                                  
                     </div>
                 </div>
                 <hr />
@@ -177,8 +183,9 @@ function Home(){
                 <div className="ProductHeader">
                     <h3 className="type">SEN ĐÁ</h3>
                     <div className="anotherChoice">
-                        
-                        <p className="extent">+ Xem tất cả</p>                                                   
+                    <Link to={`/category/sen-da`} className="header__link" >
+                        <p className="extent">+ Xem tất cả</p>   
+                        </Link>                                                 
                     </div>
                 </div>
                 <hr />
@@ -197,8 +204,9 @@ function Home(){
                 <div className="ProductHeader">
                     <h3 className="type">XƯƠNG RỒNG</h3>
                     <div className="anotherChoice">
-                        
-                        <p className="extent">+ Xem tất cả</p>                                                   
+                    <Link to={`/category/xuong-rong`} className="header__link" >
+                        <p className="extent">+ Xem tất cả</p> 
+                        </Link>                                                  
                     </div>
                 </div>
                 <hr />
@@ -222,7 +230,9 @@ function Home(){
                         <a href='#' className="choice">Hoạt hình</a>
                         <a href='#' className="choice">Động vật</a>
                         <a href='#' className="choice">Kiến trúc</a>
-                        <p className="extent">+ Xem tất cả</p>                                                   
+                        <Link to={`/category/phu-kien-terrarium`} className="header__link" k>
+                        <p className="extent">+ Xem tất cả</p>    
+                        </Link>                                               
                     </div>
                 </div>
                 <hr />
