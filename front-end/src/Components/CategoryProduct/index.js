@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Item from "../ListProduct/Item"
 import "../ListProduct/styles.css"
+import "../ListProduct/styles.css"
 import { Link, useParams } from "react-router-dom";
 import { getListCategoryProduct } from "../../services/productServices";
 import { getListCategory } from "../../services/categoryServices";
@@ -54,10 +55,10 @@ function CategoryProduct(){
                 }
             </div>
             <div className="product__page">
-              <button onClick={handleDown}>-
+              <button className="product__page__divider" onClick={handleDown}>-
               </button>
               <span>{page}</span>
-              <button onClick={handleUp}>+
+              <button className="product__page__divider" onClick={handleUp}>+
               </button>
 
             </div>
