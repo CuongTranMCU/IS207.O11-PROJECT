@@ -1,0 +1,125 @@
+.HomeProduct{
+    margin-bottom:3vw;
+}
+.type{
+    font-size: 2vw;
+    color:var(--color-green);
+}
+.type:hover{
+    color:black;
+    cursor: pointer;
+}
+.choice{
+    font-size: 1.1vw;
+    margin-right: 20px;
+    padding-top: 2%;
+    color: black;
+}
+.choice:hover{
+    color:var(--color-green);
+    cursor: pointer;
+}
+.ProductHeader{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: -20px;
+}
+.extent{
+    color: white;
+    background-color: green;
+    padding:5px;
+    border-radius: 5px;
+    font-size: 1.2vw;
+
+}
+.extent:hover{
+    background-color:var(--color-green);
+    cursor: pointer;
+}
+.anotherChoice{
+    display: flex;
+}
+.HomePostContainer{
+    display: flex;
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+}
+.Home__link{
+    
+    width :23%
+}
+.Bestsell__link{
+    width: 32%;
+    margin-bottom: 1vw;
+}
+.HomePost{
+    /* justify-content: center; */
+    /* align-items: center; */
+    
+    flex-direction: column;
+    display: flex;
+    box-shadow: 2px 2px 20px #00000017;
+    width: 90%;
+    height: auto;
+    word-wrap:break-word;
+    margin-bottom: 1vw;
+
+}
+.HomePost:hover{
+    cursor: pointer;
+}
+.Postimgborder{
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.HomePostImg{
+    width: 100%;
+    height:100%;
+    transition: transform 500ms ease-in-out;
+}
+.HomePostImg:hover{
+    transform: scale(1.3);
+    transition: transform 500ms ease-in-out;
+    z-index: -1;
+}
+.PostContentContainer{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+    /* margin: 1vw; */
+    margin-bottom: 1.3vw;
+}
+.PostName{
+    color:var(--color-green);
+    font-size: 1.4vw;
+    text-align: center;
+
+}
+.PostPrice{
+    color: #f089ab;
+    font-size: 1.2vw;
+    display: flex;
+}
+.OldPrice{
+    text-decoration: line-through;
+    color: gray;
+
+}
+.TagSell{
+    background-color: green;
+    color:white;
+    position: absolute;
+    border-radius: 50%;
+    width: 4vw;
+    height: 4vw;
+    font-size: 1.2vw;
+    padding-top: 1vw;
+    margin: 0.5vw;
+    text-align: center;
+    z-index: 1;
+}
