@@ -48,7 +48,7 @@ function ProductDetail(){
                 
                 
 
-                <div className="detail__description">{/*{productDetail.content}*/}This is the content space for our products</div>
+                <div className="detail__description">{productDetail.content}</div>
                 <div className="detail__cart">
                     
                     <div className="detail__quantity">
