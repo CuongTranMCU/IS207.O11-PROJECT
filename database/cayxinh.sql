@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 19, 2023 at 05:03 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th10 27, 2023 lúc 12:47 PM
+-- Phiên bản máy phục vụ: 10.4.28-MariaDB
+-- Phiên bản PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `cayxinh`
+-- Cơ sở dữ liệu: `cayxinh`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admins`
+-- Cấu trúc bảng cho bảng `admins`
 --
 
 CREATE TABLE `admins` (
@@ -39,7 +39,7 @@ CREATE TABLE `admins` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `admins`
+-- Đang đổ dữ liệu cho bảng `admins`
 --
 
 INSERT INTO `admins` (`Admin_ID`, `Name`, `Email`, `Phone`, `Address`, `Created_at`, `Updated_at`, `Password`) VALUES
@@ -52,7 +52,7 @@ INSERT INTO `admins` (`Admin_ID`, `Name`, `Email`, `Phone`, `Address`, `Created_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `carts`
+-- Cấu trúc bảng cho bảng `carts`
 --
 
 CREATE TABLE `carts` (
@@ -70,7 +70,7 @@ CREATE TABLE `carts` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categories`
+-- Cấu trúc bảng cho bảng `categories`
 --
 
 CREATE TABLE `categories` (
@@ -82,7 +82,7 @@ CREATE TABLE `categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `categories`
+-- Đang đổ dữ liệu cho bảng `categories`
 --
 
 INSERT INTO `categories` (`Category_ID`, `Name`, `Slug`, `Created_at`, `Updated_at`) VALUES
@@ -97,7 +97,20 @@ INSERT INTO `categories` (`Category_ID`, `Name`, `Slug`, `Created_at`, `Updated_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `migrations`
+-- Cấu trúc bảng cho bảng `email_verify_tokens`
+--
+
+CREATE TABLE `email_verify_tokens` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `token` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '2023-11-25 22:13:53'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -107,18 +120,21 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `migrations`
+-- Đang đổ dữ liệu cho bảng `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '2014_10_12_100000_create_password_reset_tokens_table', 1),
 (2, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(3, '2023_11_14_012955_create_carts_table', 2);
+(3, '2023_11_14_012955_create_carts_table', 2),
+(4, '2023_11_26_043744_create_email_verify_tokens_table', 3),
+(5, '2023_11_26_044535_add_email_verified_at_to_users', 4),
+(6, '2023_11_26_051317_create_email_verify_tokens_table', 5);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `orders`
+-- Cấu trúc bảng cho bảng `orders`
 --
 
 CREATE TABLE `orders` (
@@ -132,25 +148,10 @@ CREATE TABLE `orders` (
   `Updated_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `orders`
---
-
-INSERT INTO `orders` (`Order_ID`, `Product_ID`, `Product_name`, `Product_price`, `Quantity`, `Transaction_ID`, `Created_at`, `Updated_at`) VALUES
-(3, 9, 'Chậu Gốm Nhật Vát Trắng Nhỏ', 35000, 2, 1, '2023-10-28 09:58:11', '2023-10-28 09:58:11'),
-(4, 10, 'Chậu Gốm Tròn Vát Đáy Đỏ', 50000, 1, 1, '2023-10-28 09:58:11', '2023-10-28 09:58:11'),
-(5, 5, 'Tiểu cảnh Thủy Tinh 18', 200000, 10, 2, '2023-10-28 10:01:33', '2023-10-28 10:01:33'),
-(6, 7, 'Tiểu cảnh gốm sứ 35', 350000, 2, 2, '2023-10-28 10:01:33', '2023-10-28 10:01:33'),
-(7, 8, 'Tranh Sen Đá 04', 350000, 2, 2, '2023-10-28 10:01:33', '2023-10-28 10:01:33'),
-(8, 1, 'Cây Ngọc Bích', 170000, 2, 3, '2023-10-28 10:03:50', '2023-10-28 10:03:50'),
-(9, 2, 'Cây Trầu Bà Đế Vương Đỏ', 220000, 2, 3, '2023-10-28 10:03:50', '2023-10-28 10:03:50'),
-(10, 3, 'Cây Vạn Lộc Thủy Sinh', 220000, 1, 4, '2023-10-28 10:06:01', '2023-10-28 10:06:01'),
-(11, 3, 'Cây Vạn Lộc Thủy Sinh', 220000, 10, 5, '2023-10-28 10:08:06', '2023-10-28 10:08:06');
-
 -- --------------------------------------------------------
 
 --
--- Table structure for table `password_reset_tokens`
+-- Cấu trúc bảng cho bảng `password_reset_tokens`
 --
 
 CREATE TABLE `password_reset_tokens` (
@@ -162,7 +163,7 @@ CREATE TABLE `password_reset_tokens` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `personal_access_tokens`
+-- Cấu trúc bảng cho bảng `personal_access_tokens`
 --
 
 CREATE TABLE `personal_access_tokens` (
@@ -179,7 +180,7 @@ CREATE TABLE `personal_access_tokens` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `personal_access_tokens`
+-- Đang đổ dữ liệu cho bảng `personal_access_tokens`
 --
 
 INSERT INTO `personal_access_tokens` (`id`, `tokenable_type`, `tokenable_id`, `name`, `token`, `abilities`, `last_used_at`, `expires_at`, `created_at`, `updated_at`) VALUES
@@ -188,7 +189,7 @@ INSERT INTO `personal_access_tokens` (`id`, `tokenable_type`, `tokenable_id`, `n
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Cấu trúc bảng cho bảng `products`
 --
 
 CREATE TABLE `products` (
@@ -207,7 +208,7 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `products`
+-- Đang đổ dữ liệu cho bảng `products`
 --
 
 INSERT INTO `products` (`Product_ID`, `Name`, `Price`, `Img_path`, `Content`, `Quantity`, `Sold`, `View`, `Discount`, `Created_at`, `Updated_at`, `Category_ID`) VALUES
@@ -297,7 +298,7 @@ INSERT INTO `products` (`Product_ID`, `Name`, `Price`, `Img_path`, `Content`, `Q
 -- --------------------------------------------------------
 
 --
--- Table structure for table `transactions`
+-- Cấu trúc bảng cho bảng `transactions`
 --
 
 CREATE TABLE `transactions` (
@@ -315,48 +316,44 @@ CREATE TABLE `transactions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `transactions`
+-- Đang đổ dữ liệu cho bảng `transactions`
 --
 
 INSERT INTO `transactions` (`Transaction_ID`, `User_ID`, `Name`, `Phone`, `Address`, `Status`, `Total_money`, `Payment_Method`, `Note`, `Created_at`, `Updated_at`) VALUES
-(1, 6, 'Lê Vy Thùy Uyên', '09125632187', 'Bình Thuận', 0, 120000, 0, 'Giao hàng sau 18h ', '2023-10-28 09:55:12', '2023-10-28 09:55:12'),
-(2, 5, 'Dan Hauer', '0512345678', 'Hà Nội', 0, 3400000, 0, 'Giao tới công ty vào giờ hành chính', '2023-10-28 09:56:29', '2023-10-28 09:56:29'),
-(3, 8, 'Đỗ Hùng Dũng', '0412356487', 'Hà Nội', 0, 780000, 0, '', '2023-10-28 09:57:02', '2023-10-28 09:57:02'),
-(4, 10, 'Trần Hưng Đạo', '0412345678', 'Cần Thơ', 0, 220000, 0, '', '2023-10-28 10:05:17', '2023-10-28 10:05:17'),
-(5, 9, 'Nguyễn Anh Thư', '081542367', 'Ninh Bình', 0, 2200000, 0, '', '2023-10-28 10:07:33', '2023-10-28 10:07:33');
+(1, 45, 'tung', '0336551596', 'KTX A', 9, 12000, 1, '', '2023-11-27 08:27:45', '2023-11-27 02:43:32');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Cấu trúc bảng cho bảng `users`
 --
 
 CREATE TABLE `users` (
   `User_ID` bigint(20) NOT NULL,
   `Email` varchar(50) NOT NULL,
-  `Password` varchar(50) NOT NULL,
+  `Password` varchar(100) NOT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
   `Created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `Updated_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `Updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `Name` varchar(100) DEFAULT NULL,
+  `Address` varchar(100) DEFAULT NULL,
+  `Phone` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `users`
+-- Đang đổ dữ liệu cho bảng `users`
 --
 
-INSERT INTO `users` (`User_ID`, `Email`, `Password`, `Created_at`, `Updated_at`) VALUES
-(5, 'kaxaka1547@undewp.com', 'user', '2023-10-28 09:17:57', '2023-10-28 09:17:57'),
-(6, 'levythuyuyen@gmail.com', 'user', '2023-10-28 09:19:35', '2023-10-28 09:19:35'),
-(7, 'trananhkiet@gmail.com', 'user', '2023-10-28 09:20:20', '2023-10-28 09:20:20'),
-(8, 'dohungdung@gmail.com', 'user', '2023-10-28 09:20:20', '2023-10-28 09:20:20'),
-(9, 'nguyenanhthu@gmail.com', 'user', '2023-10-28 09:21:24', '2023-10-28 09:21:24'),
-(10, 'tranhungdao@gmail.com', 'user', '2023-10-28 09:21:24', '2023-10-28 09:21:24');
+INSERT INTO `users` (`User_ID`, `Email`, `Password`, `email_verified_at`, `Created_at`, `Updated_at`, `Name`, `Address`, `Phone`) VALUES
+(45, 'tung@gmail.com', '$2y$12$tvAZtwkKfmyB.cK7MwA8geejBQjEmyx699qk/ObfdIj6ghiF2nZTq', '2023-11-27 01:26:54', '2023-11-27 08:26:54', '2023-11-27 01:26:54', NULL, NULL, NULL),
+(47, 'tung123@gmail.com', '$2y$12$eMl36oTzQ2t2U132KouefeGUkpav/kl7g57mYiz6d/82EcgSIxNp2', '2023-11-27 02:06:22', '2023-11-27 09:06:22', '2023-11-27 02:06:22', NULL, NULL, NULL);
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `admins`
+-- Chỉ mục cho bảng `admins`
 --
 ALTER TABLE `admins`
   ADD PRIMARY KEY (`Admin_ID`),
@@ -364,7 +361,7 @@ ALTER TABLE `admins`
   ADD UNIQUE KEY `Phone` (`Phone`);
 
 --
--- Indexes for table `carts`
+-- Chỉ mục cho bảng `carts`
 --
 ALTER TABLE `carts`
   ADD PRIMARY KEY (`id`),
@@ -372,19 +369,25 @@ ALTER TABLE `carts`
   ADD KEY `Product_ID` (`Product_ID`);
 
 --
--- Indexes for table `categories`
+-- Chỉ mục cho bảng `categories`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`Category_ID`);
 
 --
--- Indexes for table `migrations`
+-- Chỉ mục cho bảng `email_verify_tokens`
+--
+ALTER TABLE `email_verify_tokens`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `orders`
+-- Chỉ mục cho bảng `orders`
 --
 ALTER TABLE `orders`
   ADD PRIMARY KEY (`Order_ID`),
@@ -392,13 +395,13 @@ ALTER TABLE `orders`
   ADD KEY `Order-Transactions` (`Transaction_ID`);
 
 --
--- Indexes for table `password_reset_tokens`
+-- Chỉ mục cho bảng `password_reset_tokens`
 --
 ALTER TABLE `password_reset_tokens`
   ADD PRIMARY KEY (`email`);
 
 --
--- Indexes for table `personal_access_tokens`
+-- Chỉ mục cho bảng `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   ADD PRIMARY KEY (`id`),
@@ -406,110 +409,116 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
--- Indexes for table `products`
+-- Chỉ mục cho bảng `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`Product_ID`),
   ADD KEY `Categories-Products` (`Category_ID`);
 
 --
--- Indexes for table `transactions`
+-- Chỉ mục cho bảng `transactions`
 --
 ALTER TABLE `transactions`
   ADD PRIMARY KEY (`Transaction_ID`),
   ADD KEY `Users-Transactions` (`User_ID`);
 
 --
--- Indexes for table `users`
+-- Chỉ mục cho bảng `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`User_ID`),
   ADD UNIQUE KEY `Email` (`Email`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `admins`
+-- AUTO_INCREMENT cho bảng `admins`
 --
 ALTER TABLE `admins`
   MODIFY `Admin_ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT for table `carts`
+-- AUTO_INCREMENT cho bảng `carts`
 --
 ALTER TABLE `carts`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `categories`
+-- AUTO_INCREMENT cho bảng `categories`
 --
 ALTER TABLE `categories`
   MODIFY `Category_ID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
--- AUTO_INCREMENT for table `migrations`
+-- AUTO_INCREMENT cho bảng `email_verify_tokens`
 --
-ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE `email_verify_tokens`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `orders`
+-- AUTO_INCREMENT cho bảng `migrations`
+--
+ALTER TABLE `migrations`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
   MODIFY `Order_ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT for table `personal_access_tokens`
+-- AUTO_INCREMENT cho bảng `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 
 --
--- AUTO_INCREMENT for table `products`
+-- AUTO_INCREMENT cho bảng `products`
 --
 ALTER TABLE `products`
   MODIFY `Product_ID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 
 --
--- AUTO_INCREMENT for table `transactions`
+-- AUTO_INCREMENT cho bảng `transactions`
 --
 ALTER TABLE `transactions`
   MODIFY `Transaction_ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `User_ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `User_ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
--- Constraints for dumped tables
+-- Các ràng buộc cho các bảng đã đổ
 --
 
 --
--- Constraints for table `carts`
+-- Các ràng buộc cho bảng `carts`
 --
 ALTER TABLE `carts`
   ADD CONSTRAINT `carts_ibfk_3` FOREIGN KEY (`User_ID`) REFERENCES `users` (`User_ID`),
   ADD CONSTRAINT `carts_ibfk_4` FOREIGN KEY (`Product_ID`) REFERENCES `products` (`Product_ID`);
 
 --
--- Constraints for table `orders`
+-- Các ràng buộc cho bảng `orders`
 --
 ALTER TABLE `orders`
   ADD CONSTRAINT `Order-Products` FOREIGN KEY (`Product_ID`) REFERENCES `products` (`Product_ID`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `Order-Transactions` FOREIGN KEY (`Transaction_ID`) REFERENCES `transactions` (`Transaction_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `products`
+-- Các ràng buộc cho bảng `products`
 --
 ALTER TABLE `products`
-  ADD CONSTRAINT `Categories-Products` FOREIGN KEY (`Category_ID`) REFERENCES `categories` (`Category_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `Categories-Products` FOREIGN KEY (`Category_ID`) REFERENCES `categories` (`Category_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `transactions`
+-- Các ràng buộc cho bảng `transactions`
 --
 ALTER TABLE `transactions`
   ADD CONSTRAINT `Users-Transactions` FOREIGN KEY (`User_ID`) REFERENCES `users` (`User_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
