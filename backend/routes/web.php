@@ -24,8 +24,12 @@ use Illuminate\Support\Facades\Route;
     Route::post('login', [App\Http\Controllers\User\UserAuth::class, 'postLogin'])->name('user.login');
     Route::get('logout', [App\Http\Controllers\User\UserAuth::class, 'postLogout'])->name('user.logout');
     Route::get('admin/login', [App\Http\Controllers\Admin\AdminAuth::class, 'getLogin'])->name('admin.preparelogin');
-Route::post('admin/login', [App\Http\Controllers\Admin\AdminAuth::class, 'postLogin'])->name('admin.login');
-Route::get('admin/logout', [App\Http\Controllers\Admin\AdminAuth::class, 'postLogout'])->name('admin.logout');
-   
+    Route::post('admin/login', [App\Http\Controllers\Admin\AdminAuth::class, 'postLogin'])->name('admin.login');
+    Route::get('admin/logout', [App\Http\Controllers\Admin\AdminAuth::class, 'postLogout'])->name('admin.logout');
+    Route::post('/forget-password', [App\Http\Controllers\Api\ForgetPasswordController::class, 'postForgetPassword']);  //Đồng thời gủi mail cho users gồm token và email.  
+    //Route::get('/forget-password/{token}',  [App\Http\Controllers\Api\ForgetPasswordController::class, 'getResetPassword'])->name('reset.password');
+    Route::post('/reset-password', [App\Http\Controllers\Api\ForgetPasswordController::class, 'postResetPassword']);  //FE post new password được nhập vào và email, token có trên url.
+    Route::get('/verify-email',[App\Http\Controllers\User\UserAuth::class, 'completeRegister'] )->name('verify.email');
+    Route::get('/payment/complete/{transactionId}', [App\Http\Controllers\Api\PaymentController::class, 'complete_momo'])->name('payment.complete');
     
 
