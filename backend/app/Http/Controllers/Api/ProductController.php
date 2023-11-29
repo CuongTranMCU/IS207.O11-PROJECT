@@ -27,7 +27,6 @@ class ProductController extends Controller
          $filter = new ProductQuery();
          $query = $filter->transform($request);
          $orderBy = $request->query('orderBy');
-         $categoryId = $request->query('categoryId');
          $search = $request->query('search');
      
          // Call the parseOrderBy method to get the column and direction
@@ -35,10 +34,6 @@ class ProductController extends Controller
      
          // Use the orderBy method to apply sorting
          $products = Product::where($query);
-     
-         if ($categoryId !== null) {
-             $products->where('Category_ID', $request->categoryId);
-         }
      
          if ($search !== null) {
              $products->where(function ($query) use ($search) {

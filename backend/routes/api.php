@@ -65,15 +65,9 @@ Route::post('orders/bulk', [App\Http\Controllers\Api\OrderController::class, 'bu
 Route::patch('orders/{id}', [App\Http\Controllers\Api\OrderController::class, 'update'])->middleware('auth:sanctum', 'ability:user'); 
 Route::delete('orders/{id}', [App\Http\Controllers\Api\OrderController::class, 'destroy'])->middleware('auth:sanctum', 'ability:user');
 
-//reset password
-//Route::post('/forget-password', [App\Http\Controllers\Api\ForgetPasswordController::class, 'forgetPasswordPost']);  //Đồng thời gủi mail cho users gồm token và email.  
-//Route::get('/forget-password/{token}',  [App\Http\Controllers\Api\ForgetPasswordController::class, 'getResetPassword'])->name('reset.password');
-//Route::post('/foreget-password/{token}', [App\Http\Controllers\Api\ForgetPasswordController::class, 'postResetPassword']);  //FE post new password được nhập vào và email, token có trên url.
-
-
-
-//route cho admin
-
+//Payment method
+Route::post('payment_momo', [App\Http\Controllers\Api\PaymentController::class, 'payment_momo']);
+Route::post('payment_cod', [App\Http\Controllers\Api\PaymentController::class, 'payment_cod']);
 
 //Route::get('home', [App\Http\Controllers\Admin\AdminAuth::class, 'index'])->name('admin.home')->middleware(['auth:sanctum' , 'ability:admin']);
 

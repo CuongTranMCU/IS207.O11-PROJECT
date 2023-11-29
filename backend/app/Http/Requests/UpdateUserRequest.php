@@ -26,7 +26,7 @@ class UpdateUserRequest extends FormRequest
             'email' => 'sometimes|required|unique:users,email',
             'password'=>'sometimes|required',
             'address'=>'sometimes|required',
-            'phone'=>['sometimes','required'],
+            'phone'=>'sometimes|required',
             'name'=>'sometimes|required'
         ];
     }
