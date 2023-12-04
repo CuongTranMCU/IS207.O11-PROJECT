@@ -51,7 +51,8 @@ function ProductDetail(){
             productPrice : newPrice,
             quantity : quantity,
             userId : parseInt(getCookie("userId")),
-            status : 0
+            status : 0,
+            imgPath: productDetail.imgPath
 
         }
         console.log(cart);

@@ -39,9 +39,9 @@ function ListCart()
                                 //  const newPrice = (it.item.price*(100-discount)/100).toFixed(0);
                                  return (
                                     <div className="cart__item" key={it.productId}>
-                                       {/* <div className="cart__image">
-                                           <img src={it.item.imgPath} alt={it.item.productName}></img>
-                                       </div> */}
+                                       <div className="cart__image">
+                                           <img src={it.imgPath} alt={it.productName}></img>
+                                       </div>
                                        <div className="cart__content">
                                            <div className="cart__title">{it.productName}</div>
                                            <div className="cart__new-price">{it.productPrice}đ</div>

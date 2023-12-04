@@ -87,6 +87,7 @@ class CartController extends Controller
                 'Quantity' => $jsonDataForCart['quantity'] ?? null,
                 'User_ID' => $jsonDataForCart['userId'] ?? null,
                 'Status' => $jsonDataForCart['status'] ?? null,
+                'Img_path'=> $jsonDataForCart['imgPath'] ?? null
             ]);
 
             // Cập nhật bản ghi chỉ với các trường có giá trị
