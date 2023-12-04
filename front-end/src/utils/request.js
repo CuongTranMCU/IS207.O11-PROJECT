@@ -15,6 +15,7 @@ export const post=async(item,path)=>
     const response = await fetch(DOMAIN+path,{
             method:"POST",
             headers:{
+                "Accept": 'application/json',
                 "Content-Type":"application/json",
                 "Authorization": `Bearer ${getCookie("token")}`
             },
@@ -29,7 +30,7 @@ export const patch=async(item,id,path)=>
             {
             method:"PATCH",
             headers:{
-                Accept: 'application/json',
+                "Accept": 'application/json',
                 "Content-Type":"application/json",
                 "Authorization": `Bearer ${getCookie("token")}`
             },

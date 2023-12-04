@@ -11,6 +11,7 @@ import "./footer.css"
 import { getCookie } from "../../helpers/cookie";
 import { useEffect, useState } from "react";
 import { getListCategory } from "../../services/categoryServices";
+import Search from "../../Components/Search";
 function LayoutDefaultHome() {
     // const cart=useSelector(state=>state.cartReducer);
     // const total=cart.reduce((sum,item)=>{
@@ -45,12 +46,8 @@ function LayoutDefaultHome() {
               <img src= {logo}  alt={"logo"} />
             </Link>
             </div>
-            <div className="header__search">
-              <input type="text" placeholder="Tìm kiếm sản phẩm" />
-              <div className="header__button">
-                <i className="fa-solid fa-magnifying-glass"></i>
-              </div>
-            </div>
+              <Search></Search>
+            
             <div className="header__contact">
               <div className="header__icon">
                 <i className="fa-solid fa-phone"></i>

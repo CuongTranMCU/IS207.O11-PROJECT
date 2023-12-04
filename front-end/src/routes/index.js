@@ -19,6 +19,9 @@ import RecruitmentPage from "../pages/RecruitmentPage";
 import WholesalePage from "../pages/WholesalePage";
 import GuidePage from "../pages/GuidePage";
 import AddressPage from "../pages/AddressPage";
+import SearchProduct from "../Components/SearchProduct";
+import FilterProduct from "../Components/FilterProduct";
+import ListProduct from "../Components/ListProduct/ListProduct";
 export const routes = [
 {
     path : "/",
@@ -46,7 +49,7 @@ export const routes = [
         },
         {
             path: "products",
-            element:<ProductPage></ProductPage>
+            element:<ListProduct></ListProduct>
         },
         {
             path:"product/:slug",
@@ -59,6 +62,14 @@ export const routes = [
         {
             path : "Knowledge",
             element: <KnowledgePage></KnowledgePage>
+        },
+        {
+            path:"products/search?",
+            element:<SearchProduct></SearchProduct>
+        },
+        {
+            path:"products/filter?",
+            element:<FilterProduct></FilterProduct>
         },
         {
             path : "Guide",

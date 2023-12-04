@@ -18,5 +18,13 @@ export const getListCategory=()=>
 }
 export const getListCategoryProduct=(categoryId)=>
 {
-    return get(`/api/products?categoryId=${categoryId}`);
+    return get(`/api/products?categoryId[eq]=${categoryId}`);
+}
+export const getSearchProduct=(search,page)=>
+{
+    return get(`/api/products?search=${search}&page=${page}`);
+}
+export const getFilterProduct=(order,filter,page)=>
+{
+    return get(`/api/products?orderBy=${order}&page=${page}&${filter}`)
 }

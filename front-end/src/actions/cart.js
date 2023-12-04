@@ -1,8 +1,9 @@
-export const addtoCart =(id,item)=>
+export const addtoCart =(id,item,quantity)=>
 {
     return{
         type:"ADD",
         id : id,
-        item: item
+        item: item,
+        quantity: quantity
     }
 }

@@ -26,9 +26,11 @@ function Login(){
             alert("Đăng nhập thành công");
             const email = user.email;
             const token = data.token;
+            const userId = data.userId;
             const exDays= 2;
             setCookie("email",email,exDays);
             setCookie("token",token,exDays);
+            setCookie("userId",userId);
             dispatch(authen(true));
             navigate("/");
         }

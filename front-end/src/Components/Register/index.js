@@ -15,16 +15,16 @@ function Register(){
             console.log(newAccount);
             // 
             const response = await createAccount(newAccount);
-
             console.log(response);
-            if(response.message.length >0)
+            if(response.message === "Please verify email")
             {
-                alert("Đăng kí thành công, vui lòng đăng nhập");
-                navigate("/login");
+                alert("Xác nhận email");
+                window.location.href = "https://mailtrap.io/inboxes/2509964/messages";
             }
             else
             {
-                alert("Đăng kí thất bại");
+                alert("Đăng kí thất bại: Email đã tồn tại");
+                navigate("/sign-up");
             }
         // }
     }

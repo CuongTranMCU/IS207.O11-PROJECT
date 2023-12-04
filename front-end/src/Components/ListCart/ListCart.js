@@ -1,13 +1,26 @@
 import { useSelector } from "react-redux";
 import "./styles.css"
+import { useEffect, useState } from "react";
+import { getCookie } from "../../helpers/cookie";
+import { getListCartByUserId } from "../../services/cartService";
 function ListCart()
 {
-    const cart = useSelector(state =>state.cartReducer);
+    const [cart,setCart]= useState([]);
+    useEffect(()=>
+    {
+        const fetchApi = async ()=>
+        {
+            const userId = parseInt(getCookie("userId"));
+            const data = await getListCartByUserId(userId);
+            setCart(data.data);
+        }
+        fetchApi();
+    },[]);
     const total = cart.reduce((total,it ) =>
     {
         // const discount=parseInt(it.item.discountPercentage).toFixed(0);
         // const newPrice = (it.item.price*(100-discount)/100).toFixed(0);
-        return total + it.item.price*it.quantity;
+        return total + it.productPrice*it.quantity;
     },0)
     return(
         <>
@@ -25,14 +38,13 @@ function ListCart()
                                 // const discount=parseInt(it.item.discountPercentage).toFixed(0);
                                 //  const newPrice = (it.item.price*(100-discount)/100).toFixed(0);
                                  return (
-                                    <div className="cart__item" key={it.id}>
-                                       <div className="cart__image">
-                                           <img src={it.item.imgPath} alt={it.item.name}></img>
-                                       </div>
+                                    <div className="cart__item" key={it.productId}>
+                                       {/* <div className="cart__image">
+                                           <img src={it.item.imgPath} alt={it.item.productName}></img>
+                                       </div> */}
                                        <div className="cart__content">
-                                           <div className="cart__title">{it.item.name}</div>
-                                           <div className="cart__new-price">{it.item.price}$</div>
-                                           {/* <div className="cart__old-price">{it.item.price}$</div> */}
+                                           <div className="cart__title">{it.productName}</div>
+                                           <div className="cart__new-price">{it.productPrice}đ</div>
                                        </div>
                                        <div className="cart__adjust">
                                            <div className="cart__updown">
