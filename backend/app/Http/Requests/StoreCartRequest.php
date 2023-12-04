@@ -27,7 +27,8 @@ class StoreCartRequest extends FormRequest
             'productPrice'=>['required'],
             'quantity'=>['required'],
             'userId'=>['required'],
-            'status'=>['required']
+            'status'=>['required'],
+            'imgPath'=>['required']
         ];
     }
     public function prepareForValidation(){
@@ -37,7 +38,8 @@ class StoreCartRequest extends FormRequest
             'Product_price'=>$this->productPrice,
             'Quantity'=>$this->quantity,
             'User_ID'=>$this->userId,
-            'Status'=>$this->status
+            'Status'=>$this->status,
+            'Img_path'=>$this->imgPath
         ]);
     }
 }
