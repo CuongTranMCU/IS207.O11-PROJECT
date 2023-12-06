@@ -30,7 +30,7 @@ function Login(){
             const exDays= 2;
             setCookie("email",email,exDays);
             setCookie("token",token,exDays);
-            setCookie("userId",userId);
+            setCookie("userId",userId,exDays);
             dispatch(authen(true));
             navigate("/");
         }

@@ -4,9 +4,12 @@ import { getListProductPage } from "../../services/productServices";
 import "./styles.css"
 import { getCookie } from "../../helpers/cookie";
 import { createNewCart } from "../../services/cartService";
+import { useDispatch } from "react-redux";
+import { addtoCart } from "../../actions/cart";
 function ProductDetail(){
     const {slug} = useParams();
     const location= useLocation();
+    const dispatch = useDispatch();
     const page = location.state.page;
     const [productDetail,setProductDetail]= useState([]);
     const[quantity,setQuantity] = useState(1);
@@ -51,13 +54,13 @@ function ProductDetail(){
             productPrice : newPrice,
             quantity : quantity,
             userId : parseInt(getCookie("userId")),
-            status : 0,
+            status : 2,
             imgPath: productDetail.imgPath
-
         }
         console.log(cart);
         const data=  await createNewCart(cart);
         console.log(data);
+        dispatch(addtoCart(true));
 
     }
     return(

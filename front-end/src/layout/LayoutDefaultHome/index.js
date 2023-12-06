@@ -13,12 +13,12 @@ import { useEffect, useState } from "react";
 import { getListCategory } from "../../services/categoryServices";
 import Search from "../../Components/Search";
 function LayoutDefaultHome() {
-    // const cart=useSelector(state=>state.cartReducer);
-    // const total=cart.reduce((sum,item)=>{
-    //   return sum + item.quantity;
-    // },0);
+    const cart= useSelector(state=>state.cartReducer);
+    const total=cart.reduce((sum,item)=>{
+      return sum + item.quantity;
+    },0);
     const token = getCookie("token");
-    const auth = useSelector(state =>state.authenReducer); 
+    const auth = useSelector(state =>state.authenReducer);
     var categoryId;
     const [category,SetCategory] = useState([]);
     // khi giá trị auth thay đổi thì tự động reload lại trang.,tại khi đăng nhập hay đăng xuất đã gửi 1 dispatch true/false 
@@ -135,8 +135,8 @@ function LayoutDefaultHome() {
                   <Link to ="/cart" className="header__link">
                     <div className="header__box header__cart">
                   
-                    <div className="header__text">Giỏ hàng</div>
-                      <div className="header__icon"><i className="fa-solid fa-cart-plus"></i></div>
+                    <div className="header__text">Giỏ hàng({total})</div>
+                      <div className="header__icon"><i className="fa-solid fa-cart-plus"></i>  </div>
                     </div>
                   </Link>
              

@@ -88,15 +88,14 @@ class PaymentController extends Controller
         if(!$transacion) return response()->json(['message'=>'Not found'], 404);
         $transacion->Status = 1; // Status khi đã thanh toán cod
         $transacion->save();
-        return redirect('https://example.com');     //page muốn hiện sau khi thanh toán
+        return response()->json(['message'=>'http://localhost:3000/cart'], 200);     //page muốn hiện sau khi thanh toán
     }
-
     public function complete_momo($transactionId){
         $transaction = Transaction::where('Transaction_ID', $transactionId)->first();
         if($transaction){
             $transaction->Status = 9;   // Status khi đã thanh toán momo
             $transaction->save();
-            return redirect('https://example.com');     //page muốn hiện sau khi thanh toán
+            return redirect('http://localhost:3000/login');     //page muốn hiện sau khi thanh toán
         }
         else return response()->json(['message'=>'Not found'], 404);
     }

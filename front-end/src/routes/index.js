@@ -22,6 +22,7 @@ import AddressPage from "../pages/AddressPage";
 import SearchProduct from "../Components/SearchProduct";
 import FilterProduct from "../Components/FilterProduct";
 import ListProduct from "../Components/ListProduct/ListProduct";
+import ConfirmOrder from "../Components/ConfirmOrder";
 export const routes = [
 {
     path : "/",
@@ -66,6 +67,10 @@ export const routes = [
         {
             path:"products/search?",
             element:<SearchProduct></SearchProduct>
+        },
+        {
+            path:"confirm-order?",
+            element:<ConfirmOrder></ConfirmOrder>
         },
         {
             path:"products/filter?",
