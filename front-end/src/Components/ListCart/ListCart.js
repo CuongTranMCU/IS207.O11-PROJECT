@@ -121,7 +121,7 @@ function ListCart()
             name: name,
             phone: phone,
             address: address,
-            status: 1
+            status: 0
         }
         console.log(transaction);
         const data = await createTransaction(transaction);

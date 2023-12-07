@@ -1,7 +1,7 @@
-export const addtoCart =(isAdd)=>
+export const addtoCart =(length)=>
 {
     return{
         type:"ADD",
-        isAdd:isAdd
+        length: length
     }
 }

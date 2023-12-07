@@ -1,17 +1,17 @@
-export const cartReducer =(state = [] ,action)=>
-{    const newState=[...state];
-
+const initialState = {
+    cartLength: 0
+  };
+export const cartReducer = (state = initialState ,action)=>
+{   
     switch(action.type)
     {
         case "ADD":
-            return [
-                ...newState,
-                {
-                        quantity:1
-                }
-            ]
+        return {
+            ...state,
+            cartLength: action.length
+          };
         default:
-            return state;
+          return state;
             
     }
 }

@@ -3,7 +3,7 @@ import { useLocation, useParams } from "react-router-dom";
 import { getListProductPage } from "../../services/productServices";
 import "./styles.css"
 import { getCookie } from "../../helpers/cookie";
-import { createNewCart } from "../../services/cartService";
+import { createNewCart, getListCartByUserId } from "../../services/cartService";
 import { useDispatch } from "react-redux";
 import { addtoCart } from "../../actions/cart";
 function ProductDetail(){
@@ -60,8 +60,8 @@ function ProductDetail(){
         console.log(cart);
         const data=  await createNewCart(cart);
         console.log(data);
-        dispatch(addtoCart(true));
-
+        const data1 = await getListCartByUserId(getCookie("userId"));
+        dispatch(addtoCart(data1.data.length));
     }
     return(
         <>
