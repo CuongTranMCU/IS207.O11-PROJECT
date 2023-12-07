@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 04, 2023 lúc 01:35 PM
+-- Thời gian đã tạo: Th12 07, 2023 lúc 04:36 PM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -146,7 +146,8 @@ CREATE TABLE `orders` (
   `Quantity` int(20) NOT NULL,
   `Transaction_ID` bigint(20) NOT NULL,
   `Created_at` timestamp NULL DEFAULT current_timestamp(),
-  `Updated_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `Updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `Img_path` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -185,7 +186,9 @@ CREATE TABLE `personal_access_tokens` (
 --
 
 INSERT INTO `personal_access_tokens` (`id`, `tokenable_type`, `tokenable_id`, `name`, `token`, `abilities`, `last_used_at`, `expires_at`, `created_at`, `updated_at`) VALUES
-(76, 'App\\Models\\User', 34, 'userToken', 'f32ff7ee30092f0b19bd00170c84f7898d0d8769377b16a95fbee198f54efdf9', '[\"user\"]', '2023-11-14 07:37:31', NULL, '2023-11-14 07:16:07', '2023-11-14 07:37:31');
+(76, 'App\\Models\\User', 34, 'userToken', 'f32ff7ee30092f0b19bd00170c84f7898d0d8769377b16a95fbee198f54efdf9', '[\"user\"]', '2023-11-14 07:37:31', NULL, '2023-11-14 07:16:07', '2023-11-14 07:37:31'),
+(82, 'App\\Models\\User', 45, 'userToken', '86c5126b067b6bc6775aaf08f4231a099f21dbfc46bc2a887ef7982e86da3675', '[\"user\"]', '2023-12-07 08:32:36', NULL, '2023-12-04 05:43:01', '2023-12-07 08:32:36'),
+(83, 'App\\Models\\User', 45, 'userToken', '687a74f3825835a0b37c0731e9813fc337fc7dfa52005af4be3f31768964d70a', '[\"user\"]', '2023-12-07 08:34:29', NULL, '2023-12-07 06:52:41', '2023-12-07 08:34:29');
 
 -- --------------------------------------------------------
 
@@ -317,13 +320,6 @@ CREATE TABLE `transactions` (
   `Updated_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Đang đổ dữ liệu cho bảng `transactions`
---
-
-INSERT INTO `transactions` (`Transaction_ID`, `User_ID`, `Name`, `Phone`, `Address`, `Status`, `Total_money`, `Payment_Method`, `Note`, `Created_at`, `Updated_at`) VALUES
-(1, 45, 'tung', '0336551596', 'KTX A', 9, 12000, 1, '', '2023-11-27 08:27:45', '2023-11-27 02:43:32');
-
 -- --------------------------------------------------------
 
 --
@@ -445,7 +441,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT cho bảng `carts`
 --
 ALTER TABLE `carts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `categories`
@@ -469,13 +465,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `Order_ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `Order_ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT cho bảng `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
 
 --
 -- AUTO_INCREMENT cho bảng `products`

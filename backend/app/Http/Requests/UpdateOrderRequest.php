@@ -27,6 +27,7 @@ class UpdateOrderRequest extends FormRequest
             'productPrice'=>['sometimes','required'],
             'quantity'=>['sometimes','required'],
             'transactionId'=>['sometimes','required'],
+            'imgPath'=>['sometimes','required'],
         ];
     }
     public function prepareForValidation(){
@@ -35,5 +36,6 @@ class UpdateOrderRequest extends FormRequest
         if($this->productPrice) $this->merge(['Product_price' => $this->productPrice]); 
         if($this->quantity) $this->merge(['Quantity' => $this->quantity]);
         if($this->transactionId) $this->merge(['Transaction_ID' => $this->transactionId]);
+        if($this->imgPath) $this->merge(['Img_path' => $this->imgPath]);
     }
 }
