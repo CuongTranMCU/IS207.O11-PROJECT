@@ -53,15 +53,15 @@ Route::delete('cart/destroy/{id}', [App\Http\Controllers\Api\CartController::cla
 Route::delete('cart/bulkdestroy', [App\Http\Controllers\Api\CartController::class, 'bulkDestroy'])->middleware('auth:sanctum', 'ability:user');
 
 //làm filter cho transaction
-Route::patch('transactions/{transactionId}', [App\Http\Controllers\Api\TransactionController::class, 'update'])->middleware('auth:sanctum', 'ability:user');   //cập nhập status của transaction
-Route::get('transactions/{transactionId}', [App\Http\Controllers\Api\TransactionController::class, 'show'])->middleware('auth:sanctum', 'ability:user');    //xem 1 transaction của user
-Route::get('user/{userId}/transactions', [App\Http\Controllers\Api\TransactionController::class, 'index'])->middleware('auth:sanctum', 'ability:user');                    //xem tất cả transaction của user
-Route::post('transactions',[App\Http\Controllers\Api\TransactionController::class, 'create'])->middleware('auth:sanctum', 'ability:user');   // Tạo transaction rỗng
-Route::delete('transactions/{id}', [App\Http\Controllers\Api\TransactionController::class, 'destroy'])->middleware('auth:sanctum', 'ability:user');   // Tạo transaction rỗng)
+Route::patch('transactions/{transactionId}', [App\Http\Controllers\Api\TransactionController::class, 'update'])->middleware('auth:sanctum', 'ability:user');   
+Route::get('transactions/{transactionId}', [App\Http\Controllers\Api\TransactionController::class, 'show'])->middleware('auth:sanctum', 'ability:user');    
+Route::get('user/{userId}/transactions', [App\Http\Controllers\Api\TransactionController::class, 'index'])->middleware('auth:sanctum', 'ability:user');                    
+Route::post('transactions',[App\Http\Controllers\Api\TransactionController::class, 'create'])->middleware('auth:sanctum', 'ability:user');   
+Route::delete('transactions/{id}', [App\Http\Controllers\Api\TransactionController::class, 'destroy'])->middleware('auth:sanctum', 'ability:user');  
 
-Route::get('orders', [App\Http\Controllers\Api\OrderController::class, 'index'])->middleware('auth:sanctum', 'ability:admin');   // Tạo transaction rỗng)
-Route::get('orders/{id}', [App\Http\Controllers\Api\OrderController::class, 'show'])->middleware('auth:sanctum', 'ability:user');   // Tạo transaction rỗng)
-Route::post('orders/bulk', [App\Http\Controllers\Api\OrderController::class, 'bulkStore'])->middleware('auth:sanctum', 'ability:user');   // Tạo transaction rỗng))
+Route::get('orders', [App\Http\Controllers\Api\OrderController::class, 'index'])->middleware('auth:sanctum', 'ability:user');   
+Route::get('orders/{id}', [App\Http\Controllers\Api\OrderController::class, 'show'])->middleware('auth:sanctum', 'ability:user');   
+Route::post('orders/bulk', [App\Http\Controllers\Api\OrderController::class, 'bulkStore'])->middleware('auth:sanctum', 'ability:user');  
 Route::patch('orders/{id}', [App\Http\Controllers\Api\OrderController::class, 'update'])->middleware('auth:sanctum', 'ability:user'); 
 Route::delete('orders/{id}', [App\Http\Controllers\Api\OrderController::class, 'destroy'])->middleware('auth:sanctum', 'ability:user');
 
