@@ -78,7 +78,10 @@ class CategoryController extends Controller
     $category = Category::where('Category_ID', $id)->first();
 
     if ($category) {
-        $category->update($request->all());
+        $data = array_filter($request->all(), function ($value) {
+            return $value !== null && $value !== '';
+        });
+        $category->update($data);
         return response()->json(['message' => 'Success']);
     } else {
         return response()->json(['message' => 'Not found'], 404);

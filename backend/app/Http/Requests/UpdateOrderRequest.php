@@ -22,12 +22,12 @@ class UpdateOrderRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'productId'=>['sometimes','required'],
-            'productName'=>['sometimes','required'],
-            'productPrice'=>['sometimes','required'],
-            'quantity'=>['sometimes','required'],
-            'transactionId'=>['sometimes','required'],
-            'imgPath'=>['sometimes','required'],
+            'productId'=>['sometimes'],
+            'productName'=>['sometimes'],
+            'productPrice'=>['sometimes'],
+            'quantity'=>['sometimes'],
+            'transactionId'=>['sometimes'],
+            'imgPath'=>['sometimes'],
         ];
     }
     public function prepareForValidation(){

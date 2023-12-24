@@ -32,8 +32,8 @@ class UpdateCategoryRequest extends FormRequest
                 ];  
         } else if($method == 'PATCH'){
             return [
-                'name' => ['sometimes', 'required'],
-                'slug' =>['sometimes','required']
+                'name' => ['sometimes'],
+                'slug' =>['sometimes']
                 ];
         }
     }

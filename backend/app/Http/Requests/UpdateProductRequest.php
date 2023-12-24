@@ -28,22 +28,26 @@ class UpdateProductRequest extends FormRequest
                 'name'=>['required'],
                 'price'=>['required'],
                 'imgPath'=>['required'],
-                'content    s'=>['required'],
+                'contents'=>['required'],
                 'quantity'=>['required'],
                 'sold'=>['sometimes', 'required'],
                 'view'=>['sometimes', 'required'],
-                'categoryId'=>['required']
+                'categoryId'=>['required'],
+                'slug'=>['required'],
+                'discount'=>['required']
             ];
         } else if($method == 'PATCH'){
         return [
-            'name'=>['sometimes', 'required'],
-            'price'=>['sometimes', 'required'],
-            'imgPath'=>['sometimes', 'required'],
-            'contents'=>['sometimes', 'required'],
-            'quantity'=>['sometimes', 'required'],
-            'sold'=>['sometimes', 'required'],
-            'view'=>['sometimes', 'required'],
-            'categoryId'=>['sometimes', 'required']
+            'name'=>['sometimes'],
+            'price'=>['sometimes'],
+            'imgPath'=>['sometimes'],
+            'contents'=>['sometimes'],
+            'quantity'=>['sometimes'],
+            'sold'=>['sometimes'],
+            'view'=>['sometimes'],
+            'categoryId'=>['sometimes'],
+            'slug'=>['sometimes'],
+            'discount'=>['sometimes']
         ];
     }
 }
@@ -84,6 +88,14 @@ class UpdateProductRequest extends FormRequest
         if($this->categoryId)
         $this->merge([
             'Category_ID' => $this->categoryId
+        ]);
+        if($this->discount)
+        $this->merge([
+            'Discount' => $this->discount
+        ]);
+        if($this->slug)
+        $this->merge([
+            'Slug' => $this->slug
         ]);
     }
 }
