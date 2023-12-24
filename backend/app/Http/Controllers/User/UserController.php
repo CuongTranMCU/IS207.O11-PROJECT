@@ -25,7 +25,10 @@ class UserController extends Controller
     public function update(UpdateUserRequest $request, $userId){
         $user = User::find($userId);
         if($user){
-            $user->update($request->all());
+            $data = array_filter($request->all(), function ($value) {
+                return $value !== null && $value !== '';
+            });
+            $user->update($data);
             return response()->json(['message'=>'Success']);
             //return response()->json(['message'=>$request->all()]);
         }

@@ -24,14 +24,14 @@ class UpdateTransactionRequest extends FormRequest
         $method = $this->method();
         if($method == 'PATCH')
         return [
-                'userId'=>['sometimes', 'required'],
-                'name'=>['sometimes', 'required'],
-                'Phone'=>['sometimes', 'required'],
-                'address'=>['sometimes', 'required'],
-                'status'=>['sometimes', 'required'],
-                'totalMoney'=>['sometimes', 'required'],
-                'paymentMethod'=>['sometimes', 'required'],
-                'note'=>['sometimes', 'required']
+                'userId'=>['sometimes'],
+                'name'=>['sometimes'],
+                'Phone'=>['sometimes'],
+                'address'=>['sometimes'],
+                'status'=>['sometimes'],
+                'totalMoney'=>['sometimes'],
+                'paymentMethod'=>['sometimes'],
+                'note'=>['sometimes']
         ];
     }
     public function prepareForValidation(){
