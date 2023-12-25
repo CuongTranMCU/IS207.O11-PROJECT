@@ -14,7 +14,6 @@ function ListProduct()
         {
             const data = await getListProductPage(page);
             setProduct(data.data);
-            console.log(data.data);
         }
         fetchApi();
     },[page]);

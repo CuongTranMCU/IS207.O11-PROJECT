@@ -25,6 +25,8 @@ import ListProduct from "../Components/ListProduct/ListProduct";
 import ConfirmOrder from "../Components/ConfirmOrder";
 import Checkout from "../Components/Admin/CheckOut";
 import MyOrder from "../Components/MyOrder";
+import ResetPassWord from "../Components/ResetPassword";
+import ResetPassword from "../Components/ResetPassword";
 export const routes = [
 {
     path : "/",
@@ -41,6 +43,10 @@ export const routes = [
         {
             path:"login",
             element: <LoginPage></LoginPage>
+        },
+        {
+            path:"new-password",
+            element:<ResetPassword></ResetPassword>
         },
         {
             path: "sign-up",

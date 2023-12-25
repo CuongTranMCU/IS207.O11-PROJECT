@@ -47,13 +47,13 @@ function NewProduct(props)
             name: e.target.elements.name.value,
             slug :e.target.elements.slug.value,
             price:  e.target.elements.price.value,
-            categoryId:e.target.elements.categoryId.value,
+            categoryId:e.target.elements.categoryId.value,     
             discount:e.target.elements.discount.value,
             imgPath: e.target.elements.imgPath.value,
             contents:  e.target.elements.contents.value,
             quantity:  e.target.elements.quantity.value 
         }   
-        console.log(product);
+      //  console.log(product);
          // fetch : là phương thức GET: chỉ lấy ra để đọc nên phải thêm tham số method
          try {
             const result = await createNewProduct(product);

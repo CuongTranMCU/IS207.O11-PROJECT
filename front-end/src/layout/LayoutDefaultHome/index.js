@@ -60,9 +60,16 @@ function LayoutDefaultHome() {
               <div className="header__tele">090.566.5982</div>
               {
                 token ?(<>
-                <Link to ="/logout" className="header__link--logout">
+               
+                  <div className="header__order">
+                  <Link to ="/logout" className="header__link--logout">
                 <div className="header__logout">Đăng xuất</div>
                 </Link>
+                <Link to ="/my-order" className="header__link--logout">
+                <div className="header__logout">Đơn hàng</div>
+                </Link>
+
+                  </div>
                 </>):
                 <>
                  <Link to = "/login" className="header__link--login">

@@ -1,10 +1,8 @@
-import { useSelector } from "react-redux";
 import "./styles.css"
 import { useEffect, useState } from "react";
 import { getCookie } from "../../helpers/cookie";
 import { deleteCart, getListCartByUserId, updateCart } from "../../services/cartService";
-import { PaymentCodPage, PaymentMomoPage, createTransaction } from "../../services/paymentService";
-import { unstable_HistoryRouter, useNavigate } from "react-router-dom";
+import {createTransaction } from "../../services/paymentService";
 function ListCart()
 {
     const [cart,setCart]= useState([]);
@@ -17,12 +15,6 @@ function ListCart()
     }
     useEffect(()=>
     {
-        // const fetchApi = async ()=>
-        // {
-        //     const userId = parseInt(getCookie("userId"));
-        //     const data = await getListCartByUserId(userId);
-        //     setCart(data.data);
-        // }
         fetchApi();
     },[]);
     const total = cart.reduce((total,it ) =>
@@ -123,27 +115,12 @@ function ListCart()
             address: address,
             status: 0
         }
-        console.log(transaction);
+        // console.log(transaction);
         const data = await createTransaction(transaction);
-        console.log(data);
-        console.log(data.transactionId);
+        // console.log(data);
+        // console.log(data.transactionId);
         window.location.href = `confirm-order?transactionId=${data.transactionId}`;
-        // const mtpayment= parseInt(method); 
-        // if(mtpayment === 0)
-        // {
-        //     const trans = {
-        //         transactionId: data.transactionId
-        //     }
-        //    const data1 = await PaymentCodPage(trans);
-        //    console.log(data1);
-        // }
-        // else  {
-        //     const trans = {
-        //         transactionId: data.transactionId
-        //     }
-        //    const data1 = await PaymentMomoPage(trans);
-        //    console.log(data1);
-        // }
+     
     }
     }
     return(
@@ -159,8 +136,7 @@ function ListCart()
                         {
                             cart.map(it=>
                             {
-                                // const discount=parseInt(it.item.discountPercentage).toFixed(0);
-                                //  const newPrice = (it.item.price*(100-discount)/100).toFixed(0);
+                               
                                  return (
                                     <div className={it.status == 1 ?"cart__item--select":"cart__item"} key={it.productId}>
                                        <div className="cart__image">

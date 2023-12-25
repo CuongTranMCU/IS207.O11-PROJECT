@@ -49,3 +49,7 @@ export const getUserTransaction = (id)=>
 {
     return get(`/api/user/${id}/transactions`)
 }
+export const getListOrderByTransactionId = (id)=>
+{
+    return get(`/api/orders?transactionId[eq]=${id}`);
+}

@@ -43,8 +43,10 @@ function ConfirmOrder(){
         newObject.productPrice = selectedItems[i].productPrice;
         newObject.quantity = selectedItems[i].quantity;
         newObject.transactionId = transactionId;
+        newObject.imgPath = selectedItems[i].imgPath;
         array.push(newObject);
         }
+        console.log(array);
         const data = await createOrder(array);
         console.log(data);
         const updateData = 

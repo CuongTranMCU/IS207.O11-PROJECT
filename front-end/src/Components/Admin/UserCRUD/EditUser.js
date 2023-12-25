@@ -67,11 +67,12 @@ function EditUser(props)
              console.log(result);
             if(result.message)
             {
+                alert("Cập nhật người dùng thành công");
                 closeModal();
                 reload();
             }
         } catch (error) {
-            alert("Chỉnh sửa người dùng thất bại");
+            alert("Cập nhật người dùng thất bại");
             console.log(error);
             closeModal();
         }      

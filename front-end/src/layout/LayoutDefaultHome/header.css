@@ -171,6 +171,17 @@ body
     position: absolute;
 
 }
+.header__order
+{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.header__introduce .header__wrap .header__contact .header__logout
+{
+    padding: 2px;
+    margin-left: 10px;
+
+}
 .header__list ul
 {
     width: 100%;
