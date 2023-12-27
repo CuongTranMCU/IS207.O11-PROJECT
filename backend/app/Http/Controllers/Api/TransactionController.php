@@ -71,7 +71,10 @@ class TransactionController extends Controller
         
         $transaction = Transaction::where('Transaction_ID', $transactionId)->first();
         if($transaction){
-            $transaction->update($request->all());
+            $data = array_filter($request->all(), function ($value) {
+                return $value !== null && $value !== '';
+            });
+            $transaction->update($data);
             if($transaction->Status == 9)
                 event(new TransactionStatusUpdated($transaction));
         }

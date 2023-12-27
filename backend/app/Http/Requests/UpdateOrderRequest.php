@@ -22,11 +22,12 @@ class UpdateOrderRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'productId'=>['sometimes','required'],
-            'productName'=>['sometimes','required'],
-            'productPrice'=>['sometimes','required'],
-            'quantity'=>['sometimes','required'],
-            'transactionId'=>['sometimes','required'],
+            'productId'=>['sometimes'],
+            'productName'=>['sometimes'],
+            'productPrice'=>['sometimes'],
+            'quantity'=>['sometimes'],
+            'transactionId'=>['sometimes'],
+            'imgPath'=>['sometimes'],
         ];
     }
     public function prepareForValidation(){
@@ -35,5 +36,6 @@ class UpdateOrderRequest extends FormRequest
         if($this->productPrice) $this->merge(['Product_price' => $this->productPrice]); 
         if($this->quantity) $this->merge(['Quantity' => $this->quantity]);
         if($this->transactionId) $this->merge(['Transaction_ID' => $this->transactionId]);
+        if($this->imgPath) $this->merge(['Img_path' => $this->imgPath]);
     }
 }

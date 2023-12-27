@@ -8,6 +8,7 @@ class OrderQuery{
         'productId'=>['eq'],
         'productName'=>['eq'],
         'productPrice'=>['eq', 'lt', 'gt', 'lte', 'gte'],
+        'transactionId'=>['eq', 'lt', 'gt', 'lte', 'gte'],
         'quantity'=>['eq', 'lt', 'gt', 'lte', 'gte'],
         'createdAt'=>['eq', 'lt', 'gt']
     ];
@@ -16,6 +17,7 @@ class OrderQuery{
         'productName'=>'Product_name',
         'productPrice'=>'Product_price',
         'quantity'=>'Quantity',
+        'transactionId'=>'Transaction_ID',
         'createdAt'=>'Created_at'
     ];
     protected $operatorMap = [

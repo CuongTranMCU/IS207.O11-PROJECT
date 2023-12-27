@@ -56,19 +56,18 @@ function EditProduct(props)
             quantity:  e.target.elements.quantity.value 
            
         }   
-        console.log(product);
+       console.log(product);
          try {
             const result = await editProduct(product,item.id);
              console.log(result);
-            if(result)
+            if(result.message === "Success")
             {
-                alert("Chỉnh sửa sản phẩm thành công");
+                alert("Cập nhật sản phẩm thành công");
                 closeModal();
                 reload();
             }
         } catch (error) {
-            alert("Chỉnh sửa sản phẩm thất thất bại");
-            console.log(error);
+            alert("Cập nhật sản phẩm thất thất bại");
             closeModal();
         }      
     }
@@ -110,7 +109,7 @@ function EditProduct(props)
                     </td>
                 </tr>
                 <tr>
-                    <td>Giá</td>
+                    <td>Giá:</td>
                     <td>
                         <input name="price" type="text" defaultValue={item.price} required></input>
                     </td>
@@ -122,7 +121,7 @@ function EditProduct(props)
                     </td>
                 </tr>
                 <tr>
-                    <td>Số lượng</td>
+                    <td>Số lượng:</td>
                     <td>
                         <input name="quantity" type="number" min={0} max={1000} defaultValue={item.quantity} required></input>
                     </td>
@@ -136,7 +135,7 @@ function EditProduct(props)
                 <tr>
                     <td>Mô tả sản phẩm</td>
                     <td>
-                       <textarea name="contents" rows={3} cols={30} defaultValue={item.contents} required></textarea>
+                       <textarea name="contents" rows={3} cols={30} defaultValue={item.content}></textarea>
                     </td>
                 </tr>
                 <tr>

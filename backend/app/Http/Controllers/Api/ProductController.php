@@ -119,13 +119,21 @@ class ProductController extends Controller
      */
     public function update(UpdateProductRequest $request, $id)
     {
-        $product = product::where('Product_ID', $id)->first();
-        if($product){
-            $product->update($request->all());
-            return response()->json(['message'=>'Success']);
+        $product = Product::where('Product_ID', $id)->first();
+    
+        if (!$product) {
+            return response()->json(['message' => 'Not found'], 404);
         }
-        else return response()->json(['message' => 'Not found'],404);
+    
+        $data = array_filter($request->all(), function ($value) {
+            return $value !== null && $value !== '';
+        });
+    
+        $product->update($data);
+    
+        return response()->json(['message' => 'Success']);
     }
+    
 
     /**
      * Remove the specified resource from storage.

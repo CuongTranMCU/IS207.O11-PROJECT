@@ -5,7 +5,11 @@ export const getListUser= ()=>
     return get("/api/admin/allUsers");
 
 }
-export const getListOrder =()=>
+export const  getListOrder = ()=>
+{
+    return get("/api/orders");
+}
+export const getListTrans =()=>
 {
     return get("/api/transactions");
 }
@@ -36,4 +40,12 @@ export const deleteUser=(id)=>
 export const deleteProduct=(id)=>
 {
     return del(id,"/api/products")
+}
+export const deleteOrder = (id)=>
+{
+    return del(id,"/api/orders");
+}
+export const editOrder = (order,id)=>
+{
+    return patch(order,id,"/api/orders");
 }

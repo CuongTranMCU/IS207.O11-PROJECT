@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Cart extends Model
 {
     protected $table = 'carts';
-    protected $fillable = ['Quantity', 'Product_name', 'Product_price', 'Product_ID', 'User_ID', 'Status'];
+    protected $fillable = ['Quantity', 'Product_name', 'Product_price', 'Product_ID', 'User_ID', 'Status', 'Img_path'];
     use HasFactory;
     public function product(){
         return $this->belongsTo(Product::class, 'Product_ID', 'Product_ID');

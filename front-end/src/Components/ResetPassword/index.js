@@ -1,11 +1,11 @@
 import { Link, useNavigate } from "react-router-dom";
-import { setCookie } from "../../helpers/cookie";
-import { login } from "../../services/userService";
+import { getCookie, setCookie } from "../../helpers/cookie";
+import { login, newtPass } from "../../services/userService";
 import { useDispatch } from "react-redux";
 import { authen } from "../../actions/authen";
-import "./Login.css";
+import "../Login/Login.css";
 
-function Login(){
+function ResetPassword(){
     const navigate= useNavigate();  
     const dispatch = useDispatch();
     const handleSubmit = async (e)=>
@@ -15,35 +15,25 @@ function Login(){
         const password = e.target.elements.password.value;
         const user =
         {
-            email: email,
-            password: password
+            email: email
         }
-        console.log(user);
-        const data = await  login(user);
+        const data = await  newtPass(user);
         console.log(data);
-        if(data.message === "Login Success")
+        if(data.message === "Success")
         {   
-            alert("Đăng nhập thành công");
-            const email = user.email;
-            const token = data.token;
-            const userId = data.userId;
-            const exDays= 2;
-            setCookie("email",email,exDays);
-            setCookie("token",token,exDays);
-            setCookie("userId",userId,exDays);
-            dispatch(authen(true));
-            navigate("/");
+            alert("Xác nhận email");
+        window.location.href = "https://mailtrap.io/inboxes/2509964/messages";
         }
         else
         {
-            alert("Đăng nhập thất bại");
+            alert("Reset thất bại");
         }
     }
     return(
         <>
         <div className="container">
             <div className="login">
-                <h3 className="login__title">Đăng nhập</h3>
+                <h3 className="login__title">Reset Password</h3>
                 <form onSubmit={handleSubmit} className="login__form">
                     <div className="login__email">
                         <input type="email" name="email" placeholder="Email" required></input>
@@ -55,14 +45,11 @@ function Login(){
                         <i class="fa-solid fa-lock"></i>
                     </div> 
 
-                    <div className="login__forgotpass">
-                        <Link to="/new-password">Forgot Password?</Link>
-                    </div>                
+                                   
 
-                    <button className="button login__button">Đăng nhập</button>
+                    <button className="button login__button">Reset</button>
                 </form>
 
-                <div className="login__register">Don't have an account? <Link to="../sign-up">Register</Link></div>
             </div>
             
         </div>
@@ -70,4 +57,4 @@ function Login(){
     )
 
 }
-export default Login;
+export default ResetPassword;

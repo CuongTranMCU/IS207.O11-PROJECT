@@ -19,6 +19,14 @@ import RecruitmentPage from "../pages/RecruitmentPage";
 import WholesalePage from "../pages/WholesalePage";
 import GuidePage from "../pages/GuidePage";
 import AddressPage from "../pages/AddressPage";
+import SearchProduct from "../Components/SearchProduct";
+import FilterProduct from "../Components/FilterProduct";
+import ListProduct from "../Components/ListProduct/ListProduct";
+import ConfirmOrder from "../Components/ConfirmOrder";
+import Checkout from "../Components/Admin/CheckOut";
+import MyOrder from "../Components/MyOrder";
+import ResetPassWord from "../Components/ResetPassword";
+import ResetPassword from "../Components/ResetPassword";
 export const routes = [
 {
     path : "/",
@@ -37,6 +45,10 @@ export const routes = [
             element: <LoginPage></LoginPage>
         },
         {
+            path:"new-password",
+            element:<ResetPassword></ResetPassword>
+        },
+        {
             path: "sign-up",
             element : <RegisterPage></RegisterPage>
         },
@@ -46,7 +58,7 @@ export const routes = [
         },
         {
             path: "products",
-            element:<ProductPage></ProductPage>
+            element:<ListProduct></ListProduct>
         },
         {
             path:"product/:slug",
@@ -59,6 +71,26 @@ export const routes = [
         {
             path : "Knowledge",
             element: <KnowledgePage></KnowledgePage>
+        },
+        {
+            path:"products/search?",
+            element:<SearchProduct></SearchProduct>
+        },
+        {
+            path:"checkout",
+            element:<Checkout></Checkout>
+        },
+        {
+            path:"my-order",
+            element:<MyOrder>   </MyOrder>
+        },
+        {
+            path:"confirm-order?",
+            element:<ConfirmOrder></ConfirmOrder>
+        },
+        {
+            path:"products/filter?",
+            element:<FilterProduct></FilterProduct>
         },
         {
             path : "Guide",

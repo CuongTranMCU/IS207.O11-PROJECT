@@ -66,7 +66,7 @@ class UserAuth extends Controller
             $user->save();
             DB::table(table:'email_verify_tokens')->where(['email'=>$email])->delete();
             //return response()->json(['message' => 'Verify email success']);
-            return redirect('https://example.com'); // page muốn hiện sau khi user click vào link verify email.
+            return redirect('http://localhost:3000/login'); // page muốn hiện sau khi user click vào link verify email.
         }
         else return response()->json(['message' => 'Not found'], 404);
     }

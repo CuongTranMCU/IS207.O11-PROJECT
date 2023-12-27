@@ -1,8 +1,7 @@
-export const addtoCart =(id,item)=>
+export const addtoCart =(length)=>
 {
     return{
         type:"ADD",
-        id : id,
-        item: item
+        length: length
     }
 }

@@ -27,6 +27,7 @@ class BulkStoreOrderRequest extends FormRequest
             '*.productPrice'=>['required'],
             '*.quantity'=>['required'],
             '*.transactionId'=>['required'],
+            '*.imgPath'=>['required'],
         ];
     }
     public function prepareForValidation(){
@@ -37,6 +38,7 @@ class BulkStoreOrderRequest extends FormRequest
             $obj['Product_price'] = $obj['productPrice'] ?? null;
             $obj['Quantity'] = $obj['quantity'] ?? null;
             $obj['Transaction_ID'] = $obj['transactionId'] ?? null;
+            $obj['Img_path'] = $obj['imgPath'] ?? null;
             $data[] = $obj;
         }
         $this->merge($data);

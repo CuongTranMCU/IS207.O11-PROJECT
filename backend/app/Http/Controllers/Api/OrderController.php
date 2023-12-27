@@ -31,7 +31,10 @@ class OrderController extends Controller
     public function update(UpdateOrderRequest $request, $id){
         $Order = Order::where('Order_ID', $id)->first();
         if($Order){
-            $Order->update($request->all());
+            $data = array_filter($request->all(), function ($value) {
+                return $value !== null && $value !== '';
+            });
+            $Order->update($data);
             return response()->json(['message'=>'Success']);
         }
         else return response()->json(['message' => 'Not found'], 404);
@@ -47,7 +50,7 @@ class OrderController extends Controller
     public function bulkStore(BulkStoreOrderRequest $request){
         $bulk = collect($request->all())->map(function($arr, $key){
             
-            return Arr::except($arr,  ['productId', 'productName', 'productPrice', 'quantity', 'transactionId']);
+            return Arr::except($arr,  ['productId', 'productName', 'productPrice', 'quantity', 'transactionId', 'imgPath']);
         });
         
         Order::insert($bulk->toArray());

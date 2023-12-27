@@ -5,20 +5,23 @@ import payment from "../../Components/images/phuong-thuc-thanh-toan-cayxinh.png"
 import footerLogo from "../../Components/images/logo-1-1.png"
 import footerProtect from "../../Components/images/dmca_protected-1.png";
 import footerNoti from "../../Components/images/20150827110756-cay-xinh-dathongbao-e1611808211540.png";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./header.css"
 import "./footer.css"
 import { getCookie } from "../../helpers/cookie";
 import { useEffect, useState } from "react";
 import { getListCategory } from "../../services/categoryServices";
+import Search from "../../Components/Search";
+import { getListCartByUserId } from "../../services/cartService";
+import { addtoCart } from "../../actions/cart";
 function LayoutDefaultHome() {
-    // const cart=useSelector(state=>state.cartReducer);
+    const cart = useSelector(state=>state.cartReducer.cartLength);
     // const total=cart.reduce((sum,item)=>{
     //   return sum + item.quantity;
     // },0);
     const token = getCookie("token");
-    const auth = useSelector(state =>state.authenReducer); 
-    var categoryId;
+    const dispatch = useDispatch();
+    const auth = useSelector(state =>state.authenReducer);
     const [category,SetCategory] = useState([]);
     // khi giá trị auth thay đổi thì tự động reload lại trang.,tại khi đăng nhập hay đăng xuất đã gửi 1 dispatch true/false 
     // => khi thay đổi thì nó sẽ reload trang để cập nhật token xem còn hay không. 
@@ -29,6 +32,9 @@ function LayoutDefaultHome() {
       {
           const data = await getListCategory();
           SetCategory(data.data);
+          const data1 = await getListCartByUserId(getCookie("userId"));
+          dispatch(addtoCart(data1.data.length));
+
       }
       fetchApi();
     },[])
@@ -45,12 +51,8 @@ function LayoutDefaultHome() {
               <img src= {logo}  alt={"logo"} />
             </Link>
             </div>
-            <div className="header__search">
-              <input type="text" placeholder="Tìm kiếm sản phẩm" />
-              <div className="header__button">
-                <i className="fa-solid fa-magnifying-glass"></i>
-              </div>
-            </div>
+              <Search></Search>
+            
             <div className="header__contact">
               <div className="header__icon">
                 <i className="fa-solid fa-phone"></i>
@@ -58,9 +60,16 @@ function LayoutDefaultHome() {
               <div className="header__tele">090.566.5982</div>
               {
                 token ?(<>
-                <Link to ="/logout" className="header__link--logout">
+               
+                  <div className="header__order">
+                  <Link to ="/logout" className="header__link--logout">
                 <div className="header__logout">Đăng xuất</div>
                 </Link>
+                <Link to ="/my-order" className="header__link--logout">
+                <div className="header__logout">Đơn hàng</div>
+                </Link>
+
+                  </div>
                 </>):
                 <>
                  <Link to = "/login" className="header__link--login">
@@ -132,14 +141,14 @@ function LayoutDefaultHome() {
              <Link to ="/Address" className="header__link">
              <div className="header__box header__address">Địa chỉ</div>
              </Link>
-             
+                  
               {
                 token ?(
                   <Link to ="/cart" className="header__link">
                     <div className="header__box header__cart">
                   
-                    <div className="header__text">Giỏ hàng</div>
-                      <div className="header__icon"><i className="fa-solid fa-cart-plus"></i></div>
+                    <div className="header__text">Giỏ hàng({cart})</div>
+                      <div className="header__icon"><i className="fa-solid fa-cart-plus"></i>  </div>
                     </div>
                   </Link>
              

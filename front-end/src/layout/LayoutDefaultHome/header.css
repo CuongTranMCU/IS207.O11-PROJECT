@@ -59,7 +59,7 @@ body
 {
     border: 2px solid var(--color-green);
     border-radius: 0px 30px 30px 0px;
-    padding: 10px 20px;
+    /* padding: 10px 20px; */
     height: 100%;
     background-color: var(--color-green);
     color:var(--color-bg);
@@ -171,6 +171,17 @@ body
     position: absolute;
 
 }
+.header__order
+{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.header__introduce .header__wrap .header__contact .header__logout
+{
+    padding: 2px;
+    margin-left: 10px;
+
+}
 .header__list ul
 {
     width: 100%;
@@ -272,6 +283,16 @@ body
 .header__knowledgedrop div{
     display: block;
     background-color: #fff;
+
+}
+.header__search .button__search
+{
+    display: inline-block;
+    color:var(--color-bg);
+    border: none;
+    background-color: var(--color-green);
+    padding: 10px 20px;
+    border-radius: 0px 30px 30px 0px;
 
 }
 

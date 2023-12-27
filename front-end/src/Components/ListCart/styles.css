@@ -6,6 +6,15 @@
     border-radius: 5px;
     margin: 10px 0px;
 }
+.cart__item--select
+{
+    display: flex;
+    border: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 10px 0px;
+    background-color: var(--color-green);
+}
 .cart__image
 {
     width: 150px;
@@ -51,6 +60,11 @@
 }
 button{
     margin: 5px;
+    padding: 5px;
+}
+.cart__delete
+{
+    margin-right: 10px;
 }
 .cart__total
 {
