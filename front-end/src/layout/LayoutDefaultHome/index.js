@@ -159,8 +159,8 @@ function LayoutDefaultHome() {
         {/* <!-------------------------------------------------------FOOTER----------------------------------------------------> */}
     <footer>
         <div className="container container-footer">
-            <div className="row1">
-                <div className="row11">
+            <div className="row row1">
+                <div className="col-lg-4 col-md-6 col-sm-12 row11 ">
                     <h3>Về chúng tôi</h3>
                     <img src={footerLogo} alt="Logo cây xinh"/>
                     <p>Cây Xinh là thương hiệu dẫn đầu trong lĩnh vực sản xuất & cung cấp các
@@ -174,7 +174,7 @@ function LayoutDefaultHome() {
                         tâm huyết của mình... để đáp ứng mọi nhu cầu của khách hàng.</p>
                 </div>
 
-                <div className="row12">
+                <div className="col-lg-4 col-md-6 col-sm-12 row12">
                     <h3>Hỗ trợ khách hàng</h3>
                     <ul>
                         <li><a href="#">Hướng dẫn đặt hàng & thanh toán</a></li>
@@ -193,7 +193,7 @@ function LayoutDefaultHome() {
                     </a>
                 </div>
 
-                <div className="row13">
+                <div className="col-lg-4 col-md-6 col-sm-12 row13">
                     <h3>Fanpage Facebook</h3>
                     <a href="#"><img src={social} alt="Facebook Fanpage"/></a>
                 </div>

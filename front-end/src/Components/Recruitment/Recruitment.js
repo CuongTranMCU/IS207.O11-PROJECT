@@ -39,10 +39,10 @@ function Recruitment(){
                 <div className="bodycontainer">
                     <div className="bodycontent">
                         <p>
-                        <h3>THÔNG TIN TUYỂN DỤNG THÁNG 7/2019</h3>
+                        <h3>THÔNG TIN TUYỂN DỤNG THÁNG 12/2023</h3>
                         Với kế hoạch mở rộng và phát triển hoạt động kinh doanh lĩnh vực cây xanh trên toàn quốc, Cây Xinh tuyển dụng nhân sự ở các vị trí khác nhau, tạo việc làm và cơ hội phát triển nghề nghiệp với thu nhập hấp dẫn.<br/><br/>
                         Đặc biệt rất phù hợp với các bạn có tình yêu với cây cối, thích làm việc trong môi trường xanh, đồng nghiệp tốt, quản lý giỏi để phát triển kỹ năng trở thành người bán hàng vĩ đại nhất<br/><br/>
-                        Địa chỉ làm việc:<span className="highlighttext"> Số 1, Ngõ 213, Giáp Nhất, Thanh Xuân, Hà Nội </span><br/><br/>
+                        Địa chỉ làm việc:<span className="highlighttext"> Trường Đại học Công nghệ thông tin  </span><br/><br/>
 
                         <h3>I. VỊ TRÍ TUYỂN DỤNG:</h3>
                         – Kế toán nội bộ: 1 nhân sự (mức lương 6,5-8tr/tháng)<br/>
@@ -74,7 +74,7 @@ function Recruitment(){
                         – Đào tạo từ A-Z về các phần mềm quản lý, kỹ năng bán hàng, chốt sale, Telesale…<br/><br/>
 
                         <h3>IV. HƯỚNG DẪN ỨNG TUYỂN </h3>
-                        – Nộp hồ sơ và phỏng vấn trực tiếp tại: <span className="highlighttext">Số 1, Ngõ 213, Giáp Nhất, Thanh Xuân, Hà Nội </span><br/>
+                        – Nộp hồ sơ và phỏng vấn trực tiếp tại: <span className="highlighttext">Trường Đại học Công nghệ thông tin </span><br/>
                         – Điện thoại: Mr. Dũng<span className="highlighttext"> 096.771.6467</span> hoặc<span className="highlighttext"> 094.822.5678</span><br/>
                         – Gửi CV qua email:<span className="highlighttext"> cayxinh.vn@gmail.com </span><br/><br/>
 

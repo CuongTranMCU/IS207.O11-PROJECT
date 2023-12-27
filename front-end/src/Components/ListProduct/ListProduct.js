@@ -33,10 +33,10 @@ function ListProduct()
       
         <div className="container">
             <h2>Danh sách sản phẩm</h2>
-            <div className="product__list">
+            <div className="row product__list">
                 {
                     product.map(item =>(
-                      <Link to = {`/product/${item.slug}`} state = {{page}}  className="product__link" key={item .id}>
+                      <Link to = {`/product/${item.slug}`} state = {{page}}  className="product__link col-lg-3 col-md-4 col-sm-6" key={item .id}>
                         <Item
                         key={item .id}
                         item={item }

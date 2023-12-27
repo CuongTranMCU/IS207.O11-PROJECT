@@ -258,8 +258,16 @@ body
 {
 
     display: none;
+    background-color: white;
     color:var(--color-text);
     position: absolute;
+    top: 45px;
+    left: 0;
+    width: 140%;
+
+    border: 2px solid #fff;
+    box-shadow: 3px 10px 13px#0000000d;
+
 }
 .header__knowledgedrop div{
     display: block;
@@ -269,10 +277,12 @@ body
 
 .header__knowledgedrop:hover  {
     display: block;
+    
 }
 .header__knowledge
 {
     display: inline-block;
+    position: relative;
     /* color:var(--color-green); */
 }
 .header__knowledge:hover .header__knowledgedrop {
