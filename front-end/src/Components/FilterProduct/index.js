@@ -89,7 +89,7 @@ function FilterProduct()
                 <option value="price-desc">Giá: Cao xuống thấp</option>
                 <option value="price[lte]500000">Giá: Dưới 500.000đ</option>
                 <option value="price500000-1000000">Giá: Từ 500.000đ - 1.000.000đ</option>
-                <option value="price[gt]1000000">Giá: Trên 1000.000đ</option>
+                <option value="price[gt]1000000">Giá: Trên 1.000.000đ</option>
               </select>
 
             </div>

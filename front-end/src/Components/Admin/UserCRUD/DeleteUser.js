@@ -1,5 +1,6 @@
 import Swal from 'sweetalert2';
 // import 'sweetalert2/src/sweetalert2.scss';
+import "./style.css"
 import { deleteUser } from '../../../services/adminService';
 function DeleteUser(props)
 {
@@ -36,7 +37,7 @@ function DeleteUser(props)
     }
     return(
         <>
-        <button onClick={handleConfirm} className= "user__delete">Delete</button>
+          <button onClick={handleConfirm} className= "btn btn-danger user__delete">Delete</button>
 
         </>
     )

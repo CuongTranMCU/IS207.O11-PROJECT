@@ -65,7 +65,7 @@ function ProductCRUD(){
                     <td>{item.createdAt}</td>
                     <td>
                         <EditProduct item ={item} reload ={handleReload}></EditProduct>
-                       <DeleteProduct item ={item} reload ={handleReload}></DeleteProduct>
+                        <DeleteProduct item ={item} reload ={handleReload}></DeleteProduct>
                     </td>
 
                 </tr>
@@ -74,10 +74,10 @@ function ProductCRUD(){
         }
             </table>
             <div className="product__page">
-              <button onClick={handleDown}>-
+              <button className="product__page__divider" onClick={handleDown}>-
               </button>
               <span>{page}</span>
-              <button onClick={handleUp}>+
+              <button className="product__page__divider" onClick={handleUp}>+
               </button>
 
             </div>

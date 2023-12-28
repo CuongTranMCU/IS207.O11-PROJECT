@@ -63,3 +63,21 @@ table td button
     text-align: center;
     border-radius: 5px;
 }
+
+
+
+
+
+
+
+/**********************************EditUser.js***********************************************/
+.td-btn {
+    text-align: center;
+}
+
+
+
+/**********************************DeleteUser.js***********************************************/
+.user__delete {
+    width: 35%;
+}

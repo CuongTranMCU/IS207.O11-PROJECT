@@ -2,6 +2,7 @@ import { useState } from "react";
 import Modal from 'react-modal';
 import { editOrder } from "../../../services/adminService";
 import { updateStatusTransaction } from "../../../services/paymentService";
+import '../UserCRUD/style.css';
 function EditOrder(props)
 {
     const {item,reload,status}=props;
@@ -60,7 +61,7 @@ function EditOrder(props)
     }
     return(
         <>
-        <button onClick={handleShowModal} className="product__edit">Edit</button>
+        <button onClick={handleShowModal} className="btn btn-primary product__edit">Edit</button>
         <Modal
         isOpen={showModal}
         style={customStyles}
@@ -101,12 +102,12 @@ function EditOrder(props)
                     </td>
                 </tr>
                
-                <tr>
+                <tr className="td-btn">
                     <td>
-                    <button className="button__close" onClick={closeModal}>Close</button>
+                    <button className="btn btn-danger button__close" onClick={closeModal}>Close</button>
                     </td>
                     <td>
-                     <button className="button__submit"  type='submit'>Update</button>
+                     <button className="btn btn-success button__submit"  type='submit'>Update</button>
 
                     </td>
                 </tr>

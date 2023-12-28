@@ -1,5 +1,6 @@
 import Swal from 'sweetalert2';
 import { deleteProduct} from '../../../services/adminService';
+import "./style.css";
 function DeleteProduct(props)
 {
     const {item,reload}=props;
@@ -35,7 +36,7 @@ function DeleteProduct(props)
     }
     return(
         <>
-        <button onClick={handleConfirm} className= "product__delete">Delete</button>
+          <button onClick={handleConfirm} className= "btn btn-danger product__delete">Delete</button>
 
         </>
     )

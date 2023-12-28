@@ -48,7 +48,7 @@ function UserCRUD(){
                     <td>{item.createdAt}</td>
                     <td>
                         <EditUser item={item} reload= {handleReload}></EditUser>
-                        <DeleteUser item={item} reload={handleReload} ></DeleteUser>
+                        <DeleteUser item={item} reload={handleReload}></DeleteUser>
                     </td>
 
                 </tr>

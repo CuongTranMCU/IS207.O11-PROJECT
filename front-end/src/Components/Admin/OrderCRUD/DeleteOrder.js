@@ -36,7 +36,7 @@ function DeleteOrder(props)
     }
     return(
         <>
-        <button onClick={handleConfirm} className= "product__delete">Delete</button>
+        <button onClick={handleConfirm} className= "btn btn-danger product__delete">Delete</button>
 
         </>
     )

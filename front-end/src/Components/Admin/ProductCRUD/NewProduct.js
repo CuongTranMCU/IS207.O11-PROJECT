@@ -74,7 +74,7 @@ function NewProduct(props)
     }
     return(
         <>
-        <button onClick={handleShowModal} className="user__add">Thêm mới sản phẩm</button>
+        <button onClick={handleShowModal} className="btn-large btn-primary user__add">Thêm mới sản phẩm</button>
         <Modal
         isOpen={showModal}
         style={customStyles}
@@ -138,12 +138,12 @@ function NewProduct(props)
                        <textarea name="contents" rows={3} cols={30} required></textarea>
                     </td>
                 </tr>
-                <tr>
+                <tr className="td-btn">
                     <td>
-                    <button className="button__close" onClick={closeModal}>Close</button>
+                    <button className="btn btn-danger button__close" onClick={closeModal}>Close</button>
                     </td>
                     <td>
-                     <button className="button__submit"  type='submit'>Create</button>
+                     <button className="btn btn-success button__submit"  type='submit'>Create</button>
 
                     </td>
                 </tr>
