@@ -43,7 +43,7 @@
   npm start
 ```
 ## Demo
-<p align='center'><img style="height: 800px" src="https://github.com/CuongTranMCU/IS207.O11-PROJECT/demo.png"></p>
+<p align='center'><img style="height: 800px" src="[https://github.com/CuongTranMCU/IS207.O11-PROJECT/demo.pn](https://github.com/CuongTranMCU/IS207.O11-PROJECT/blob/main/demo.png)g"></p>
 <!-- Footer -->
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;`Copyright © 2023 - Trần Văn Cường`
 
