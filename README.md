@@ -23,7 +23,7 @@
 | 5   | 21522251 | Bành Trí Kiệt        |                                   | 21522251@gm.uit.edu.vn |
 ## ĐỒ ÁN CUỐI KÌ
 - **Tên đồ án:** Website kinh doanh cây cảnh 
-- **Front-end:**  [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML), [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS), [JavaScript](https://www.javascript.com/),[ReactJs](https://react.dev/)
+- **Front-end:**  [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML), [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS), [JavaScript](https://www.javascript.com/), [ReactJs](https://react.dev/)
 - **Back-end:**  [PHP](https://www.php.net/), [Laravel 9](https://laravel.com/)
 -   **Database:** [MySQL](https://www.mysql.com/)
 ## Cách chạy dự án Backend:
@@ -43,7 +43,7 @@
   npm start
 ```
 ## Demo
-<p align='center'><img style="height: 800px" src="[https://github.com/CuongTranMCU/IS207.O11-PROJECT/demo.pn](https://github.com/CuongTranMCU/IS207.O11-PROJECT/blob/main/demo.png)g"></p>
+<p align='center'><img style="height: 800px" src="https://github.com/CuongTranMCU/IS207.O11-PROJECT/blob/main/demo.png"></p>
 <!-- Footer -->
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;`Copyright © 2023 - Trần Văn Cường`
 
