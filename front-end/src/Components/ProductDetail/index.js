@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
-import { getListProductPage } from "../../services/productServices";
+import { getAllProducts, getListProductPage } from "../../services/productServices";
 import "./styles.css"
 import { getCookie } from "../../helpers/cookie";
 import { createNewCart, getListCartByUserId } from "../../services/cartService";
@@ -17,19 +17,27 @@ function ProductDetail(){
     {
         const fetchProductDetail = async()=>
         {
-            const data= await getListProductPage(page);  
-            for (let i=0;i<data.data.length;i++)
+            let fetchedPage = 1;
+            let data = [];
+            while(fetchedPage <= 5)
             {
-                if(slug === data.data[i].slug)
+                data = await getListProductPage(fetchedPage);
+                for (let i=0;i<data.data.length;i++)
                 {
-                    setProductDetail(data.data[i]);
-                    break;
+                    if(slug === data.data[i].slug)
+                    {
+                        setProductDetail(data.data[i]);
+                        break;
+                    }
                 }
+                fetchedPage++;
             }
+          
         }
+
         fetchProductDetail();
       
-    },[slug]);
+    },[slug,page]);
     console.log(productDetail); 
     const handleDown = ()=>
     {
@@ -82,6 +90,7 @@ function ProductDetail(){
                 
 
                 <div className="detail__description">{productDetail.content}</div>
+                
                 <div className="detail__cart">
                     
                     <div className="detail__quantity">

@@ -1,0 +1,30 @@
+/**********************************EditProduct.js***********************************************/
+.td-btn {
+    text-align: center;
+}
+
+
+
+.product__delete {
+    width: 35%;
+}
+
+
+
+/**********************************index.js***********************************************/
+.product__page__divider
+{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: none;
+    margin: 1% 1%;
+
+    background-color: var(--color-green);
+    color: yellow;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

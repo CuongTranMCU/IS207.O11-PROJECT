@@ -8,13 +8,13 @@ function ListProduct()
   const navigate = useNavigate();
     const [product,setProduct] = useState([]);
     const [page,setPage] = useState(1);
-    useEffect(()=>
+    const fetchApi = async ()=>
     {
-        const fetchApi = async ()=>
-        {
-            const data = await getListProductPage(page);
-            setProduct(data.data);
-        }
+        const data = await getListProductPage(page);
+        setProduct(data.data);
+    }
+    useEffect(()=>
+    {  
         fetchApi();
     },[page]);
     const handleDown =()=>
@@ -55,10 +55,10 @@ function ListProduct()
             <div className="product__list">
                 {
                     product.map(item =>(
-                      <Link to = {`/product/${item.slug}`} state = {{page}}  className="product__link" key={item .id}>
+                      <Link to = {`/product/${item.slug}`} state = {{page}}  className="product__link col-lg-3 col-md-4 col-sm-6" key={item .id}>
                         <Item
                         key={item .id}
-                        item={item }
+                        item={item}
                     />
                       </Link>
                     ))

@@ -9,8 +9,8 @@ function Checkout()
         <>
         <div className="container">
             <div className="checkout">
-            <h2>ĐẶT MUA ĐƠN HÀNG THÀNH CÔNG</h2>
-        <button onClick={handleClick} className="button__order">Xem đơn hàng của tôi</button>
+                <h2>ĐẶT MUA ĐƠN HÀNG THÀNH CÔNG</h2>
+                <button onClick={handleClick} className="btn btn-primary button__order">Xem đơn hàng của tôi</button>
             </div>
       
         </div>

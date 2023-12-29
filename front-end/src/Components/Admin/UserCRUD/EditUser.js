@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Modal from 'react-modal';
 import {  editUser } from "../../../services/adminService";
+import "./style.css";
 function EditUser(props)
 {
     const {item,reload}=props;
@@ -79,7 +80,7 @@ function EditUser(props)
     }
     return(
         <>
-        <button onClick={handleShowModal} className="user__edit">Edit</button>
+        <button onClick={handleShowModal} className="btn btn-primary user__edit">Edit</button>
         <Modal
         isOpen={showModal}
         style={customStyles}
@@ -119,12 +120,11 @@ function EditUser(props)
                 </tr>
                
                 <tr>
-                    <td>
-                    <button className="button__close" onClick={closeModal}>Close</button>
+                    <td className="td-btn">
+                        <button className="btn btn-danger button__close" onClick={closeModal}>Close</button>
                     </td>
-                    <td>
-                     <button className="button__submit"  type='submit'>Update</button>
-
+                    <td className="td-btn">
+                        <button className="btn btn-success button__submit"  type='submit'>Update</button>
                     </td>
                 </tr>
                 </tbody>

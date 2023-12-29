@@ -19,7 +19,7 @@ function Register(){
             if(response.message === "Please verify email")
             {
                 alert("Xác nhận email");
-                window.location.href = "https://mailtrap.io/inboxes/2509964/messages";
+                window.location.href = "https://mailtrap.io/inboxes";
             }
             else
             {

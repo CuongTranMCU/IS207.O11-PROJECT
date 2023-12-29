@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Modal from 'react-modal';
+import "./style.css";
 import { editProduct } from "../../../services/adminService";
 import { getListCategory } from "../../../services/categoryServices";
 function EditProduct(props)
@@ -73,7 +74,7 @@ function EditProduct(props)
     }
     return(
         <>
-        <button onClick={handleShowModal} className="product__edit">Edit</button>
+        <button onClick={handleShowModal} className="btn btn-primary product__edit">Edit</button>
         <Modal
         isOpen={showModal}
         style={customStyles}
@@ -138,12 +139,12 @@ function EditProduct(props)
                        <textarea name="contents" rows={3} cols={30} defaultValue={item.content}></textarea>
                     </td>
                 </tr>
-                <tr>
+                <tr className="td-btn">
                     <td>
-                    <button className="button__close" onClick={closeModal}>Close</button>
+                        <button className="btn btn-danger button__close" onClick={closeModal}>Close</button>
                     </td>
                     <td>
-                     <button className="button__submit"  type='submit'>Update</button>
+                        <button className="btn btn-success button__submit"  type='submit'>Update</button>
 
                     </td>
                 </tr>

@@ -56,7 +56,7 @@ function Login(){
                     </div> 
 
                     <div className="login__forgotpass">
-                        <Link to="/new-password">Forgot Password?</Link>
+                        <Link to="/forget-password">Forgot Password?</Link>
                     </div>                
 
                     <button className="button login__button">Đăng nhập</button>

@@ -1,5 +1,6 @@
 import Swal from 'sweetalert2';
 import { deleteProduct} from '../../../services/adminService';
+import "./style.css";
 function DeleteProduct(props)
 {
     const {item,reload}=props;
@@ -7,6 +8,7 @@ function DeleteProduct(props)
     {
       // fetch : là phương thức GET: chỉ lấy ra để đọc nên phải thêm tham số method
     const result = await deleteProduct(item.id);
+    console.log(result);
     if(result)
     {
         Swal.fire(
@@ -35,7 +37,7 @@ function DeleteProduct(props)
     }
     return(
         <>
-        <button onClick={handleConfirm} className= "product__delete">Delete</button>
+          <button onClick={handleConfirm} className= "btn btn-danger product__delete">Delete</button>
 
         </>
     )

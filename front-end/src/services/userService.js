@@ -13,7 +13,11 @@ export const loginadmin =(admin)=>
 {
     return post(admin,"/admin/login");
 }
-export const newtPass = (data)=>
+export const forgetPass = (data)=>
 {
     return post(data,"/forget-password");
+}
+export const resetPass = (data)=>
+{
+    return post(data,"/reset-password");
 }

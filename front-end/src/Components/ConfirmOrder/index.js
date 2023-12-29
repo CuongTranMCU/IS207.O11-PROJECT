@@ -91,11 +91,11 @@ function ConfirmOrder(){
         <div className="container">
         <h2> XÁC NHẬN ĐƠN HÀNG</h2>
 
-        <div>Tên người nhận: {transaction && transaction.length > 0 ? transaction[0].name : 'N/A'}</div>
-        <div>Địa chỉ: {transaction && transaction.length > 0 ? transaction[0].address : 'N/A'}</div>
-        <div>Số điện thoại: {transaction && transaction.length > 0 ? transaction[0].phone : 'N/A'}</div>
-        <div>Tổng tiền: {total}đ</div>
-        <div>Hình thức: { transaction && transaction.length > 0 ? convertMethod(transaction[0].paymentMethod):'N/A'}</div>
+        <div><b>Tên người nhận:</b> {transaction && transaction.length > 0 ? transaction[0].name : 'N/A'}</div>
+        <div><b>Địa chỉ:</b> {transaction && transaction.length > 0 ? transaction[0].address : 'N/A'}</div>
+        <div><b>Số điện thoại:</b> {transaction && transaction.length > 0 ? transaction[0].phone : 'N/A'}</div>
+        <div><b>Tổng tiền:</b> {total}đ</div>
+        <div><b>Hình thức:</b> { transaction && transaction.length > 0 ? convertMethod(transaction[0].paymentMethod):'N/A'}</div>
         <div className="cart__list">
                         {
                             selectedItems.map(it=>
@@ -109,7 +109,7 @@ function ConfirmOrder(){
                                        </div>
                                        <div className="cart__content">
                                            <div className="cart__title">{it.productName}</div>
-                                           <div className="cart__new-price">{it.productPrice}đ</div>
+                                           <div className="cart__new-price">{it.productPrice.toLocaleString()}đ</div>
                                            <div className="cart__quantity">Số lượng: {it.quantity}</div>
                                        </div>
                                     
@@ -120,7 +120,7 @@ function ConfirmOrder(){
 
                         }
                         </div>
-                            <button onClick={handleSubmit}>Đặt Hàng</button>     
+                            <button className="btn btn-success" onClick={handleSubmit} style={{marginBottom: "20px"}}>Đặt Hàng</button>     
                         </div>
         </>
     )

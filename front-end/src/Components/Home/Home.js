@@ -44,9 +44,7 @@ function Home(){
     const [Spare, setSpare]= useState([]);
     //let dataArray=[];
     const location= useLocation();
-    useEffect(()=>
-    {
-        const fetchProductName = async ()=>
+    const fetchProductName = async ()=>
         {   
             //bestsell
             const bestsell= await getListProductPage(1);
@@ -57,8 +55,6 @@ function Home(){
             setArray(office.data);  
             //caterogy : 1,2 cây, 3 tiểu cảnh, 4 chậu, 5 tranh, 6 xương rồng, 7 phụ kiện
             //page: 2 tiểu cảnh, 3 sen đá, 4 xương rồng
-
-            
             setOfficeProduct(office.data.filter(products => products.name.includes("Cây")).slice(0, 8));
             //tiểu cảnh
             const miniscreen= await getListProductPage(2);
@@ -80,6 +76,9 @@ function Home(){
             const spare = await getListCategoryProduct(7);
             setSpare(spare.data)
         }
+    useEffect(()=>
+    {
+        
         fetchProductName();
     });
     

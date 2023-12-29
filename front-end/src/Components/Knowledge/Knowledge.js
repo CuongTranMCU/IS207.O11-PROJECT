@@ -48,7 +48,7 @@ function Knowledge()
             <h2>Kiến thức cây cảnh</h2>
             <div className="KnowledgeTitle">
             Tổng hợp các kiến thức về cây phong thủy, hướng dẫn lựa chọn 
-            cây phù hợp với tuổi, mệnh.Ngoài ra nơi đây còn chia sẻ cách chăm 
+            cây phù hợp với tuổi, mệnh. Ngoài ra nơi đây còn chia sẻ cách chăm 
             sóc các loại cây để bàn, sen đá, xương rồng tốt nhất...
             </div>
             <div className="bodycontainer">
@@ -60,8 +60,7 @@ function Knowledge()
                         content="Sen đá được yêu thích không chỉ bởi sự nhỏ nhắn 
                         đáng yêu mà còn vì đây là một loại cây cực kì dễ sống, dễ trồng.
                         Đối với nhiều người, có lẽ trồng và chăm sóc sen đá không 
-                        có gì là quá khó. Với kinh nghiệm 
-                        nhiều năm trong lĩnh vực kinh doanh cây cảnh,  "
+                        có gì là quá khó. Với kinh nghiệm nhiều năm trong lĩnh vực kinh doanh cây cảnh"
                         comment="19"
                     />
                     <Post
@@ -70,7 +69,7 @@ function Knowledge()
                         content="Lễ mừng thọ là một trong những truyền thống tốt đẹp của 
                         người Việt, là dịp quan trọng để con cháu bày tỏ sự tôn trọng, 
                         lòng biết ơn tới ông, bà, bố, mẹ. Một chậu cây xanh tốt chắc chắn sẽ 
-                        là món quà mừng ý nghĩa, mang giá trị thực tế cao. "
+                        là món quà mừng ý nghĩa, mang giá trị thực tế cao."
                         
                         comment="19"
                     />

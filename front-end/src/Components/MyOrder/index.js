@@ -94,18 +94,18 @@ function MyOrder()
                                        </div>
                                        <div className="cart__content">
                                            <div className="cart__title">{it.productName}</div>
-                                           <div className="cart__new-price">{it.productPrice}đ</div>
+                                           <div className="cart__new-price">{it.productPrice.toLocaleString()}đ</div>
                                            <div className="cart__quantity">Số lượng: {it.quantity}</div>
                                            <div className="cart__status">Trạng thái: {convertStatus(it.transactionId)}</div>
                                        </div>
                                        <div className="order__adjust">
                                         {
-                                           (convertStatus(it.transactionId) !== "Đã nhận đơn hàng" && convertStatus(it.transactionId) !== "Đã hủy đơn hàng" )  ?<> <button onClick={()=> handleReceive(it.transactionId)}>Đã nhận được hàng</button></>:<></>
+                                           (convertStatus(it.transactionId) !== "Đã nhận đơn hàng" && convertStatus(it.transactionId) !== "Đã hủy đơn hàng" )  ?<> <button style={{marginRight: "10px"}} className="btn btn-primary" onClick={()=> handleReceive(it.transactionId)}>Đã nhận được hàng</button></>:<></>
                                         }
                                        </div>
                                        <div className="order__adjust">
                                         {
-                                              (convertStatus(it.transactionId) !== "Đã nhận đơn hàng" && convertStatus(it.transactionId) !== "Đã hủy đơn hàng" ) ?<> <button onClick={()=> handleCancle(it.transactionId)}>Hủy đơn hàng</button></>:<></>
+                                              (convertStatus(it.transactionId) !== "Đã nhận đơn hàng" && convertStatus(it.transactionId) !== "Đã hủy đơn hàng" ) ?<> <button className="btn btn-danger" onClick={()=> handleCancle(it.transactionId)}>Hủy đơn hàng</button></>:<></>
                                         }
                                         </div>
                                     
