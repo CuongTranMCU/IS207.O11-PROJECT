@@ -193,7 +193,7 @@ function ListCart()
                            <input type="radio" name ="method" value={1}></input>
                            Thanh toán bằng MOMO
                            </label><br></br>
-                            <button  >Thanh Toán</button>
+                            <button className="btn btn-primary" >Thanh Toán</button>
                         </form>
                     </div>
                 </div>
