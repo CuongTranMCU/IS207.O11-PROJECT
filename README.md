@@ -26,7 +26,7 @@
 - **Front-end:**  [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML), [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS), [JavaScript](https://www.javascript.com/), [ReactJs](https://react.dev/)
 - **Back-end:**  [PHP](https://www.php.net/), [Laravel 9](https://laravel.com/)
 -   **Database:** [MySQL](https://www.mysql.com/)
-## CÁCH CHẠY DỰ ÁN FRONTEND:
+## CÁCH CHẠY DỰ ÁN BACKEND:
 - B1: Vào folder backend
 - B2: Cài đặt composer:
 ```
@@ -36,7 +36,7 @@
 ```
    php artisan serve
 ```
-## CÁCH CHẠY DỰ ÁN BACKEND:
+## CÁCH CHẠY DỰ ÁN FRONTEND:
 - B1: Vào folder front-end
 - B2: Chạy dự án
 ```
