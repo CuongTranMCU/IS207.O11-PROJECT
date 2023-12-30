@@ -17,7 +17,7 @@
 | STT | MSSV     | Họ và Tên            | GitHub                            | Email                  |
 | :-- | :------- | :------------------- | :---------------------------      | :--------------------- |
 | 1   | 21521909 | Trần Văn Cường       | https://github.com/CuongTranMCU   |21521909@gm.uit.edu.vn |
-| 2   | 21522764 | Trần Anh Tuấn        | https://github.com/TuanO20      |21522764@gm.uit.edu.vn |
+| 2   | 21522764 | Trần Anh Tuấn        | https://github.com/TuanO20        |21522764@gm.uit.edu.vn |
 | 3   | 21521649 | Nguyễn Xuân Tùng     |                                   | 21521649@gm.uit.edu.vn |
 | 4   | 21520312 | Nguyễn Đặng Anh Kiệt |                                   | 21520312@gm.uit.edu.vn |
 | 5   | 21522251 | Bành Trí Kiệt        |                                   | 21522251@gm.uit.edu.vn |
@@ -26,7 +26,7 @@
 - **Front-end:**  [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML), [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS), [JavaScript](https://www.javascript.com/), [ReactJs](https://react.dev/)
 - **Back-end:**  [PHP](https://www.php.net/), [Laravel 9](https://laravel.com/)
 -   **Database:** [MySQL](https://www.mysql.com/)
-## Cách chạy dự án Backend:
+## CÁCH CHẠY DỰ ÁN FRONTEND:
 - B1: Vào folder backend
 - B2: Cài đặt composer:
 ```
@@ -36,7 +36,7 @@
 ```
    php artisan serve
 ```
-## Cách chạy dự án Frontend:
+## CÁCH CHẠY DỰ ÁN BACKEND:
 - B1: Vào folder front-end
 - B2: Chạy dự án
 ```
